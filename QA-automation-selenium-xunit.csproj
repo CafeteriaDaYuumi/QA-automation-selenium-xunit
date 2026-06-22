@@ -1,5 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+<ItemGroup>
+  <!-- Garante que o arquivo de configuração seja copiado para a pasta de execução dos testes -->
+  <None Update="appsettings.json">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>QA_automation_selenium_xunit</RootNamespace>
