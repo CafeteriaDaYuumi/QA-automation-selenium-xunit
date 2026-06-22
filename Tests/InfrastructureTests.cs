@@ -1,5 +1,3 @@
-using OpenQA.Selenium;
-using QA_automation_selenium_xunit.Drivers;
 using QA_automation_selenium_xunit.Utils;
 using Xunit;
 
@@ -9,7 +7,7 @@ namespace QA_automation_selenium_xunit.Tests
     /// Testes responsáveis por validar a infraestrutura básica
     /// do framework de automação.
     /// </summary>
-    public class InfrastructureTests
+    public class InfrastructureTests : BaseTest
     {
         /// <summary>
         /// Valida se o navegador pode ser iniciado,
@@ -18,24 +16,20 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void DeveAbrirNavegadorEAcessarSite()
         {
-            // Inicializa o navegador através da DriverFactory.
-            DriverFactory driverFactory = new DriverFactory();
-            IWebDriver driver = driverFactory.GetDriver();
+            // Acessa a URL base configurada no appsettings.json.
+            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            // Acessa a URL configurada no ambiente.
-            driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
-
-            // Gera evidência da execução.
+            // Gera evidência visual da execução.
             ScreenshotHelper.TakeScreenshot(
-                driver,
+                Driver,
                 "DeveAbrirNavegadorEAcessarSite"
             );
 
             // Valida se a página foi carregada corretamente.
-            Assert.Contains("Automation Exercise", driver.Title);
-
-            // Finaliza a execução do navegador.
-            driverFactory.QuitDriver();
+            Assert.Contains(
+                "Automation Exercise",
+                Driver.Title
+            );
         }
     }
 }

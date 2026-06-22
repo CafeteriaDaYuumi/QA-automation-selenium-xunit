@@ -44,17 +44,5 @@ namespace QA_automation_selenium_xunit.Utils
         {
             return GetValue("BaseUrl");
         }
-
-        
-       /*
-       Em funçoes futuras:
-        {
-            "BaseUrl": "https://automationexercise.com/",
-            "Browser": "Chrome",
-            "Timeout": "10"
-        }
-       */
-
-
     }
 }
