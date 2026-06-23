@@ -7,3 +7,4 @@ namespace QA_automation_selenium_xunit.Models
         public string Password { get; set; } = string.Empty;
     }
 }
+

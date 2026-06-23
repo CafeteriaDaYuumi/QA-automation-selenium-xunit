@@ -7,6 +7,7 @@ namespace QA_automation_selenium_xunit.Tests
     /// Testes responsáveis por validar a infraestrutura básica
     /// do framework de automação.
     /// </summary>
+    [Collection("Sequential Tests")]
     public class InfrastructureTests : BaseTest
     {
         /// <summary>

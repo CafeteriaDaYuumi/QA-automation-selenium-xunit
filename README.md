@@ -6,7 +6,7 @@ Framework de automação de testes web desenvolvido com Selenium WebDriver, xUni
 
 Desenvolver um framework de automação capaz de validar os principais fluxos de um sistema de e-commerce, simulando um ambiente real de trabalho na área de Qualidade de Software (QA).
 
-O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências e organização dos artefatos de teste.
+O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências, massa de dados e organização dos artefatos de teste.
 
 ---
 
@@ -27,9 +27,11 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Login
 
+* Acesso à página de login
 * Login válido
 * Login inválido
 * Login com campos vazios
+* Logout
 
 ## Cadastro
 
@@ -67,6 +69,7 @@ QA-automation-selenium-xunit
 │   └── Defeitos
 │
 ├── Drivers
+├── Models
 ├── Pages
 ├── Tests
 ├── Utils
@@ -114,22 +117,48 @@ Responsável pela geração automática de evidências.
 ### Funcionalidades
 
 * Captura de screenshots
-* Organização automática das evidências
+* Organização automática das evidências por execução
 * Registro do local de armazenamento
 
 ---
 
-## InfrastructureTests
+## TestDataReader
 
-Responsável pela validação da infraestrutura do framework.
+Responsável pela leitura da massa de dados utilizada nos testes.
 
-### Validações
+### Funcionalidades
 
-* Inicialização do WebDriver
-* Navegação para a aplicação
-* Captura de evidências
-* Validação do carregamento da página
-* Encerramento correto do navegador
+* Leitura do arquivo Users.json
+* Separação entre dados de teste e código
+* Apoio ao conceito de Data Driven Testing
+
+---
+
+## BaseTest
+
+Responsável por centralizar a inicialização e o encerramento do navegador.
+
+### Funcionalidades
+
+* Inicialização do WebDriver antes dos testes
+* Encerramento automático do navegador após a execução
+* Redução de duplicação de código nas classes de teste
+
+---
+
+# Testes Implementados
+
+## Infraestrutura
+
+* INFRA001 — Deve abrir navegador e acessar o site
+
+## Login
+
+* LOGIN001 — Deve acessar página de login
+* CT001 — Login com credenciais válidas
+* CT002 — Login com senha inválida
+* CT003 — Login com campos vazios
+* CT004 — Logout com sucesso
 
 ---
 
@@ -185,6 +214,30 @@ Responsável pela validação da infraestrutura do framework.
 * Evidências de Teste
 * Organização em Camadas
 * Controle de Versão com Git
+* Separação de massa de dados
+* Reutilização de componentes
+
+---
+
+# Como Executar os Testes
+
+Execute todos os testes:
+
+```bash
+dotnet test
+```
+
+Execute com detalhes no console:
+
+```bash
+dotnet test --logger "console;verbosity=detailed"
+```
+
+Execute um teste específico:
+
+```bash
+dotnet test --filter CT001
+```
 
 ---
 
@@ -196,14 +249,20 @@ Sprint 2 — Login
 
 ### Concluído
 
-* Estrutura do Framework
+* Estrutura inicial do framework
+* Infraestrutura de automação
 * DriverFactory
 * ConfigReader
 * ScreenshotHelper
+* BaseTest
 * InfrastructureTests
-* Planejamento dos Testes
-* Documentação Inicial
+* LoginPage
+* LoginTests
+* Massa de dados para login
+* Evidências automáticas
+* Planejamento dos testes
+* Documentação inicial
 
 ### Próxima Entrega
 
-Implementação do módulo de Login utilizando Page Object Model (POM).
+Finalização da Sprint 2 com revisão dos testes de Login e preparação para a Sprint 3 — Cadastro de Usuário.

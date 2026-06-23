@@ -25,6 +25,10 @@ namespace QA_automation_selenium_xunit.Pages
         private readonly By _logoutButton =
             By.XPath("//a[contains(text(),'Logout')]");
 
+        // Título exibido na área de login.
+        private readonly By _loginTitle =
+            By.XPath("//h2[contains(text(),'Login to your account')]");
+
         // Mensagem exibida quando o login é realizado com sucesso.
         private readonly By _loggedInMessage =
             By.XPath("//a[contains(text(),'Logged in as')]");
@@ -132,9 +136,7 @@ namespace QA_automation_selenium_xunit.Pages
         /// <returns>True quando a página de login estiver visível.</returns>
         public bool IsLoginPageDisplayed()
         {
-            return _driver.PageSource.Contains(
-                "Login to your account"
-            );
+            return _driver.FindElement(_loginTitle).Displayed;
         }
     }
 }

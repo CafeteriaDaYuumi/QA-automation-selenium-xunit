@@ -25,10 +25,30 @@ namespace QA_automation_selenium_xunit.Drivers
                 // Inicia o navegador maximizado.
                 options.AddArgument("--start-maximized");
 
+                // Desabilita notificações.
+                options.AddArgument("--disable-notifications");
+
+                // Desabilita pop-ups.
+                options.AddArgument("--disable-popup-blocking");
+
+                // Desabilita extensões do navegador.
+                options.AddArgument("--disable-extensions");
+
+                // Melhora desempenho em algumas máquinas.
+                options.AddArgument("--disable-gpu");
+
+                // Desabilita carregamento de imagens.
+                options.AddArgument("--blink-settings=imagesEnabled=false");
+
                 _driver = new ChromeDriver(options);
 
-                // Define tempo de espera implícita para localização de elementos.
-                _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                // Tempo para localizar elementos.
+                _driver.Manage().Timeouts().ImplicitWait =
+                    TimeSpan.FromSeconds(5);
+
+                // Tempo máximo de carregamento da página.
+                _driver.Manage().Timeouts().PageLoad =
+                    TimeSpan.FromSeconds(15);
             }
 
             return _driver;
