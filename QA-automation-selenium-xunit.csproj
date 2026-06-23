@@ -8,6 +8,13 @@
   </ItemGroup>
 
   <ItemGroup>
+  <!-- Garante que a massa de dados de cadastro seja copiada para a pasta de execução dos testes -->
+    <None Update="TestData\CadastroUsers.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="TestData\Users.json">
      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

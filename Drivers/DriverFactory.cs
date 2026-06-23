@@ -48,7 +48,7 @@ namespace QA_automation_selenium_xunit.Drivers
 
                 // Tempo máximo de carregamento da página.
                 _driver.Manage().Timeouts().PageLoad =
-                    TimeSpan.FromSeconds(15);
+                    TimeSpan.FromSeconds(30);
             }
 
             return _driver;

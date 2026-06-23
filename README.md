@@ -192,7 +192,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 | -------- | --------------------------- | ------------ |
 | Sprint 0 | Estrutura Inicial           | Concluído    |
 | Sprint 1 | Infraestrutura do Framework | Concluído    |
-| Sprint 2 | Login                       | Em andamento |
+| Sprint 2 | Login                       | Concluído    |
 | Sprint 3 | Cadastro                    | Planejado    |
 | Sprint 4 | Pesquisa de Produtos        | Planejado    |
 | Sprint 5 | Carrinho                    | Planejado    |

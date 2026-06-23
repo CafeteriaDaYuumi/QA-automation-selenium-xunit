@@ -47,11 +47,13 @@ namespace QA_automation_selenium_xunit.Pages
         /// </summary>
         public void OpenLoginPage()
         {
-            _driver.FindElement(
-                By.XPath("//a[contains(text(),'Signup / Login')]")
-            ).Click();
+            if (!_driver.Url.Contains("/login"))
+            {
+                _driver.FindElement(
+                    By.XPath("//a[contains(text(),'Signup / Login')]")
+                ).Click();
+            }
         }
-
         /// <summary>
         /// Preenche o campo de e-mail.
         /// </summary>
