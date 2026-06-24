@@ -10,81 +10,127 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 # Funcionalidade: Login
 
-## CA001 - Login com Credenciais Válidas
+## CA001 - Acesso à Página de Login
+
+### Critérios de Aceite
+
+* A área de autenticação deve ser acessível através do menu principal.
+* A página de login deve ser exibida corretamente.
+* Os campos de autenticação devem estar disponíveis para preenchimento.
+
+---
+
+## CA002 - Login com Credenciais Válidas
 
 ### Critérios de Aceite
 
 * O usuário deve conseguir acessar o sistema utilizando credenciais válidas.
-* O sistema deve redirecionar o usuário para a página principal.
+* O sistema deve autenticar o usuário com sucesso.
+* A identificação do usuário logado deve ser exibida.
 * Nenhuma mensagem de erro deve ser apresentada.
 
 ---
 
-## CA002 - Login com Credenciais Inválidas
+## CA003 - Login com Credenciais Inválidas
 
 ### Critérios de Aceite
 
 * O sistema deve impedir a autenticação.
 * O usuário deve permanecer na tela de login.
-* Uma mensagem informando credenciais inválidas deve ser exibida.
+* Deve ser exibida a mensagem:
+  "Your email or password is incorrect!"
 
 ---
 
-## CA003 - Campos Obrigatórios
+## CA004 - Login com Campos Obrigatórios Vazios
 
 ### Critérios de Aceite
 
-* O sistema deve exigir o preenchimento dos campos obrigatórios.
-* O acesso não deve ser permitido com campos vazios.
-* A validação deve ocorrer antes da autenticação.
+* O sistema não deve autenticar o usuário.
+* O usuário deve permanecer na tela de login.
+* Os campos obrigatórios devem ser validados.
+
+---
+
+## CA005 - Logout com Sucesso
+
+### Critérios de Aceite
+
+* O sistema deve encerrar a sessão do usuário autenticado.
+* O usuário deve retornar à tela de login.
+* Os recursos autenticados não devem permanecer acessíveis.
 
 ---
 
 # Funcionalidade: Cadastro de Usuário
 
-## CA004 - Cadastro com Dados Válidos
+## CA006 - Acesso à Área de Cadastro
 
 ### Critérios de Aceite
 
-* O cadastro deve ser concluído com sucesso.
-* Os dados devem ser registrados no sistema.
-* O usuário deve receber confirmação do cadastro.
+* A área de cadastro deve estar acessível através do menu principal.
+* O formulário de cadastro deve ser exibido corretamente.
 
 ---
 
-## CA005 - Cadastro com E-mail Duplicado
+## CA007 - Início de Cadastro com Dados Válidos
+
+### Critérios de Aceite
+
+* O sistema deve aceitar nome e e-mail válidos.
+* O fluxo deve avançar para a tela de informações da conta.
+* Nenhuma mensagem de erro deve ser apresentada.
+
+---
+
+## CA008 - Cadastro com E-mail Já Existente
 
 ### Critérios de Aceite
 
 * O sistema deve impedir o cadastro.
-* Deve ser apresentada mensagem informando que o e-mail já está cadastrado.
-* Nenhum novo registro deve ser criado.
+* Deve ser apresentada a mensagem:
+  "Email Address already exist!"
+* Nenhuma nova conta deve ser criada.
 
 ---
 
-## CA006 - Campos Obrigatórios de Cadastro
+## CA009 - Cadastro com Campos Obrigatórios Vazios
 
 ### Critérios de Aceite
 
-* Todos os campos obrigatórios devem ser validados.
-* O cadastro não deve ser concluído com informações incompletas.
-* O sistema deve informar os campos pendentes.
+* O sistema não deve permitir o avanço do cadastro.
+* O usuário deve permanecer na área de cadastro.
+* Os campos obrigatórios devem ser validados.
+
+---
+
+## CA010 - Criação e Exclusão de Conta
+
+### Critérios de Aceite
+
+* A conta deve ser criada com sucesso.
+* O sistema deve exibir a mensagem:
+  "Account Created!"
+* O usuário deve conseguir acessar a aplicação após o cadastro.
+* A conta deve ser removida com sucesso.
+* O sistema deve exibir a mensagem:
+  "Account Deleted!"
 
 ---
 
 # Funcionalidade: Pesquisa de Produtos
 
-## CA007 - Pesquisa de Produto Existente
+## CA011 - Pesquisa de Produto Existente
 
 ### Critérios de Aceite
 
 * O produto pesquisado deve ser localizado.
 * Os resultados devem corresponder ao termo informado.
-* O usuário deve conseguir acessar os detalhes do produto.
+* O usuário deve conseguir visualizar o produto encontrado.
 
 ---
 
-## CA008 - Pesquisa de Produto Inexistente
+## CA012 - Pesquisa de Produto Inexistente
 
 ### Critérios de Aceite
 
@@ -95,7 +141,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 # Funcionalidade: Carrinho de Compras
 
-## CA009 - Adicionar Produto ao Carrinho
+## CA013 - Adicionar Produto ao Carrinho
 
 ### Critérios de Aceite
 
@@ -105,7 +151,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
-## CA010 - Adicionar Múltiplos Produtos
+## CA014 - Adicionar Múltiplos Produtos ao Carrinho
 
 ### Critérios de Aceite
 
@@ -115,7 +161,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
-## CA011 - Remover Produto do Carrinho
+## CA015 - Remover Produto do Carrinho
 
 ### Critérios de Aceite
 
@@ -127,17 +173,17 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 # Funcionalidade: Checkout
 
-## CA012 - Finalização da Compra
+## CA016 - Finalização da Compra
 
 ### Critérios de Aceite
 
 * O pedido deve ser criado com sucesso.
 * O sistema deve exibir confirmação da compra.
-* O usuário deve receber o número ou confirmação do pedido.
+* O usuário deve receber confirmação do pedido.
 
 ---
 
-## CA013 - Dados Obrigatórios do Checkout
+## CA017 - Dados Obrigatórios do Checkout
 
 ### Critérios de Aceite
 
@@ -147,7 +193,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
-## CA014 - Dados Inválidos no Checkout
+## CA018 - Dados Inválidos no Checkout
 
 ### Critérios de Aceite
 
@@ -165,6 +211,7 @@ Uma funcionalidade será considerada aprovada quando:
 * Nenhum erro crítico for identificado.
 * Os resultados obtidos estiverem de acordo com os requisitos definidos.
 * As evidências forem registradas corretamente.
+* Os testes automatizados forem executados com sucesso.
 
 ---
 
@@ -176,9 +223,12 @@ Uma funcionalidade será considerada reprovada quando:
 * O comportamento observado divergir do esperado.
 * Existirem erros que impeçam a execução do fluxo principal.
 * As regras de negócio não forem respeitadas.
+* O teste automatizado apresentar falha.
 
 ---
 
 # Status
 
-Critérios de aceite documentados e aprovados para utilização durante a execução dos testes manuais e automatizados.
+Critérios de aceite das funcionalidades de Login e Cadastro implementados e validados.
+
+Próxima atualização prevista: Sprint 4 — Pesquisa de Produtos.

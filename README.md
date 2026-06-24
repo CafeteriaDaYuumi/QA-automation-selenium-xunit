@@ -17,7 +17,6 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 * Selenium WebDriver
 * xUnit
 * Newtonsoft.Json
-* ExtentReports
 * Git
 * GitHub
 
@@ -35,9 +34,11 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Cadastro
 
+* Acesso à área de cadastro
 * Cadastro válido
 * Cadastro com e-mail duplicado
 * Cadastro sem campos obrigatórios
+* Criação e exclusão de conta
 
 ## Produtos
 
@@ -128,8 +129,8 @@ Responsável pela leitura da massa de dados utilizada nos testes.
 
 ### Funcionalidades
 
-* Leitura do arquivo Users.json
-* Separação entre dados de teste e código
+* Leitura de arquivos JSON
+* Separação entre dados e código
 * Apoio ao conceito de Data Driven Testing
 
 ---
@@ -140,9 +141,9 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Funcionalidades
 
-* Inicialização do WebDriver antes dos testes
-* Encerramento automático do navegador após a execução
-* Redução de duplicação de código nas classes de teste
+* Inicialização do WebDriver
+* Encerramento automático do navegador
+* Reutilização de código
 
 ---
 
@@ -152,6 +153,8 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 * INFRA001 — Deve abrir navegador e acessar o site
 
+---
+
 ## Login
 
 * LOGIN001 — Deve acessar página de login
@@ -159,6 +162,16 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 * CT002 — Login com senha inválida
 * CT003 — Login com campos vazios
 * CT004 — Logout com sucesso
+
+---
+
+## Cadastro
+
+* CT005 — Acessar área de cadastro
+* CT006 — Iniciar cadastro com dados válidos
+* CT007 — Validar e-mail já cadastrado
+* CT008 — Validar campos obrigatórios
+* CT009 — Criar e excluir conta
 
 ---
 
@@ -188,18 +201,18 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 # Roadmap
 
-| Sprint   | Descrição                   | Status    |
-| -------- | --------------------------- | --------- |
-| Sprint 0 | Estrutura Inicial           | Concluído |
-| Sprint 1 | Infraestrutura do Framework | Concluído |
-| Sprint 2 | Login                       | Concluído |
-| Sprint 3 | Cadastro                    | Concluído |
-| Sprint 4 | Pesquisa de Produtos        | Planejado |
-| Sprint 5 | Carrinho                    | Planejado |
-| Sprint 6 | Checkout                    | Planejado |
-| Sprint 7 | Data Driven Testing         | Planejado |
-| Sprint 8 | Evidências e Relatórios     | Planejado |
-| Sprint 9 | Refatoração e Publicação    | Planejado |
+| Sprint   | Descrição                   | Status       |
+| -------- | --------------------------- | ------------ |
+| Sprint 0 | Estrutura Inicial           | Concluído    |
+| Sprint 1 | Infraestrutura do Framework | Concluído    |
+| Sprint 2 | Login                       | Concluído    |
+| Sprint 3 | Cadastro                    | Em validação |
+| Sprint 4 | Pesquisa de Produtos        | Planejado    |
+| Sprint 5 | Carrinho                    | Planejado    |
+| Sprint 6 | Checkout                    | Planejado    |
+| Sprint 7 | Data Driven Testing         | Planejado    |
+| Sprint 8 | Evidências e Relatórios     | Planejado    |
+| Sprint 9 | Refatoração e Publicação    | Planejado    |
 
 ---
 
@@ -207,7 +220,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Sprint Atual
 
-Sprint 4 — Pesquisa de Produtos
+Sprint 3 — Cadastro de Usuários
 
 ### Concluído
 
@@ -215,16 +228,24 @@ Sprint 4 — Pesquisa de Produtos
 * DriverFactory
 * ConfigReader
 * ScreenshotHelper
+* TestDataReader
+* BaseTest
 * InfrastructureTests
 * LoginPage
 * LoginTests
 * CadastroPage
 * CadastroTests
-* Massa de Dados de Login
-* Massa de Dados de Cadastro
-* CT001 ao CT009
+* UserData
+* CadastroData
+* Users.json
+* CadastroUsers.json
+* CT001 ao CT008
 * Planejamento dos Testes
 * Documentação Inicial
+
+### Em Validação
+
+* CT009 — Criação e exclusão de conta
 
 ### Próxima Entrega
 

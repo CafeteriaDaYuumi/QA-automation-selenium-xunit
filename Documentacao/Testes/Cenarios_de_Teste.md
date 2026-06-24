@@ -2,11 +2,23 @@
 
 ## Objetivo
 
-Este documento apresenta os cenários de teste planejados para validação das funcionalidades do sistema de e-commerce utilizado como base para o framework de automação.
+Este documento apresenta os cenários de teste planejados e implementados para validação das funcionalidades do sistema de e-commerce utilizado como base para o framework de automação.
 
 ---
 
 # Módulo: Login
+
+## LOGIN001 - Acesso à Página de Login
+
+### Objetivo
+
+Validar o acesso à área de autenticação da aplicação.
+
+### Resultado Esperado
+
+A página de login deve ser exibida corretamente.
+
+---
 
 ## CT001 - Login com Credenciais Válidas
 
@@ -16,7 +28,7 @@ Validar que um usuário consiga acessar o sistema utilizando credenciais válida
 
 ### Resultado Esperado
 
-O usuário deve ser autenticado e direcionado para a área principal da aplicação.
+O usuário deve ser autenticado com sucesso e identificado como usuário logado.
 
 ---
 
@@ -24,11 +36,11 @@ O usuário deve ser autenticado e direcionado para a área principal da aplicaç
 
 ### Objetivo
 
-Validar o comportamento do sistema ao informar senha incorreta.
+Validar o comportamento do sistema ao informar uma senha incorreta.
 
 ### Resultado Esperado
 
-O sistema deve impedir o acesso e apresentar mensagem de erro.
+O sistema deve impedir o acesso e exibir mensagem de erro.
 
 ---
 
@@ -36,33 +48,57 @@ O sistema deve impedir o acesso e apresentar mensagem de erro.
 
 ### Objetivo
 
-Validar os campos obrigatórios da tela de autenticação.
+Validar o comportamento do sistema quando os campos obrigatórios não são preenchidos.
 
 ### Resultado Esperado
 
-O sistema deve solicitar o preenchimento dos campos obrigatórios.
+O usuário deve permanecer na tela de login.
+
+---
+
+## CT004 - Logout com Sucesso
+
+### Objetivo
+
+Validar o encerramento da sessão do usuário autenticado.
+
+### Resultado Esperado
+
+O sistema deve retornar para a tela de login.
 
 ---
 
 # Módulo: Cadastro de Usuário
 
-## CT004 - Cadastro de Usuário com Dados Válidos
+## CT005 - Acesso à Área de Cadastro
 
 ### Objetivo
 
-Validar o processo de criação de uma nova conta.
+Validar o acesso à área de cadastro de novos usuários.
 
 ### Resultado Esperado
 
-O usuário deve ser cadastrado com sucesso.
+A área de cadastro deve ser exibida corretamente.
 
 ---
 
-## CT005 - Cadastro com E-mail Já Existente
+## CT006 - Início de Cadastro com Dados Válidos
 
 ### Objetivo
 
-Validar a restrição de e-mails duplicados.
+Validar o início do processo de cadastro utilizando nome e e-mail válidos.
+
+### Resultado Esperado
+
+O sistema deve exibir a tela de informações da conta.
+
+---
+
+## CT007 - Cadastro com E-mail Já Existente
+
+### Objetivo
+
+Validar a restrição de cadastro utilizando e-mail previamente registrado.
 
 ### Resultado Esperado
 
@@ -70,21 +106,33 @@ O sistema deve impedir o cadastro e exibir mensagem adequada.
 
 ---
 
-## CT006 - Cadastro sem Campos Obrigatórios
+## CT008 - Cadastro com Campos Obrigatórios Vazios
 
 ### Objetivo
 
-Validar os campos obrigatórios do formulário de cadastro.
+Validar o comportamento do sistema quando os campos obrigatórios não são preenchidos.
 
 ### Resultado Esperado
 
-O sistema deve impedir o cadastro e informar os campos pendentes.
+O sistema deve impedir o avanço do cadastro.
 
 ---
 
-# Módulo: Pesquisa de Produtos
+## CT009 - Criação e Exclusão de Conta
 
-## CT007 - Pesquisa de Produto Existente
+### Objetivo
+
+Validar o fluxo completo de criação e remoção de uma conta.
+
+### Resultado Esperado
+
+A conta deve ser criada com sucesso e posteriormente excluída.
+
+---
+
+# Módulo: Produtos
+
+## CT010 - Pesquisa de Produto Existente
 
 ### Objetivo
 
@@ -96,7 +144,7 @@ O sistema deve exibir os produtos relacionados ao termo pesquisado.
 
 ---
 
-## CT008 - Pesquisa de Produto Inexistente
+## CT011 - Pesquisa de Produto Inexistente
 
 ### Objetivo
 
@@ -110,7 +158,7 @@ O sistema deve informar que nenhum produto foi encontrado.
 
 # Módulo: Carrinho de Compras
 
-## CT009 - Adicionar Produto ao Carrinho
+## CT012 - Adicionar Produto ao Carrinho
 
 ### Objetivo
 
@@ -122,7 +170,7 @@ O produto deve ser adicionado corretamente ao carrinho.
 
 ---
 
-## CT010 - Adicionar Múltiplos Produtos ao Carrinho
+## CT013 - Adicionar Múltiplos Produtos ao Carrinho
 
 ### Objetivo
 
@@ -134,7 +182,7 @@ Todos os produtos selecionados devem ser adicionados ao carrinho.
 
 ---
 
-## CT011 - Remover Produto do Carrinho
+## CT014 - Remover Produto do Carrinho
 
 ### Objetivo
 
@@ -148,7 +196,7 @@ O produto deve ser removido do carrinho.
 
 # Módulo: Checkout
 
-## CT012 - Finalizar Compra com Sucesso
+## CT015 - Finalizar Compra com Sucesso
 
 ### Objetivo
 
@@ -160,7 +208,7 @@ O pedido deve ser criado com sucesso.
 
 ---
 
-## CT013 - Finalizar Compra sem Dados Obrigatórios
+## CT016 - Finalizar Compra sem Dados Obrigatórios
 
 ### Objetivo
 
@@ -172,7 +220,7 @@ O sistema deve impedir a conclusão da compra.
 
 ---
 
-## CT014 - Finalizar Compra com Dados Inválidos
+## CT017 - Finalizar Compra com Dados Inválidos
 
 ### Objetivo
 
@@ -186,25 +234,31 @@ O sistema deve impedir a conclusão da compra e apresentar mensagem adequada.
 
 # Resumo dos Cenários
 
-| ID    | Módulo   | Cenário                      |
-| ----- | -------- | ---------------------------- |
-| CT001 | Login    | Login válido                 |
-| CT002 | Login    | Login inválido               |
-| CT003 | Login    | Campos vazios                |
-| CT004 | Cadastro | Cadastro válido              |
-| CT005 | Cadastro | E-mail duplicado             |
-| CT006 | Cadastro | Campos obrigatórios          |
-| CT007 | Produtos | Produto existente            |
-| CT008 | Produtos | Produto inexistente          |
-| CT009 | Carrinho | Adicionar produto            |
-| CT010 | Carrinho | Adicionar múltiplos produtos |
-| CT011 | Carrinho | Remover produto              |
-| CT012 | Checkout | Compra com sucesso           |
-| CT013 | Checkout | Dados obrigatórios           |
-| CT014 | Checkout | Dados inválidos              |
+| ID       | Módulo   | Cenário                      | Status         |
+| -------- | -------- | ---------------------------- | -------------- |
+| LOGIN001 | Login    | Acesso à página de login     | ✔ Implementado |
+| CT001    | Login    | Login válido                 | ✔ Implementado |
+| CT002    | Login    | Login inválido               | ✔ Implementado |
+| CT003    | Login    | Campos vazios                | ✔ Implementado |
+| CT004    | Login    | Logout                       | ✔ Implementado |
+| CT005    | Cadastro | Acesso à área de cadastro    | ✔ Implementado |
+| CT006    | Cadastro | Cadastro válido              | ✔ Implementado |
+| CT007    | Cadastro | E-mail duplicado             | ✔ Implementado |
+| CT008    | Cadastro | Campos obrigatórios          | ✔ Implementado |
+| CT009    | Cadastro | Criar e excluir conta        | ✔ Implementado |
+| CT010    | Produtos | Produto existente            | Planejado      |
+| CT011    | Produtos | Produto inexistente          | Planejado      |
+| CT012    | Carrinho | Adicionar produto            | Planejado      |
+| CT013    | Carrinho | Adicionar múltiplos produtos | Planejado      |
+| CT014    | Carrinho | Remover produto              | Planejado      |
+| CT015    | Checkout | Compra com sucesso           | Planejado      |
+| CT016    | Checkout | Dados obrigatórios           | Planejado      |
+| CT017    | Checkout | Dados inválidos              | Planejado      |
 
 ---
 
 # Status
 
-Cenários documentados e aprovados para detalhamento dos Casos de Teste.
+Cenários das Sprints 2 e 3 implementados e automatizados.
+
+Próxima Sprint: Produtos (CT010 e CT011).

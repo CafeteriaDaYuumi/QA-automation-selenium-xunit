@@ -8,7 +8,7 @@ QA Test Automation Framework
 
 ### Versão
 
-1.0
+1.2
 
 ### Responsável
 
@@ -18,13 +18,17 @@ Victor Hugo
 
 Junho de 2026
 
+### Última Atualização
+
+Junho de 2026
+
 ---
 
 # 2. Objetivo
 
-Este documento tem como objetivo definir a estratégia, o escopo, os critérios e as abordagens de teste utilizadas no projeto de automação de testes web.
+Este documento define a estratégia, o escopo, os critérios e as abordagens utilizadas para validação automatizada de um sistema de e-commerce.
 
-O foco do projeto é validar os principais fluxos de um sistema de e-commerce através de testes automatizados desenvolvidos com Selenium WebDriver e xUnit.
+O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicando o padrão Page Object Model (POM), geração automática de evidências e organização em camadas.
 
 ---
 
@@ -60,8 +64,9 @@ Validar:
 * Regras de negócio
 * Fluxos críticos
 * Mensagens de erro
-* Comportamentos esperados
+* Tratamento de exceções
 * Integridade dos processos de compra
+* Comportamento esperado da aplicação
 
 ---
 
@@ -75,23 +80,26 @@ Validação das funcionalidades conforme os requisitos.
 
 * Login
 * Cadastro
+* Logout
 * Checkout
 
 ---
 
 ## Testes de Regressão
 
-Execução recorrente dos fluxos automatizados para garantir que novas alterações não impactem funcionalidades já existentes.
+Execução recorrente dos cenários automatizados para garantir que alterações futuras não impactem funcionalidades existentes.
 
 ---
 
 ## Testes Positivos
 
-Validação de cenários esperados.
+Validação de fluxos esperados.
 
-### Exemplo
+### Exemplos
 
-Login com credenciais válidas.
+* Login válido
+* Cadastro válido
+* Criação de conta
 
 ---
 
@@ -99,9 +107,11 @@ Login com credenciais válidas.
 
 Validação do tratamento de erros.
 
-### Exemplo
+### Exemplos
 
-Login com senha incorreta.
+* Senha inválida
+* E-mail já cadastrado
+* Campos obrigatórios vazios
 
 ---
 
@@ -135,26 +145,63 @@ GitHub
 
 Google Chrome
 
+## Padrão de Projeto
+
+Page Object Model (POM)
+
 ---
 
-# 7. Casos de Teste Planejados
+# 7. Casos de Teste Implementados e Planejados
 
-| ID    | Caso de Teste                          |
-| ----- | -------------------------------------- |
-| CT001 | Login válido                           |
-| CT002 | Login inválido                         |
-| CT003 | Login com campos vazios                |
-| CT004 | Cadastro válido                        |
-| CT005 | Cadastro com e-mail duplicado          |
-| CT006 | Cadastro sem campos obrigatórios       |
-| CT007 | Pesquisa de produto existente          |
-| CT008 | Pesquisa de produto inexistente        |
-| CT009 | Adicionar produto ao carrinho          |
-| CT010 | Adicionar múltiplos produtos           |
-| CT011 | Remover produto do carrinho            |
-| CT012 | Checkout com sucesso                   |
-| CT013 | Checkout sem preenchimento obrigatório |
-| CT014 | Checkout com dados inválidos           |
+## Login
+
+| ID    | Caso de Teste                 | Status       |
+| ----- | ----------------------------- | ------------ |
+| CT001 | Login com credenciais válidas | Implementado |
+| CT002 | Login com senha inválida      | Implementado |
+| CT003 | Login com campos vazios       | Implementado |
+| CT004 | Logout com sucesso            | Implementado |
+
+---
+
+## Cadastro
+
+| ID    | Caso de Teste                        | Status       |
+| ----- | ------------------------------------ | ------------ |
+| CT005 | Acesso à área de cadastro            | Implementado |
+| CT006 | Início de cadastro com dados válidos | Implementado |
+| CT007 | Validação de e-mail já cadastrado    | Implementado |
+| CT008 | Validação de campos obrigatórios     | Implementado |
+| CT009 | Criação e exclusão de conta          | Implementado |
+
+---
+
+## Produtos
+
+| ID    | Caso de Teste                   | Status    |
+| ----- | ------------------------------- | --------- |
+| CT010 | Pesquisa de produto existente   | Planejado |
+| CT011 | Pesquisa de produto inexistente | Planejado |
+
+---
+
+## Carrinho
+
+| ID    | Caso de Teste                 | Status    |
+| ----- | ----------------------------- | --------- |
+| CT012 | Adicionar produto ao carrinho | Planejado |
+| CT013 | Adicionar múltiplos produtos  | Planejado |
+| CT014 | Remover produto do carrinho   | Planejado |
+
+---
+
+## Checkout
+
+| ID    | Caso de Teste                   | Status    |
+| ----- | ------------------------------- | --------- |
+| CT015 | Finalizar compra com sucesso    | Planejado |
+| CT016 | Checkout sem dados obrigatórios | Planejado |
+| CT017 | Checkout com dados inválidos    | Planejado |
 
 ---
 
@@ -162,10 +209,11 @@ Google Chrome
 
 Os testes poderão ser iniciados quando:
 
-* Ambiente disponível
-* Projeto compilando sem erros
+* Projeto compilando sem erros críticos
 * Dependências instaladas
+* Ambiente disponível
 * Massa de testes preparada
+* Navegador configurado corretamente
 
 ---
 
@@ -175,54 +223,63 @@ Os testes serão considerados concluídos quando:
 
 * Todos os cenários planejados forem executados
 * Evidências forem geradas
-* Defeitos encontrados forem registrados
+* Defeitos forem registrados
 * Resultados forem documentados
 
 ---
 
 # 10. Riscos
 
-| Risco                         | Impacto |
-| ----------------------------- | ------- |
-| Instabilidade do ambiente     | Médio   |
-| Mudanças na aplicação testada | Alto    |
-| Massa de dados inconsistente  | Médio   |
-| Falhas de conexão             | Baixo   |
+| Risco                                        | Impacto |
+| -------------------------------------------- | ------- |
+| Mudanças na aplicação testada                | Alto    |
+| Instabilidade do ambiente                    | Médio   |
+| Massa de dados inconsistente                 | Médio   |
+| Bloqueios causados por anúncios da aplicação | Médio   |
+| Falhas de conexão                            | Baixo   |
 
 ---
 
 # 11. Evidências
 
-As evidências geradas durante as execuções serão armazenadas na estrutura:
+As evidências são armazenadas automaticamente na estrutura:
 
 ```text
-Evidence/
-└── Screenshots/
+Evidence
+│
+└── AAAA-MM-DD_HH-MM-SS
+    ├── CT001_LoginValido.png
+    ├── CT002_LoginSenhaInvalida.png
+    └── ...
 ```
 
-As capturas poderão ser geradas em:
+As capturas podem ser geradas em:
 
 * Execuções com sucesso
 * Execuções com falha
-* Pontos críticos do fluxo
+* Pontos críticos dos fluxos
 
 ---
 
 # 12. Registro de Defeitos
 
-Todos os defeitos identificados durante a execução dos testes deverão ser registrados no documento:
+Todos os defeitos identificados devem ser registrados em:
 
 ```text
-Documentacao/Defeitos/Registro_de_Defeitos.md
+Documentacao
+│
+└── Defeitos
+    └── Registro_de_Defeitos.md
 ```
 
 ---
 
 # 13. Métricas Planejadas
 
-Serão acompanhadas as seguintes métricas:
+Serão acompanhadas:
 
 * Total de testes planejados
+* Total de testes implementados
 * Total de testes executados
 * Total de testes aprovados
 * Total de testes reprovados
@@ -237,11 +294,22 @@ O plano de testes será considerado aprovado quando:
 
 * O escopo estiver definido
 * Os cenários estiverem documentados
-* Os casos de teste estiverem cadastrados
-* A estratégia de execução estiver validada
+* Os casos de teste estiverem implementados
+* As evidências estiverem sendo geradas corretamente
 
 ---
 
 # Status Atual
 
-Plano de Testes elaborado e aguardando execução das primeiras sprints de automação.
+Sprint Atual: Sprint 3 — Cadastro de Usuários
+
+Concluído:
+
+* Sprint 0 — Estrutura Inicial
+* Sprint 1 — Infraestrutura do Framework
+* Sprint 2 — Login
+* Sprint 3 — Cadastro (implementado)
+
+Próxima Sprint:
+
+Sprint 4 — Pesquisa de Produtos
