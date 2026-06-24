@@ -188,56 +188,18 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 # Roadmap
 
-| Sprint   | Descrição                   | Status       |
-| -------- | --------------------------- | ------------ |
-| Sprint 0 | Estrutura Inicial           | Concluído    |
-| Sprint 1 | Infraestrutura do Framework | Concluído    |
-| Sprint 2 | Login                       | Concluído    |
-| Sprint 3 | Cadastro                    | Planejado    |
-| Sprint 4 | Pesquisa de Produtos        | Planejado    |
-| Sprint 5 | Carrinho                    | Planejado    |
-| Sprint 6 | Checkout                    | Planejado    |
-| Sprint 7 | Data Driven Testing         | Planejado    |
-| Sprint 8 | Evidências e Relatórios     | Planejado    |
-| Sprint 9 | Refatoração e Publicação    | Planejado    |
-
----
-
-# Conceitos Aplicados
-
-* Testes Funcionais
-* Testes de Regressão
-* Selenium WebDriver
-* xUnit
-* Page Object Model (POM)
-* Data Driven Testing
-* Evidências de Teste
-* Organização em Camadas
-* Controle de Versão com Git
-* Separação de massa de dados
-* Reutilização de componentes
-
----
-
-# Como Executar os Testes
-
-Execute todos os testes:
-
-```bash
-dotnet test
-```
-
-Execute com detalhes no console:
-
-```bash
-dotnet test --logger "console;verbosity=detailed"
-```
-
-Execute um teste específico:
-
-```bash
-dotnet test --filter CT001
-```
+| Sprint   | Descrição                   | Status    |
+| -------- | --------------------------- | --------- |
+| Sprint 0 | Estrutura Inicial           | Concluído |
+| Sprint 1 | Infraestrutura do Framework | Concluído |
+| Sprint 2 | Login                       | Concluído |
+| Sprint 3 | Cadastro                    | Concluído |
+| Sprint 4 | Pesquisa de Produtos        | Planejado |
+| Sprint 5 | Carrinho                    | Planejado |
+| Sprint 6 | Checkout                    | Planejado |
+| Sprint 7 | Data Driven Testing         | Planejado |
+| Sprint 8 | Evidências e Relatórios     | Planejado |
+| Sprint 9 | Refatoração e Publicação    | Planejado |
 
 ---
 
@@ -245,24 +207,25 @@ dotnet test --filter CT001
 
 ### Sprint Atual
 
-Sprint 2 — Login
+Sprint 4 — Pesquisa de Produtos
 
 ### Concluído
 
-* Estrutura inicial do framework
-* Infraestrutura de automação
+* Estrutura do Framework
 * DriverFactory
 * ConfigReader
 * ScreenshotHelper
-* BaseTest
 * InfrastructureTests
 * LoginPage
 * LoginTests
-* Massa de dados para login
-* Evidências automáticas
-* Planejamento dos testes
-* Documentação inicial
+* CadastroPage
+* CadastroTests
+* Massa de Dados de Login
+* Massa de Dados de Cadastro
+* CT001 ao CT009
+* Planejamento dos Testes
+* Documentação Inicial
 
 ### Próxima Entrega
 
-Finalização da Sprint 2 com revisão dos testes de Login e preparação para a Sprint 3 — Cadastro de Usuário.
+Implementação do módulo de Pesquisa de Produtos utilizando Page Object Model (POM).

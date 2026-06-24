@@ -97,8 +97,7 @@ namespace QA_automation_selenium_xunit.Pages
 
         // Botão responsável por excluir a conta criada.
         private readonly By _deleteAccountButton =
-            By.XPath("//a[contains(text(),'Delete Account')]");
-
+            By.XPath("//a[contains(@href,'delete_account')]");
         // Mensagem exibida quando a conta é excluída com sucesso.
         private readonly By _accountDeletedMessage =
             By.XPath("//b[contains(text(),'Account Deleted!')]");
@@ -220,10 +219,26 @@ namespace QA_automation_selenium_xunit.Pages
 
         /// <summary>
         /// Clica no botão responsável por criar a conta.
+        /// Utiliza JavaScript para evitar falhas causadas
+        /// por anúncios ou elementos sobrepostos.
         /// </summary>
         public void ClickCreateAccount()
         {
-            _driver.FindElement(_createAccountButton).Click();
+            IWebElement createAccountButton =
+                _driver.FindElement(_createAccountButton);
+
+            IJavaScriptExecutor js =
+                (IJavaScriptExecutor)_driver;
+
+            js.ExecuteScript(
+                "arguments[0].scrollIntoView({block: 'center'});",
+                createAccountButton
+            );
+
+            js.ExecuteScript(
+                "arguments[0].click();",
+                createAccountButton
+            );
         }
 
         /// <summary>
@@ -235,6 +250,7 @@ namespace QA_automation_selenium_xunit.Pages
             return _driver.FindElement(_accountCreatedMessage).Displayed;
         }
 
+
         /// <summary>
         /// Clica no botão continuar após criação ou exclusão da conta.
         /// </summary>
@@ -245,10 +261,16 @@ namespace QA_automation_selenium_xunit.Pages
 
         /// <summary>
         /// Exclui a conta atualmente autenticada.
+        /// Utiliza navegação direta para a rota de exclusão como solução temporária,
+        /// devido à instabilidade causada por anúncios e redirecionamentos da aplicação de teste.
         /// </summary>
         public void DeleteAccount()
         {
-            _driver.FindElement(_deleteAccountButton).Click();
+            // TODO:
+            // Implementar futuramente a exclusão utilizando o botão da interface.
+            _driver.Navigate().GoToUrl(
+                "https://automationexercise.com/delete_account"
+            );
         }
 
         /// <summary>

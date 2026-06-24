@@ -159,6 +159,10 @@ namespace QA_automation_selenium_xunit.Tests
 
             cadastroPage.ClickContinue();
 
+            // Aguarda o carregamento após a criação da conta.
+            // Solução temporária até a implementação de WaitHelper.
+            Thread.Sleep(2000);
+
             cadastroPage.DeleteAccount();
 
             ScreenshotHelper.TakeScreenshot(
@@ -169,4 +173,4 @@ namespace QA_automation_selenium_xunit.Tests
             Assert.True(cadastroPage.IsAccountDeleted());
         }
     }
-}
+} 
