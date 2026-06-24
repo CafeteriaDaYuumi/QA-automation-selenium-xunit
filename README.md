@@ -17,6 +17,7 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 * Selenium WebDriver
 * xUnit
 * Newtonsoft.Json
+* ExtentReports
 * Git
 * GitHub
 
@@ -34,7 +35,6 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Cadastro
 
-* Acesso à área de cadastro
 * Cadastro válido
 * Cadastro com e-mail duplicado
 * Cadastro sem campos obrigatórios
@@ -42,8 +42,10 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Produtos
 
+* Acesso à área de produtos
 * Pesquisa de produto existente
 * Pesquisa de produto inexistente
+* Visualização dos detalhes do produto
 
 ## Carrinho
 
@@ -130,7 +132,7 @@ Responsável pela leitura da massa de dados utilizada nos testes.
 ### Funcionalidades
 
 * Leitura de arquivos JSON
-* Separação entre dados e código
+* Separação entre dados de teste e código
 * Apoio ao conceito de Data Driven Testing
 
 ---
@@ -141,9 +143,9 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Funcionalidades
 
-* Inicialização do WebDriver
-* Encerramento automático do navegador
-* Reutilização de código
+* Inicialização do WebDriver antes dos testes
+* Encerramento automático do navegador após a execução
+* Redução de duplicação de código nas classes de teste
 
 ---
 
@@ -153,8 +155,6 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 * INFRA001 — Deve abrir navegador e acessar o site
 
----
-
 ## Login
 
 * LOGIN001 — Deve acessar página de login
@@ -163,15 +163,20 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 * CT003 — Login com campos vazios
 * CT004 — Logout com sucesso
 
----
-
 ## Cadastro
 
-* CT005 — Acessar área de cadastro
-* CT006 — Iniciar cadastro com dados válidos
-* CT007 — Validar e-mail já cadastrado
-* CT008 — Validar campos obrigatórios
-* CT009 — Criar e excluir conta
+* CT005 — Deve acessar área de cadastro
+* CT006 — Deve iniciar cadastro com dados válidos
+* CT007 — Deve validar e-mail já cadastrado
+* CT008 — Deve validar campos obrigatórios no cadastro
+* CT009 — Deve criar e excluir conta com sucesso
+
+## Produtos
+
+* CT010 — Deve acessar área de produtos
+* CT011 — Deve pesquisar produto existente
+* CT012 — Deve pesquisar produto inexistente
+* CT013 — Deve visualizar detalhes do produto
 
 ---
 
@@ -206,9 +211,9 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 | Sprint 0 | Estrutura Inicial           | Concluído    |
 | Sprint 1 | Infraestrutura do Framework | Concluído    |
 | Sprint 2 | Login                       | Concluído    |
-| Sprint 3 | Cadastro                    | Em validação |
-| Sprint 4 | Pesquisa de Produtos        | Planejado    |
-| Sprint 5 | Carrinho                    | Planejado    |
+| Sprint 3 | Cadastro                    | Concluído    |
+| Sprint 4 | Produtos                    | Concluído    |
+| Sprint 5 | Carrinho                    | Em andamento |
 | Sprint 6 | Checkout                    | Planejado    |
 | Sprint 7 | Data Driven Testing         | Planejado    |
 | Sprint 8 | Evidências e Relatórios     | Planejado    |
@@ -220,7 +225,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Sprint Atual
 
-Sprint 3 — Cadastro de Usuários
+Sprint 5 — Carrinho de Compras
 
 ### Concluído
 
@@ -228,25 +233,21 @@ Sprint 3 — Cadastro de Usuários
 * DriverFactory
 * ConfigReader
 * ScreenshotHelper
-* TestDataReader
 * BaseTest
-* InfrastructureTests
 * LoginPage
 * LoginTests
 * CadastroPage
 * CadastroTests
+* ProductPage
+* ProductTests
 * UserData
-* CadastroData
+* ProductData
 * Users.json
-* CadastroUsers.json
-* CT001 ao CT008
+* Products.json
+* CT001 ao CT013
 * Planejamento dos Testes
 * Documentação Inicial
 
-### Em Validação
-
-* CT009 — Criação e exclusão de conta
-
 ### Próxima Entrega
 
-Implementação do módulo de Pesquisa de Produtos utilizando Page Object Model (POM).
+Implementação do módulo de Carrinho de Compras utilizando Selenium WebDriver, xUnit e Page Object Model (POM).

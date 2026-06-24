@@ -1,0 +1,14 @@
+[
+  {
+    "existingProduct": "Blue Top",
+    "nonExistingProduct": "Produto Inexistente XYZ"
+  },
+  {
+    "existingProduct": "Men Tshirt",
+    "nonExistingProduct": "Produto Que Nao Existe"
+  },
+  {
+    "existingProduct": "Sleeveless Dress",
+    "nonExistingProduct": "Item Invalido"
+  }
+]
