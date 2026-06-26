@@ -1,0 +1,11 @@
+[
+  {
+    "ProductId": "1",
+    "Comment": "Pedido automatizado para validação do fluxo de checkout.",
+    "CardName": "Usuario Teste",
+    "CardNumber": "4111111111111111",
+    "Cvc": "123",
+    "ExpirationMonth": "12",
+    "ExpirationYear": "2030"
+  }
+]

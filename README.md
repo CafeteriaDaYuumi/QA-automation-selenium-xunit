@@ -23,7 +23,7 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ---
 
-# Funcionalidades Planejadas
+# Funcionalidades Implementadas
 
 ## Login
 
@@ -55,9 +55,10 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Checkout
 
-* Finalização da compra
-* Validação de campos obrigatórios
-* Validação de dados inválidos
+* Acesso à tela de checkout
+* Finalização de compra com sucesso
+* Acesso à tela de pagamento
+* Finalização de compra utilizando segunda massa de dados
 
 ---
 
@@ -184,6 +185,13 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 * CT015 — Deve adicionar múltiplos produtos ao carrinho
 * CT016 — Deve remover produto do carrinho
 
+## Checkout
+
+* CT017 — Deve acessar tela de checkout
+* CT018 — Deve finalizar compra com sucesso
+* CT019 — Deve acessar tela de pagamento
+* CT020 — Deve finalizar compra utilizando segunda massa de dados
+
 ---
 
 # Documentação
@@ -220,10 +228,11 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 | Sprint 3 | Cadastro                    | Concluído    |
 | Sprint 4 | Produtos                    | Concluído    |
 | Sprint 5 | Carrinho                    | Concluído    |
-| Sprint 6 | Checkout                    | Em andamento |
-| Sprint 7 | Data Driven Testing         | Planejado    |
+| Sprint 6 | Checkout                    | Concluído    |
+| Sprint 7 | Data Driven Testing         | Em andamento |
 | Sprint 8 | Evidências e Relatórios     | Planejado    |
 | Sprint 9 | Refatoração e Publicação    | Planejado    |
+
 
 ---
 
@@ -231,7 +240,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Sprint Atual
 
-Sprint 6 — Checkout
+Sprint 7 — Data Driven Testing
 
 ### Concluído
 
@@ -241,23 +250,27 @@ Sprint 6 — Checkout
 * ScreenshotHelper
 * BaseTest
 * LoginPage
-* LoginTests
 * CadastroPage
-* CadastroTests
 * ProductPage
-* ProductTests
 * CartPage
+* CheckoutPage
+* LoginTests
+* CadastroTests
+* ProductTests
 * CartTests
+* CheckoutTests
 * UserData
 * ProductData
 * CartData
+* CheckoutData
 * Users.json
 * Products.json
 * CartItems.json
-* CT001 ao CT016
+* CheckoutData.json
+* CT001 ao CT020
 * Planejamento dos Testes
 * Documentação Inicial
 
 ### Próxima Entrega
 
-Implementação do módulo de Checkout utilizando Selenium WebDriver, xUnit e Page Object Model (POM).
+Implementação de Data Driven Testing para execução dos cenários utilizando massas de dados externas, reduzindo duplicação de código e ampliando a reutilização dos testes automatizados.
