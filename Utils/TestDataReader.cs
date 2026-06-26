@@ -1,63 +1,69 @@
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using QA_automation_selenium_xunit.Models;
 
 namespace QA_automation_selenium_xunit.Utils
 {
     /// <summary>
-    /// Responsável pela leitura das massas de dados
-    /// utilizadas durante a execução dos testes.
+    /// Classe responsável pela leitura dos arquivos JSON
+    /// utilizados como massa de dados dos testes automatizados.
     /// </summary>
     public static class TestDataReader
     {
-        private static readonly JObject Data;
-
-        /// <summary>
-        /// Carrega o arquivo Users.json durante a inicialização da classe.
-        /// </summary>
-        static TestDataReader()
+        public static List<T> GetDataList<T>(string fileName)
         {
-            string path = Path.Combine(
+            string filePath = Path.Combine(
                 AppContext.BaseDirectory,
                 "TestData",
-                "Users.json"
+                fileName
             );
 
-            if (!File.Exists(path))
+            if (!File.Exists(filePath))
             {
                 throw new FileNotFoundException(
-                    $"Arquivo de massa de dados não encontrado: {path}"
+                    $"Arquivo de massa de dados não encontrado: {filePath}"
                 );
             }
 
-            string json = File.ReadAllText(path);
+            string jsonContent = File.ReadAllText(filePath);
 
-            Data = JObject.Parse(json);
+            List<T>? data = JsonConvert.DeserializeObject<List<T>>(jsonContent);
+
+            if (data == null || data.Count == 0)
+            {
+                throw new InvalidOperationException(
+                    $"O arquivo {fileName} não possui dados válidos."
+                );
+            }
+
+            return data;
+        }
+
+        public static T GetFirstData<T>(string fileName)
+        {
+            return GetDataList<T>(fileName).First();
         }
 
         /// <summary>
-        /// Retorna um usuário da massa de dados.
+        /// Retorna um usuário específico do arquivo Users.json
+        /// a partir da chave informada.
+        /// Mantido para compatibilidade com os testes de login existentes.
         /// </summary>
-        /// <param name="userType">
-        /// Nome do usuário configurado no arquivo JSON.
-        /// Exemplo: validUser ou invalidUser.
-        /// </param>
-        /// <returns>Objeto contendo e-mail e senha.</returns>
-        public static UserData GetUser(string userType)
+        public static UserData GetUser(string key)
         {
-            var user = Data[userType];
+            List<UserData> users = GetDataList<UserData>("Users.json");
+
+            UserData? user = users.FirstOrDefault(
+                item => item.Key == key
+            );
 
             if (user == null)
             {
-                throw new Exception(
-                    $"Usuário '{userType}' não encontrado no arquivo Users.json."
+                throw new InvalidOperationException(
+                    $"Usuário com a chave '{key}' não encontrado em Users.json."
                 );
             }
 
-            return new UserData
-            {
-                Email = user["email"]?.ToString() ?? string.Empty,
-                Password = user["password"]?.ToString() ?? string.Empty
-            };
+            return user;
         }
     }
 }

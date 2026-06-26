@@ -6,7 +6,7 @@ Framework de automação de testes web desenvolvido com Selenium WebDriver, xUni
 
 Desenvolver um framework de automação capaz de validar os principais fluxos de um sistema de e-commerce, simulando um ambiente real de trabalho na área de Qualidade de Software (QA).
 
-O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências, massa de dados e organização dos artefatos de teste.
+O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências, massa de dados, Data Driven Testing e organização dos artefatos de teste.
 
 ---
 
@@ -55,10 +55,17 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 
 ## Checkout
 
-* Acesso à tela de checkout
-* Finalização de compra com sucesso
+* Acesso ao checkout
 * Acesso à tela de pagamento
-* Finalização de compra utilizando segunda massa de dados
+* Finalização da compra
+* Finalização utilizando múltiplas massas de dados
+
+## Data Driven Testing
+
+* Leitura automática de massa de usuários
+* Leitura automática de produtos
+* Leitura automática de carrinho
+* Leitura automática de checkout
 
 ---
 
@@ -91,62 +98,31 @@ QA-automation-selenium-xunit
 
 ## DriverFactory
 
-Responsável pelo gerenciamento do navegador durante a execução dos testes.
-
-### Funcionalidades
-
 * Inicialização do ChromeDriver
 * Configuração do navegador
-* Gerenciamento de tempo de espera
-* Encerramento seguro do navegador
-
----
+* Gerenciamento do ciclo de vida do WebDriver
 
 ## ConfigReader
 
-Responsável pela leitura das configurações da aplicação.
-
-### Funcionalidades
-
-* Leitura do arquivo appsettings.json
-* Recuperação da URL base da aplicação
-* Tratamento de erros de configuração
-
----
+* Leitura do appsettings.json
+* Recuperação da URL base
 
 ## ScreenshotHelper
 
-Responsável pela geração automática de evidências.
-
-### Funcionalidades
-
-* Captura de screenshots
-* Organização automática das evidências por execução
-* Registro do local de armazenamento
-
----
+* Captura automática de evidências
+* Organização por data e horário
 
 ## TestDataReader
 
-Responsável pela leitura da massa de dados utilizada nos testes.
-
-### Funcionalidades
-
-* Leitura de arquivos JSON
-* Separação entre dados de teste e código
-* Apoio ao conceito de Data Driven Testing
-
----
+* Leitura genérica de arquivos JSON
+* Suporte a Data Driven Testing
+* Desserialização automática da massa de dados
 
 ## BaseTest
 
-Responsável por centralizar a inicialização e o encerramento do navegador.
-
-### Funcionalidades
-
-* Inicialização do WebDriver antes dos testes
-* Encerramento automático do navegador após a execução
-* Redução de duplicação de código nas classes de teste
+* Inicialização automática do navegador
+* Encerramento automático da sessão
+* Reutilização da infraestrutura entre os testes
 
 ---
 
@@ -192,6 +168,13 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 * CT019 — Deve acessar tela de pagamento
 * CT020 — Deve finalizar compra utilizando segunda massa de dados
 
+## Data Driven Testing
+
+* CT021 — Deve ler massa de usuários
+* CT022 — Deve ler massa de produtos
+* CT023 — Deve ler massa de carrinho
+* CT024 — Deve ler massa de checkout
+
 ---
 
 # Documentação
@@ -220,19 +203,18 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 # Roadmap
 
-| Sprint   | Descrição                   | Status       |
-| -------- | --------------------------- | ------------ |
-| Sprint 0 | Estrutura Inicial           | Concluído    |
-| Sprint 1 | Infraestrutura do Framework | Concluído    |
-| Sprint 2 | Login                       | Concluído    |
-| Sprint 3 | Cadastro                    | Concluído    |
-| Sprint 4 | Produtos                    | Concluído    |
-| Sprint 5 | Carrinho                    | Concluído    |
-| Sprint 6 | Checkout                    | Concluído    |
-| Sprint 7 | Data Driven Testing         | Em andamento |
-| Sprint 8 | Evidências e Relatórios     | Planejado    |
-| Sprint 9 | Refatoração e Publicação    | Planejado    |
-
+| Sprint | Descrição | Status |
+|--------|-----------|---------|
+| Sprint 0 | Estrutura Inicial |  Concluído |
+| Sprint 1 | Infraestrutura do Framework | Concluído |
+| Sprint 2 | Login | Concluído |
+| Sprint 3 | Cadastro |  Concluído |
+| Sprint 4 | Produtos | Concluído |
+| Sprint 5 | Carrinho |  Concluído |
+| Sprint 6 | Checkout |  Concluído |
+| Sprint 7 | Data Driven Testing |  Concluído |
+| Sprint 8 | Evidências e Relatórios | Em andamento |
+| Sprint 9 | Refatoração e Publicação |  Planejado |
 
 ---
 
@@ -240,7 +222,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Sprint Atual
 
-Sprint 7 — Data Driven Testing
+**Sprint 8 — Evidências e Relatórios**
 
 ### Concluído
 
@@ -248,6 +230,7 @@ Sprint 7 — Data Driven Testing
 * DriverFactory
 * ConfigReader
 * ScreenshotHelper
+* TestDataReader
 * BaseTest
 * LoginPage
 * CadastroPage
@@ -259,18 +242,20 @@ Sprint 7 — Data Driven Testing
 * ProductTests
 * CartTests
 * CheckoutTests
+* DataDrivenTests
 * UserData
 * ProductData
 * CartData
 * CheckoutData
+* TestDataModel
 * Users.json
 * Products.json
 * CartItems.json
 * CheckoutData.json
-* CT001 ao CT020
+* CT001 ao CT024
 * Planejamento dos Testes
 * Documentação Inicial
 
 ### Próxima Entrega
 
-Implementação de Data Driven Testing para execução dos cenários utilizando massas de dados externas, reduzindo duplicação de código e ampliando a reutilização dos testes automatizados.
+Implementação da geração de relatórios automatizados, consolidação das evidências de execução e integração com ExtentReports para apresentação dos resultados dos testes.

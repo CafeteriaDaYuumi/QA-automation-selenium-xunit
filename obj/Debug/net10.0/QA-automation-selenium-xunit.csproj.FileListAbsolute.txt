@@ -146,3 +146,7 @@ D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\obj\Debug\net10.0\QA-automat
 D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\obj\Debug\net10.0\QA-automation-selenium-xunit.genruntimeconfig.cache
 D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\obj\Debug\net10.0\ref\QA-automation-selenium-xunit.dll
 D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\bin\Debug\net10.0\TestData\CadastroUsers.json
+D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\bin\Debug\net10.0\TestData\CartItems.json
+D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\bin\Debug\net10.0\TestData\CheckoutData.json
+D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\bin\Debug\net10.0\TestData\LoginUsers.json
+D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\bin\Debug\net10.0\TestData\Products.json
