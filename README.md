@@ -178,6 +178,12 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 * CT012 — Deve pesquisar produto inexistente
 * CT013 — Deve visualizar detalhes do produto
 
+## Carrinho
+
+* CT014 — Deve adicionar produto ao carrinho
+* CT015 — Deve adicionar múltiplos produtos ao carrinho
+* CT016 — Deve remover produto do carrinho
+
 ---
 
 # Documentação
@@ -213,8 +219,8 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 | Sprint 2 | Login                       | Concluído    |
 | Sprint 3 | Cadastro                    | Concluído    |
 | Sprint 4 | Produtos                    | Concluído    |
-| Sprint 5 | Carrinho                    | Em andamento |
-| Sprint 6 | Checkout                    | Planejado    |
+| Sprint 5 | Carrinho                    | Concluído    |
+| Sprint 6 | Checkout                    | Em andamento |
 | Sprint 7 | Data Driven Testing         | Planejado    |
 | Sprint 8 | Evidências e Relatórios     | Planejado    |
 | Sprint 9 | Refatoração e Publicação    | Planejado    |
@@ -225,7 +231,7 @@ Responsável por centralizar a inicialização e o encerramento do navegador.
 
 ### Sprint Atual
 
-Sprint 5 — Carrinho de Compras
+Sprint 6 — Checkout
 
 ### Concluído
 
@@ -240,14 +246,18 @@ Sprint 5 — Carrinho de Compras
 * CadastroTests
 * ProductPage
 * ProductTests
+* CartPage
+* CartTests
 * UserData
 * ProductData
+* CartData
 * Users.json
 * Products.json
-* CT001 ao CT013
+* CartItems.json
+* CT001 ao CT016
 * Planejamento dos Testes
 * Documentação Inicial
 
 ### Próxima Entrega
 
-Implementação do módulo de Carrinho de Compras utilizando Selenium WebDriver, xUnit e Page Object Model (POM).
+Implementação do módulo de Checkout utilizando Selenium WebDriver, xUnit e Page Object Model (POM).

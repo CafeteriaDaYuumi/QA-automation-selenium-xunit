@@ -1,0 +1,17 @@
+[
+  {
+    "ProductName": "Blue Top",
+    "Quantity": 1,
+    "RemoveAfterAdd": false
+  },
+  {
+    "ProductName": "Men Tshirt",
+    "Quantity": 2,
+    "RemoveAfterAdd": false
+  },
+  {
+    "ProductName": "Sleeveless Dress",
+    "Quantity": 1,
+    "RemoveAfterAdd": true
+  }
+]
