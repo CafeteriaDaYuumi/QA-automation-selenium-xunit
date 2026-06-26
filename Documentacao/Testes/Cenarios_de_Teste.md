@@ -64,11 +64,11 @@ Validar o encerramento da sessão do usuário autenticado.
 
 ### Resultado Esperado
 
-O sistema deve retornar para a tela de login.
+O sistema deve retornar para a tela inicial.
 
 ---
 
-# Módulo: Cadastro de Usuário
+# Módulo: Cadastro
 
 ## CT005 - Acesso à Área de Cadastro
 
@@ -132,7 +132,19 @@ A conta deve ser criada com sucesso e posteriormente excluída.
 
 # Módulo: Produtos
 
-## CT010 - Pesquisa de Produto Existente
+## CT010 - Acesso à Área de Produtos
+
+### Objetivo
+
+Validar o acesso à página de produtos.
+
+### Resultado Esperado
+
+A listagem de produtos deve ser exibida corretamente.
+
+---
+
+## CT011 - Pesquisa de Produto Existente
 
 ### Objetivo
 
@@ -144,7 +156,7 @@ O sistema deve exibir os produtos relacionados ao termo pesquisado.
 
 ---
 
-## CT011 - Pesquisa de Produto Inexistente
+## CT012 - Pesquisa de Produto Inexistente
 
 ### Objetivo
 
@@ -156,13 +168,25 @@ O sistema deve informar que nenhum produto foi encontrado.
 
 ---
 
-# Módulo: Carrinho de Compras
-
-## CT012 - Adicionar Produto ao Carrinho
+## CT013 - Visualização dos Detalhes do Produto
 
 ### Objetivo
 
-Validar a inclusão de produtos no carrinho.
+Validar a abertura da página de detalhes de um produto.
+
+### Resultado Esperado
+
+As informações completas do produto devem ser exibidas.
+
+---
+
+# Módulo: Carrinho
+
+## CT014 - Adicionar Produto ao Carrinho
+
+### Objetivo
+
+Validar a inclusão de um produto no carrinho.
 
 ### Resultado Esperado
 
@@ -170,7 +194,7 @@ O produto deve ser adicionado corretamente ao carrinho.
 
 ---
 
-## CT013 - Adicionar Múltiplos Produtos ao Carrinho
+## CT015 - Adicionar Múltiplos Produtos ao Carrinho
 
 ### Objetivo
 
@@ -182,7 +206,7 @@ Todos os produtos selecionados devem ser adicionados ao carrinho.
 
 ---
 
-## CT014 - Remover Produto do Carrinho
+## CT016 - Remover Produto do Carrinho
 
 ### Objetivo
 
@@ -190,13 +214,25 @@ Validar a remoção de produtos previamente adicionados.
 
 ### Resultado Esperado
 
-O produto deve ser removido do carrinho.
+O produto deve ser removido corretamente do carrinho.
 
 ---
 
 # Módulo: Checkout
 
-## CT015 - Finalizar Compra com Sucesso
+## CT017 - Acesso à Tela de Checkout
+
+### Objetivo
+
+Validar que o usuário consiga iniciar o processo de checkout.
+
+### Resultado Esperado
+
+A tela de checkout deve ser exibida corretamente.
+
+---
+
+## CT018 - Finalizar Compra com Sucesso
 
 ### Objetivo
 
@@ -204,61 +240,120 @@ Validar o fluxo completo de finalização da compra.
 
 ### Resultado Esperado
 
-O pedido deve ser criado com sucesso.
+O pedido deve ser criado com sucesso e a mensagem **Order Placed!** deve ser exibida.
 
 ---
 
-## CT016 - Finalizar Compra sem Dados Obrigatórios
+## CT019 - Acesso à Tela de Pagamento
 
 ### Objetivo
 
-Validar os campos obrigatórios do checkout.
+Validar a navegação para a tela de pagamento após selecionar **Place Order**.
 
 ### Resultado Esperado
 
-O sistema deve impedir a conclusão da compra.
+A tela de pagamento deve ser exibida contendo os campos para preenchimento do cartão.
 
 ---
 
-## CT017 - Finalizar Compra com Dados Inválidos
+## CT020 - Finalizar Compra com Segunda Massa de Dados
 
 ### Objetivo
 
-Validar as regras de negócio do processo de pagamento.
+Validar o fluxo completo de checkout utilizando um segundo conjunto de dados.
 
 ### Resultado Esperado
 
-O sistema deve impedir a conclusão da compra e apresentar mensagem adequada.
+O pedido deve ser concluído com sucesso utilizando uma massa de dados alternativa.
+
+---
+
+# Módulo: Data Driven Testing
+
+## CT021 - Leitura da Massa de Usuários
+
+### Objetivo
+
+Validar a leitura do arquivo **Users.json**.
+
+### Resultado Esperado
+
+Os usuários devem ser carregados corretamente.
+
+---
+
+## CT022 - Leitura da Massa de Produtos
+
+### Objetivo
+
+Validar a leitura do arquivo **Products.json**.
+
+### Resultado Esperado
+
+Os produtos devem ser carregados corretamente.
+
+---
+
+## CT023 - Leitura da Massa de Carrinho
+
+### Objetivo
+
+Validar a leitura do arquivo **CartItems.json**.
+
+### Resultado Esperado
+
+Os itens do carrinho devem ser carregados corretamente.
+
+---
+
+## CT024 - Leitura da Massa de Checkout
+
+### Objetivo
+
+Validar a leitura do arquivo **CheckoutData.json**.
+
+### Resultado Esperado
+
+Os dados de checkout devem ser carregados corretamente.
 
 ---
 
 # Resumo dos Cenários
 
-| ID       | Módulo   | Cenário                      | Status         |
-| -------- | -------- | ---------------------------- | -------------- |
-| LOGIN001 | Login    | Acesso à página de login     | ✔ Implementado |
-| CT001    | Login    | Login válido                 | ✔ Implementado |
-| CT002    | Login    | Login inválido               | ✔ Implementado |
-| CT003    | Login    | Campos vazios                | ✔ Implementado |
-| CT004    | Login    | Logout                       | ✔ Implementado |
-| CT005    | Cadastro | Acesso à área de cadastro    | ✔ Implementado |
-| CT006    | Cadastro | Cadastro válido              | ✔ Implementado |
-| CT007    | Cadastro | E-mail duplicado             | ✔ Implementado |
-| CT008    | Cadastro | Campos obrigatórios          | ✔ Implementado |
-| CT009    | Cadastro | Criar e excluir conta        | ✔ Implementado |
-| CT010    | Produtos | Produto existente            | Planejado      |
-| CT011    | Produtos | Produto inexistente          | Planejado      |
-| CT012    | Carrinho | Adicionar produto            | Planejado      |
-| CT013    | Carrinho | Adicionar múltiplos produtos | Planejado      |
-| CT014    | Carrinho | Remover produto              | Planejado      |
-| CT015    | Checkout | Compra com sucesso           | Planejado      |
-| CT016    | Checkout | Dados obrigatórios           | Planejado      |
-| CT017    | Checkout | Dados inválidos              | Planejado      |
+| ID       | Módulo      | Cenário                           | Status         |
+| -------- | ----------- | --------------------------------- | -------------- |
+| LOGIN001 | Login       | Acesso à página de login          | ✔ Implementado |
+| CT001    | Login       | Login válido                      | ✔ Implementado |
+| CT002    | Login       | Login inválido                    | ✔ Implementado |
+| CT003    | Login       | Campos vazios                     | ✔ Implementado |
+| CT004    | Login       | Logout                            | ✔ Implementado |
+| CT005    | Cadastro    | Acesso à área de cadastro         | ✔ Implementado |
+| CT006    | Cadastro    | Cadastro válido                   | ✔ Implementado |
+| CT007    | Cadastro    | E-mail duplicado                  | ✔ Implementado |
+| CT008    | Cadastro    | Campos obrigatórios               | ✔ Implementado |
+| CT009    | Cadastro    | Criar e excluir conta             | ✔ Implementado |
+| CT010    | Produtos    | Acesso à área de produtos         | ✔ Implementado |
+| CT011    | Produtos    | Pesquisa de produto existente     | ✔ Implementado |
+| CT012    | Produtos    | Pesquisa de produto inexistente   | ✔ Implementado |
+| CT013    | Produtos    | Visualização dos detalhes         | ✔ Implementado |
+| CT014    | Carrinho    | Adicionar produto                 | ✔ Implementado |
+| CT015    | Carrinho    | Adicionar múltiplos produtos      | ✔ Implementado |
+| CT016    | Carrinho    | Remover produto                   | ✔ Implementado |
+| CT017    | Checkout    | Acesso ao checkout                | ✔ Implementado |
+| CT018    | Checkout    | Finalizar compra                  | ✔ Implementado |
+| CT019    | Checkout    | Acesso à tela de pagamento        | ✔ Implementado |
+| CT020    | Checkout    | Compra com segunda massa de dados | ✔ Implementado |
+| CT021    | Data Driven | Leitura da massa de usuários      | ✔ Implementado |
+| CT022    | Data Driven | Leitura da massa de produtos      | ✔ Implementado |
+| CT023    | Data Driven | Leitura da massa de carrinho      | ✔ Implementado |
+| CT024    | Data Driven | Leitura da massa de checkout      | ✔ Implementado |
 
 ---
 
 # Status
 
-Cenários das Sprints 2 e 3 implementados e automatizados.
+**Todos os cenários previstos até a Sprint 7 foram implementados e automatizados.**
 
-Próxima Sprint: Produtos (CT010 e CT011).
+### Próxima Sprint
+
+**Sprint 8 — Evidências e Relatórios (ExtentReports e geração de relatórios automatizados).**

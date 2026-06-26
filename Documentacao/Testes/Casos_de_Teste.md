@@ -6,436 +6,311 @@ Documentar os procedimentos necessários para validar as funcionalidades do sist
 
 ---
 
-# LOGIN001 - Acesso à Página de Login
+# Módulo: Login
 
-## Módulo
+### LOGIN001 - Acesso à Página de Login
 
-Login
+**Prioridade:** Alta
 
-## Prioridade
+**Pré-condição:** Nenhuma.
 
-Alta
-
-## Pré-Condição
-
-Nenhuma.
-
-## Passos
+**Passos**
 
 1. Acessar a aplicação.
-2. Clicar em "Signup / Login".
+2. Clicar em **Signup / Login**.
 
-## Resultado Esperado
-
-A área de login deve ser exibida corretamente.
+**Resultado Esperado**
+A página de login deve ser exibida corretamente.
 
 ---
 
-# CT001 - Login com Credenciais Válidas
+### CT001 - Login com Credenciais Válidas
 
-## Módulo
+**Prioridade:** Alta
 
-Login
+**Pré-condição:** Usuário previamente cadastrado.
 
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Usuário previamente cadastrado.
-
-## Passos
+**Passos**
 
 1. Acessar a página de login.
 2. Informar e-mail válido.
 3. Informar senha válida.
-4. Clicar em Login.
+4. Clicar em **Login**.
 
-## Resultado Esperado
-
-O sistema deve autenticar o usuário e exibir a identificação do usuário logado.
+**Resultado Esperado**
+O usuário deve ser autenticado com sucesso.
 
 ---
 
-# CT002 - Login com Senha Inválida
+### CT002 - Login com Senha Inválida
 
-## Módulo
+**Prioridade:** Alta
 
-Login
+**Pré-condição:** Usuário previamente cadastrado.
 
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Usuário previamente cadastrado.
-
-## Passos
+**Passos**
 
 1. Acessar a página de login.
 2. Informar e-mail válido.
 3. Informar senha inválida.
-4. Clicar em Login.
+4. Clicar em **Login**.
 
-## Resultado Esperado
-
-O sistema deve exibir a mensagem:
-
-"Your email or password is incorrect!"
+**Resultado Esperado**
+Exibir a mensagem **"Your email or password is incorrect!"**
 
 ---
 
-# CT003 - Login com Campos Vazios
+### CT003 - Login com Campos Vazios
 
-## Módulo
+**Prioridade:** Alta
 
-Login
+**Pré-condição:** Nenhuma.
 
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Nenhuma.
-
-## Passos
+**Passos**
 
 1. Acessar a página de login.
-2. Deixar os campos vazios.
-3. Clicar em Login.
+2. Não preencher os campos.
+3. Clicar em **Login**.
 
-## Resultado Esperado
-
-O usuário deve permanecer na tela de login.
+**Resultado Esperado**
+O sistema deve impedir a autenticação.
 
 ---
 
-# CT004 - Logout com Sucesso
+### CT004 - Logout com Sucesso
 
-## Módulo
+**Prioridade:** Alta
 
-Login
+**Pré-condição:** Usuário autenticado.
 
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Usuário autenticado.
-
-## Passos
+**Passos**
 
 1. Realizar login.
-2. Clicar em Logout.
+2. Clicar em **Logout**.
 
-## Resultado Esperado
-
-O sistema deve encerrar a sessão e retornar à tela de login.
-
----
-
-# CT005 - Acesso à Área de Cadastro
-
-## Módulo
-
-Cadastro
-
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Nenhuma.
-
-## Passos
-
-1. Acessar a aplicação.
-2. Clicar em "Signup / Login".
-
-## Resultado Esperado
-
-A área de cadastro deve ser exibida corretamente.
+**Resultado Esperado**
+A sessão deve ser encerrada.
 
 ---
 
-# CT006 - Início de Cadastro com Dados Válidos
+# Módulo: Cadastro
 
-## Módulo
+### CT005 - Acesso à Área de Cadastro
 
-Cadastro
+**Prioridade:** Alta
 
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-E-mail não cadastrado.
-
-## Passos
-
-1. Acessar a área de cadastro.
-2. Informar nome válido.
-3. Informar e-mail válido.
-4. Clicar em Signup.
-
-## Resultado Esperado
-
-O sistema deve exibir a tela "Enter Account Information".
+**Resultado Esperado**
+Exibir corretamente a área de cadastro.
 
 ---
 
-# CT007 - Cadastro com E-mail Já Existente
+### CT006 - Início de Cadastro com Dados Válidos
 
-## Módulo
+**Prioridade:** Alta
 
-Cadastro
-
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-E-mail previamente cadastrado.
-
-## Passos
-
-1. Acessar a área de cadastro.
-2. Informar nome válido.
-3. Informar e-mail já cadastrado.
-4. Clicar em Signup.
-
-## Resultado Esperado
-
-O sistema deve exibir a mensagem:
-
-"Email Address already exist!"
+**Resultado Esperado**
+Exibir a tela **Enter Account Information**.
 
 ---
 
-# CT008 - Cadastro com Campos Obrigatórios Vazios
+### CT007 - Cadastro com E-mail Já Existente
 
-## Módulo
+**Prioridade:** Alta
 
-Cadastro
-
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-Nenhuma.
-
-## Passos
-
-1. Acessar a área de cadastro.
-2. Não preencher os campos.
-3. Clicar em Signup.
-
-## Resultado Esperado
-
-O sistema deve impedir o avanço do cadastro e permanecer na área de cadastro.
+**Resultado Esperado**
+Exibir a mensagem **"Email Address already exist!"**
 
 ---
 
-# CT009 - Criação e Exclusão de Conta
+### CT008 - Cadastro com Campos Obrigatórios Vazios
 
-## Módulo
+**Prioridade:** Alta
 
-Cadastro
-
-## Prioridade
-
-Alta
-
-## Pré-Condição
-
-E-mail não cadastrado.
-
-## Passos
-
-1. Iniciar cadastro com dados válidos.
-2. Preencher informações da conta.
-3. Preencher endereço.
-4. Criar conta.
-5. Confirmar criação.
-6. Excluir conta.
-
-## Resultado Esperado
-
-A conta deve ser criada com sucesso e posteriormente removida do sistema.
+**Resultado Esperado**
+Impedir o avanço do cadastro.
 
 ---
 
-# CT010 - Pesquisa de Produto Existente
+### CT009 - Criação e Exclusão de Conta
 
-## Módulo
+**Prioridade:** Alta
 
-Produtos
-
-## Prioridade
-
-Média
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Criar e remover a conta com sucesso.
 
 ---
 
-# CT011 - Pesquisa de Produto Inexistente
+# Módulo: Produtos
 
-## Módulo
+### CT010 - Acesso à Área de Produtos
 
-Produtos
+**Prioridade:** Média
 
-## Prioridade
-
-Média
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Exibir a página de produtos.
 
 ---
 
-# CT012 - Adicionar Produto ao Carrinho
+### CT011 - Pesquisa de Produto Existente
 
-## Módulo
+**Prioridade:** Média
 
-Carrinho
-
-## Prioridade
-
-Alta
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Retornar produtos relacionados ao termo pesquisado.
 
 ---
 
-# CT013 - Adicionar Múltiplos Produtos ao Carrinho
+### CT012 - Pesquisa de Produto Inexistente
 
-## Módulo
+**Prioridade:** Média
 
-Carrinho
-
-## Prioridade
-
-Alta
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Nenhum produto deve ser encontrado.
 
 ---
 
-# CT014 - Remover Produto do Carrinho
+### CT013 - Visualização dos Detalhes do Produto
 
-## Módulo
+**Prioridade:** Média
 
-Carrinho
-
-## Prioridade
-
-Alta
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Abrir corretamente a página de detalhes do produto.
 
 ---
 
-# CT015 - Checkout com Sucesso
+# Módulo: Carrinho
 
-## Módulo
+### CT014 - Adicionar Produto ao Carrinho
 
-Checkout
+**Prioridade:** Alta
 
-## Prioridade
-
-Alta
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Adicionar um produto ao carrinho.
 
 ---
 
-# CT016 - Checkout sem Dados Obrigatórios
+### CT015 - Adicionar Múltiplos Produtos ao Carrinho
 
-## Módulo
+**Prioridade:** Alta
 
-Checkout
-
-## Prioridade
-
-Alta
-
-## Status
-
-Planejado
+**Resultado Esperado**
+Adicionar dois produtos ao carrinho.
 
 ---
 
-# CT017 - Checkout com Dados Inválidos
+### CT016 - Remover Produto do Carrinho
 
-## Módulo
+**Prioridade:** Alta
 
-Checkout
+**Resultado Esperado**
+Remover corretamente um item do carrinho.
 
-## Prioridade
+---
 
-Alta
+# Módulo: Checkout
 
-## Status
+### CT017 - Acessar Tela de Checkout
 
-Planejado
+**Prioridade:** Alta
+
+**Resultado Esperado**
+Exibir a página de checkout.
+
+---
+
+### CT018 - Finalizar Compra com Sucesso
+
+**Prioridade:** Alta
+
+**Resultado Esperado**
+Concluir a compra e exibir **Order Placed!**
+
+---
+
+### CT019 - Acessar Tela de Pagamento
+
+**Prioridade:** Alta
+
+**Resultado Esperado**
+Exibir corretamente a tela de pagamento.
+
+---
+
+### CT020 - Finalizar Compra com Segunda Massa de Dados
+
+**Prioridade:** Alta
+
+**Resultado Esperado**
+Concluir a compra utilizando um segundo conjunto de dados.
+
+---
+
+# Módulo: Data Driven Testing
+
+### CT021 - Leitura da Massa de Usuários
+
+**Prioridade:** Média
+
+**Resultado Esperado**
+Carregar corretamente o arquivo **Users.json**.
+
+---
+
+### CT022 - Leitura da Massa de Produtos
+
+**Prioridade:** Média
+
+**Resultado Esperado**
+Carregar corretamente o arquivo **Products.json**.
+
+---
+
+### CT023 - Leitura da Massa de Carrinho
+
+**Prioridade:** Média
+
+**Resultado Esperado**
+Carregar corretamente o arquivo **CartItems.json**.
+
+---
+
+### CT024 - Leitura da Massa de Checkout
+
+**Prioridade:** Média
+
+**Resultado Esperado**
+Carregar corretamente o arquivo **CheckoutData.json**.
 
 ---
 
 # Resumo
 
-Total de Casos de Teste: 18
+**Total de Casos de Teste:** **25**
 
 ## Implementados
 
-✔ LOGIN001
-✔ CT001
-✔ CT002
-✔ CT003
-✔ CT004
-✔ CT005
-✔ CT006
-✔ CT007
-✔ CT008
-✔ CT009
+* ✔ LOGIN001
+* ✔ CT001 ao CT024
 
 ## Planejados
 
-□ CT010
-□ CT011
-□ CT012
-□ CT013
-□ CT014
-□ CT015
-□ CT016
-□ CT017
+* Nenhum
 
 ## Distribuição
 
 * Login: 5
 * Cadastro: 5
-* Produtos: 2
+* Produtos: 4
 * Carrinho: 3
-* Checkout: 3
+* Checkout: 4
+* Data Driven Testing: 4
 
-Status Geral: Sprint 3 concluída.
+---
+
+# Status Geral
+
+**Sprint 7 — Data Driven Testing concluída.**
+
+Todo o framework encontra-se documentado e implementado até a Sprint 7, contemplando os principais fluxos de negócio da aplicação, gerenciamento de massa de dados externa e testes de leitura das massas utilizadas pelo framework.
+
+**Próxima Sprint:** Sprint 8 — Evidências e Relatórios (ExtentReports).

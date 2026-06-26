@@ -2,9 +2,9 @@
 
 ## Objetivo
 
-Este documento define os dados utilizados na execução dos testes manuais e automatizados do sistema de e-commerce utilizado como base para o framework de automação.
+Este documento define as massas de dados utilizadas na execução dos testes automatizados do sistema de e-commerce utilizado como base para o framework.
 
-A massa de teste tem como objetivo garantir padronização, rastreabilidade e reutilização dos dados durante os cenários de validação.
+A massa de teste tem como objetivo garantir padronização, rastreabilidade, reutilização dos dados e suporte ao conceito de **Data Driven Testing**, permitindo a separação entre código e dados de teste.
 
 ---
 
@@ -41,7 +41,7 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade e re
 | Mês    | Maio   |
 | Ano    | 2000   |
 
-## Dados de Endereço
+### Dados de Endereço
 
 | Campo     | Valor          |
 | --------- | -------------- |
@@ -61,88 +61,119 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade e re
 | ID      | Produto                 | Finalidade          |
 | ------- | ----------------------- | ------------------- |
 | PROD001 | Blue Top                | Pesquisa de produto |
-| PROD002 | Men Tshirt              | Pesquisa e carrinho |
+| PROD002 | Men Tshirt              | Carrinho            |
 | PROD003 | Sleeveless Dress        | Checkout            |
 | PROD004 | Produto Inexistente XYZ | Pesquisa negativa   |
 
 ---
 
-# 5. Dados de Checkout
+# 5. Carrinho de Compras
 
-| ID       | Nome | Sobrenome | Endereço       | CEP       | Cidade    | Finalidade              |
-| -------- | ---- | --------- | -------------- | --------- | --------- | ----------------------- |
-| CHECK001 | João | Silva     | Rua Teste, 123 | 00000     | São Paulo | Checkout válido         |
-| CHECK002 | -    | Silva     | Rua Teste, 123 | 00000     | São Paulo | Campo obrigatório vazio |
-| CHECK003 | João | Silva     | -              | 00000     | São Paulo | Endereço vazio          |
-| CHECK004 | João | Silva     | CEP_INVALIDO   | São Paulo | São Paulo | Dados inválidos         |
-
----
-
-# 6. Relação com Casos de Teste
-
-| Caso de Teste | Massa Utilizada   |
-| ------------- | ----------------- |
-| CT001         | USER001           |
-| CT002         | USER002           |
-| CT003         | USER003           |
-| CT004         | USER001           |
-| CT005         | CAD001            |
-| CT006         | CAD001            |
-| CT007         | CAD002            |
-| CT008         | CAD003            |
-| CT009         | CAD004            |
-| CT010         | PROD001           |
-| CT011         | PROD004           |
-| CT012         | PROD001           |
-| CT013         | PROD001, PROD002  |
-| CT014         | PROD001           |
-| CT015         | USER001, CHECK001 |
-| CT016         | USER001, CHECK002 |
-| CT017         | USER001, CHECK004 |
+| ID      | Produto               | Quantidade | Finalidade         |
+| ------- | --------------------- | ---------- | ------------------ |
+| CART001 | Blue Top              | 1          | Adição simples     |
+| CART002 | Blue Top + Men Tshirt | 2          | Múltiplos produtos |
+| CART003 | Blue Top              | 1          | Remoção de produto |
 
 ---
 
-# 7. Arquivos Implementados
+# 6. Dados de Checkout
+
+| ID       | Nome no Cartão | Número           | CVC | Mês | Ano  | Finalidade             |
+| -------- | -------------- | ---------------- | --- | --- | ---- | ---------------------- |
+| CHECK001 | Usuario Teste  | 4111111111111111 | 123 | 12  | 2030 | Compra válida          |
+| CHECK002 | Maria Oliveira | 5555555555554444 | 456 | 10  | 2032 | Segunda massa de dados |
+
+---
+
+# 7. Relação com Casos de Teste
+
+| Caso de Teste | Massa Utilizada    |
+| ------------- | ------------------ |
+| CT001         | USER001            |
+| CT002         | USER002            |
+| CT003         | USER003            |
+| CT004         | USER001            |
+| CT005         | CAD001             |
+| CT006         | CAD001             |
+| CT007         | CAD002             |
+| CT008         | CAD003             |
+| CT009         | CAD004             |
+| CT010         | PROD001            |
+| CT011         | PROD004            |
+| CT012         | PROD001            |
+| CT013         | PROD001            |
+| CT014         | CART001            |
+| CT015         | CART002            |
+| CT016         | CART003            |
+| CT017         | USER001 + CART001  |
+| CT018         | USER001 + CHECK001 |
+| CT019         | USER001 + CHECK001 |
+| CT020         | USER001 + CHECK002 |
+| CT021         | Users.json         |
+| CT022         | Products.json      |
+| CT023         | CartItems.json     |
+| CT024         | CheckoutData.json  |
+
+---
+
+# 8. Arquivos Implementados
 
 ```text
 TestData
 │
 ├── Users.json
 ├── CadastroUsers.json
+├── Products.json
+├── CartItems.json
+└── CheckoutData.json
 ```
 
 ---
 
-# 8. Arquivos Planejados
+# 9. Organização da Massa de Dados
 
-```text
-TestData
-│
-├── Products.json
-├── CheckoutData.json
-```
+Todas as massas de dados são armazenadas em arquivos JSON e carregadas dinamicamente durante a execução dos testes através da classe **TestDataReader**, seguindo o conceito de **Data Driven Testing**.
+
+Essa abordagem proporciona:
+
+* Separação entre código e dados de teste.
+* Facilidade de manutenção.
+* Reutilização das massas de dados.
+* Maior escalabilidade do framework.
 
 ---
 
 # Observações
 
-* Os dados utilizados são exclusivamente para testes.
-* Os usuários de cadastro utilizam e-mails dinâmicos para evitar conflitos entre execuções.
-* Parte da massa de dados já foi externalizada em arquivos JSON.
-* Novas massas serão adicionadas conforme a implementação dos módulos Produtos, Carrinho e Checkout.
+* Todos os dados são destinados exclusivamente para testes automatizados.
+* Usuários de cadastro utilizam e-mails dinâmicos para evitar conflitos entre execuções.
+* As massas de dados são reutilizadas entre diferentes cenários sempre que possível.
+* Novas massas poderão ser adicionadas sem necessidade de alteração da infraestrutura do framework.
 
 ---
 
 # Status
 
-Massa de teste parcialmente implementada.
+**Massa de teste totalmente implementada.**
 
-Concluído:
+### Arquivos disponíveis
 
 * Users.json
 * CadastroUsers.json
+* Products.json
+* CartItems.json
+* CheckoutData.json
+
+### Funcionalidades cobertas
+
 * Login
 * Cadastro
+* Produtos
+* Carrinho
+* Checkout
+* Data Driven Testing
 
-Próxima atualização prevista:
-Sprint 4 — Pesquisa de Produtos.
+### Próxima atualização prevista
+
+**Sprint 8 — Evidências e Relatórios**

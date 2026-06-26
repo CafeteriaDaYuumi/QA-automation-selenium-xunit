@@ -12,20 +12,18 @@ Este documento apresenta a divisão das atividades do projeto em Sprints, permit
 
 Preparar o ambiente e a estrutura base do projeto.
 
-## Itens do Backlog
+### Itens do Backlog
 
 * US001 — Estrutura Inicial
 
-## Entregas
+### Entregas
 
 * Projeto xUnit criado
 * Estrutura de diretórios definida
 * Repositório Git configurado
 * Documentação inicial criada
 
-## Status
-
-Concluído
+**Status:** ✅ Concluído
 
 ---
 
@@ -35,46 +33,25 @@ Concluído
 
 Desenvolver os componentes reutilizáveis do framework.
 
-## Itens do Backlog
+### Itens do Backlog
 
 * US002 — Gerenciamento do Navegador
 * US003 — Captura de Evidências
 * US004 — Configuração do Ambiente
 
-## Entregas Realizadas
+### Entregas
 
-### DriverFactory
+* DriverFactory
+* ConfigReader
+* ScreenshotHelper
+* BaseTest
+* InfrastructureTests
 
-* Inicialização do navegador
-* Encerramento do navegador
-* Configuração do ChromeDriver
+### Critério de Aceite
 
-### ConfigReader
+O navegador deve abrir, executar ações e encerrar corretamente.
 
-* Leitura da URL da aplicação
-* Configurações do ambiente
-
-### ScreenshotHelper
-
-* Captura automática de evidências
-* Organização dos arquivos gerados
-
-### BaseTest
-
-* Centralização da inicialização dos testes
-* Encerramento automático do navegador
-
-### InfrastructureTests
-
-* Validação da infraestrutura do framework
-
-## Critério de Aceite
-
-O navegador deve abrir, executar ações simples e encerrar corretamente.
-
-## Status
-
-Concluído
+**Status:** ✅ Concluído
 
 ---
 
@@ -84,132 +61,128 @@ Concluído
 
 Automatizar o processo de autenticação.
 
-## Itens do Backlog
+### Itens do Backlog
 
 * US005 — Login Válido
 * US006 — Login Inválido
 
-## Casos de Teste
+### Casos de Teste
 
-* LOGIN001 — Acesso à página de login
-* CT001 — Login com credenciais válidas
-* CT002 — Login com senha inválida
-* CT003 — Login com campos obrigatórios vazios
-* CT004 — Logout com sucesso
+* LOGIN001
+* CT001
+* CT002
+* CT003
+* CT004
 
-## Entregas Realizadas
+### Entregas
 
 * LoginPage.cs
 * LoginTests.cs
 * UserData.cs
 * Users.json
-* TestDataReader.cs
 
-## Critério de Aceite
+### Critério de Aceite
 
-Todos os cenários devem executar conforme esperado.
+Todos os cenários de login devem executar com sucesso.
 
-## Status
-
-Concluído
+**Status:** ✅ Concluído
 
 ---
 
-# Sprint 3 — Cadastro de Usuários
+# Sprint 3 — Cadastro
 
 ## Objetivo
 
-Automatizar o processo de cadastro de usuários.
+Automatizar o fluxo de cadastro de usuários.
 
-## Itens do Backlog
+### Itens do Backlog
 
 * US007 — Cadastro de Usuário
 
-## Casos de Teste
+### Casos de Teste
 
-* CT005 — Acesso à área de cadastro
-* CT006 — Início de cadastro com dados válidos
-* CT007 — Validação de e-mail já cadastrado
-* CT008 — Validação de campos obrigatórios
-* CT009 — Criação e exclusão de conta
+* CT005
+* CT006
+* CT007
+* CT008
+* CT009
 
-## Entregas Realizadas
+### Entregas
 
 * CadastroPage.cs
 * CadastroTests.cs
 * CadastroData.cs
 * CadastroUsers.json
-* Ampliação do TestDataReader para múltiplas massas de dados
 
-## Critério de Aceite
+### Critério de Aceite
 
-As regras de cadastro devem ser validadas corretamente.
+Todas as regras de cadastro devem ser validadas.
 
-## Status
-
-Concluído
+**Status:** ✅ Concluído
 
 ---
 
-# Sprint 4 — Pesquisa de Produtos
+# Sprint 4 — Produtos
 
 ## Objetivo
 
-Automatizar a busca de produtos.
+Automatizar o módulo de produtos.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US008 — Pesquisa de Produto
+* US008 — Pesquisa de Produtos
 
-## Casos de Teste Planejados
+### Casos de Teste
 
-* CT010 — Pesquisa de produto existente
-* CT011 — Pesquisa de produto inexistente
+* CT010
+* CT011
+* CT012
+* CT013
 
-## Entregas Previstas
+### Entregas
 
-* ProdutoPage.cs
-* ProdutoTests.cs
+* ProductPage.cs
+* ProductTests.cs
+* ProductData.cs
+* Products.json
 
-## Critério de Aceite
+### Critério de Aceite
 
-Os resultados devem refletir corretamente os termos pesquisados.
+Todos os cenários de pesquisa e visualização de produtos devem executar corretamente.
 
-## Status
-
-Planejado
+**Status:** ✅ Concluído
 
 ---
 
-# Sprint 5 — Carrinho de Compras
+# Sprint 5 — Carrinho
 
 ## Objetivo
 
-Automatizar as operações do carrinho.
+Automatizar as operações do carrinho de compras.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US009 — Adicionar Produto ao Carrinho
-* US010 — Remover Produto do Carrinho
+* US009 — Adicionar Produto
+* US010 — Remover Produto
 
-## Casos de Teste Planejados
+### Casos de Teste
 
-* CT012 — Adicionar produto ao carrinho
-* CT013 — Adicionar múltiplos produtos
-* CT014 — Remover produto do carrinho
+* CT014
+* CT015
+* CT016
 
-## Entregas Previstas
+### Entregas
 
-* CarrinhoPage.cs
-* CarrinhoTests.cs
+* CartPage.cs
+* CartTests.cs
+* CartData.cs
+* CartItems.json
 
-## Critério de Aceite
+### Critério de Aceite
 
-O carrinho deve refletir corretamente as ações executadas.
+O carrinho deve refletir corretamente todas as operações realizadas.
 
-## Status
-
-Planejado
+**Status:** ✅ Concluído
 
 ---
 
@@ -217,30 +190,31 @@ Planejado
 
 ## Objetivo
 
-Automatizar a finalização da compra.
+Automatizar o fluxo completo de checkout.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US011 — Finalização da Compra
+* US011 — Checkout
 
-## Casos de Teste Planejados
+### Casos de Teste
 
-* CT015 — Checkout com sucesso
-* CT016 — Checkout sem dados obrigatórios
-* CT017 — Checkout com informações inválidas
+* CT017
+* CT018
+* CT019
+* CT020
 
-## Entregas Previstas
+### Entregas
 
 * CheckoutPage.cs
 * CheckoutTests.cs
+* CheckoutData.cs
+* CheckoutData.json
 
-## Critério de Aceite
+### Critério de Aceite
 
-O sistema deve permitir ou bloquear a compra conforme as regras de negócio.
+O checkout deve validar corretamente o fluxo de compra e pagamento.
 
-## Status
-
-Planejado
+**Status:** ✅ Concluído
 
 ---
 
@@ -248,34 +222,35 @@ Planejado
 
 ## Objetivo
 
-Implementar massa de dados externa para execução dos testes.
+Externalizar a massa de dados utilizada pelo framework.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US012 — Massa de Dados Externa
+* US012 — Data Driven Testing
 
-## Entregas Realizadas
+### Casos de Teste
 
+* CT021
+* CT022
+* CT023
+* CT024
+
+### Entregas
+
+* TestDataReader.cs
+* TestDataModel.cs
 * Users.json
 * CadastroUsers.json
-* UserData.cs
-* CadastroData.cs
-* TestDataReader.cs
-
-## Entregas Futuras
-
 * Products.json
-* CartData.json
+* CartItems.json
 * CheckoutData.json
-* Parametrização dos demais módulos
+* DataDrivenTests.cs
 
-## Critério de Aceite
+### Critério de Aceite
 
-Os cenários devem executar utilizando dados externos.
+Todas as massas de dados devem ser carregadas corretamente durante a execução dos testes.
 
-## Status
-
-Parcialmente Concluído
+**Status:** ✅ Concluído
 
 ---
 
@@ -283,29 +258,24 @@ Parcialmente Concluído
 
 ## Objetivo
 
-Melhorar a rastreabilidade das execuções.
+Melhorar a rastreabilidade das execuções automatizadas.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US013 — Relatórios de Execução
+* US013 — Evidências e Relatórios
 
-## Entregas Realizadas
+### Entregas Planejadas
 
-* ScreenshotHelper
-* Estrutura automática de evidências
-
-## Entregas Futuras
-
+* ExtentReports
 * Relatórios HTML
-* Integração com ExtentReports
+* Registro automático de falhas
+* Captura de screenshots integrada aos relatórios
 
-## Critério de Aceite
+### Critério de Aceite
 
-Cada execução deve gerar evidências rastreáveis.
+Cada execução deve gerar um relatório detalhado contendo evidências dos testes.
 
-## Status
-
-Parcialmente Concluído
+**Status:** 🚧 Em andamento
 
 ---
 
@@ -313,55 +283,56 @@ Parcialmente Concluído
 
 ## Objetivo
 
-Preparar o projeto para publicação final.
+Preparar o framework para publicação.
 
-## Itens do Backlog
+### Itens do Backlog
 
-* US014 — Melhoria do Framework
+* US014 — Refatoração Final
 
-## Entregas Previstas
+### Entregas Planejadas
 
 * Refatoração do código
-* Atualização da documentação
-* Revisão dos testes
-* Atualização do README
 * Revisão dos Page Objects
+* Atualização da documentação
+* Revisão do README
+* Organização final do projeto
 
-## Critério de Aceite
+### Critério de Aceite
 
-Framework documentado, organizado e pronto para utilização.
+Framework documentado, organizado e pronto para publicação.
 
-## Status
-
-Planejado
+**Status:** ⏳ Planejado
 
 ---
 
 # Resumo Geral
 
-| Sprint   | Descrição                | Status                 |
-| -------- | ------------------------ | ---------------------- |
-| Sprint 0 | Estrutura Inicial        | Concluído              |
-| Sprint 1 | Infraestrutura           | Concluído              |
-| Sprint 2 | Login                    | Concluído              |
-| Sprint 3 | Cadastro                 | Concluído              |
-| Sprint 4 | Pesquisa de Produtos     | Planejado              |
-| Sprint 5 | Carrinho                 | Planejado              |
-| Sprint 6 | Checkout                 | Planejado              |
-| Sprint 7 | Data Driven Testing      | Parcialmente Concluído |
-| Sprint 8 | Evidências e Relatórios  | Parcialmente Concluído |
-| Sprint 9 | Refatoração e Publicação | Planejado              |
+| Sprint   | Descrição                | Status          |
+| -------- | ------------------------ | --------------- |
+| Sprint 0 | Estrutura Inicial        | ✅ Concluído     |
+| Sprint 1 | Infraestrutura           | ✅ Concluído     |
+| Sprint 2 | Login                    | ✅ Concluído     |
+| Sprint 3 | Cadastro                 | ✅ Concluído     |
+| Sprint 4 | Produtos                 | ✅ Concluído     |
+| Sprint 5 | Carrinho                 | ✅ Concluído     |
+| Sprint 6 | Checkout                 | ✅ Concluído     |
+| Sprint 7 | Data Driven Testing      | ✅ Concluído     |
+| Sprint 8 | Evidências e Relatórios  | 🚧 Em andamento |
+| Sprint 9 | Refatoração e Publicação | ⏳ Planejado     |
 
 ---
 
 # Progresso do Projeto
 
-Progresso Atual: 40%
+**Progresso Atual:** **≈80%**
 
-Sprint Atual: Sprint 4 — Pesquisa de Produtos
+## Sprint Atual
 
-Próxima Entrega:
+**Sprint 8 — Evidências e Relatórios**
 
-* ProdutoPage.cs
-* ProdutoTests.cs
-* Casos CT010 e CT011
+## Próxima Entrega
+
+* Implementação do ExtentReports
+* Geração de relatórios HTML
+* Integração das evidências aos relatórios
+* Finalização da documentação do framework

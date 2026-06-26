@@ -8,7 +8,7 @@ QA Test Automation Framework
 
 ### Versão
 
-1.2
+1.7
 
 ### Responsável
 
@@ -28,7 +28,7 @@ Junho de 2026
 
 Este documento define a estratégia, o escopo, os critérios e as abordagens utilizadas para validação automatizada de um sistema de e-commerce.
 
-O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicando o padrão Page Object Model (POM), geração automática de evidências e organização em camadas.
+O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicando o padrão Page Object Model (POM), Data Driven Testing, geração automática de evidências e organização em camadas.
 
 ---
 
@@ -38,12 +38,12 @@ O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicand
 
 * Login
 * Cadastro de Usuário
-* Recuperação de Senha
 * Pesquisa de Produtos
-* Adição ao Carrinho
-* Remoção do Carrinho
+* Visualização de Produtos
+* Carrinho de Compras
 * Checkout
 * Logout
+* Data Driven Testing
 
 ## Funcionalidades Fora do Escopo
 
@@ -55,7 +55,7 @@ O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicand
 
 ---
 
-# 4. Objetivos dos Testes
+# 4. Objetivo dos Testes
 
 Garantir que os principais fluxos da aplicação funcionem conforme esperado.
 
@@ -65,8 +65,9 @@ Validar:
 * Fluxos críticos
 * Mensagens de erro
 * Tratamento de exceções
-* Integridade dos processos de compra
+* Integridade do processo de compra
 * Comportamento esperado da aplicação
+* Leitura correta das massas de dados
 
 ---
 
@@ -80,7 +81,8 @@ Validação das funcionalidades conforme os requisitos.
 
 * Login
 * Cadastro
-* Logout
+* Pesquisa de Produtos
+* Carrinho
 * Checkout
 
 ---
@@ -99,7 +101,7 @@ Validação de fluxos esperados.
 
 * Login válido
 * Cadastro válido
-* Criação de conta
+* Compra realizada com sucesso
 
 ---
 
@@ -112,6 +114,19 @@ Validação do tratamento de erros.
 * Senha inválida
 * E-mail já cadastrado
 * Campos obrigatórios vazios
+
+---
+
+## Data Driven Testing
+
+Validação da execução dos testes utilizando massas de dados externas armazenadas em arquivos JSON.
+
+### Exemplos
+
+* Leitura de usuários
+* Leitura de produtos
+* Leitura de carrinho
+* Leitura de checkout
 
 ---
 
@@ -151,7 +166,7 @@ Page Object Model (POM)
 
 ---
 
-# 7. Casos de Teste Implementados e Planejados
+# 7. Casos de Teste Implementados
 
 ## Login
 
@@ -178,30 +193,44 @@ Page Object Model (POM)
 
 ## Produtos
 
-| ID    | Caso de Teste                   | Status    |
-| ----- | ------------------------------- | --------- |
-| CT010 | Pesquisa de produto existente   | Planejado |
-| CT011 | Pesquisa de produto inexistente | Planejado |
+| ID    | Caso de Teste                        | Status       |
+| ----- | ------------------------------------ | ------------ |
+| CT010 | Acesso à área de produtos            | Implementado |
+| CT011 | Pesquisa de produto existente        | Implementado |
+| CT012 | Pesquisa de produto inexistente      | Implementado |
+| CT013 | Visualização dos detalhes do produto | Implementado |
 
 ---
 
 ## Carrinho
 
-| ID    | Caso de Teste                 | Status    |
-| ----- | ----------------------------- | --------- |
-| CT012 | Adicionar produto ao carrinho | Planejado |
-| CT013 | Adicionar múltiplos produtos  | Planejado |
-| CT014 | Remover produto do carrinho   | Planejado |
+| ID    | Caso de Teste                 | Status       |
+| ----- | ----------------------------- | ------------ |
+| CT014 | Adicionar produto ao carrinho | Implementado |
+| CT015 | Adicionar múltiplos produtos  | Implementado |
+| CT016 | Remover produto do carrinho   | Implementado |
 
 ---
 
 ## Checkout
 
-| ID    | Caso de Teste                   | Status    |
-| ----- | ------------------------------- | --------- |
-| CT015 | Finalizar compra com sucesso    | Planejado |
-| CT016 | Checkout sem dados obrigatórios | Planejado |
-| CT017 | Checkout com dados inválidos    | Planejado |
+| ID    | Caso de Teste                                 | Status       |
+| ----- | --------------------------------------------- | ------------ |
+| CT017 | Acesso à tela de checkout                     | Implementado |
+| CT018 | Finalização da compra com sucesso             | Implementado |
+| CT019 | Acesso à tela de pagamento                    | Implementado |
+| CT020 | Finalização utilizando segunda massa de dados | Implementado |
+
+---
+
+## Data Driven Testing
+
+| ID    | Caso de Teste                | Status       |
+| ----- | ---------------------------- | ------------ |
+| CT021 | Leitura da massa de usuários | Implementado |
+| CT022 | Leitura da massa de produtos | Implementado |
+| CT023 | Leitura da massa de carrinho | Implementado |
+| CT024 | Leitura da massa de checkout | Implementado |
 
 ---
 
@@ -236,6 +265,7 @@ Os testes serão considerados concluídos quando:
 | Instabilidade do ambiente                    | Médio   |
 | Massa de dados inconsistente                 | Médio   |
 | Bloqueios causados por anúncios da aplicação | Médio   |
+| Alterações na estrutura HTML                 | Médio   |
 | Falhas de conexão                            | Baixo   |
 
 ---
@@ -250,6 +280,7 @@ Evidence
 └── AAAA-MM-DD_HH-MM-SS
     ├── CT001_LoginValido.png
     ├── CT002_LoginSenhaInvalida.png
+    ├── CT018_FinalizarCompra.png
     └── ...
 ```
 
@@ -285,6 +316,8 @@ Serão acompanhadas:
 * Total de testes reprovados
 * Quantidade de defeitos encontrados
 * Cobertura dos fluxos automatizados
+* Cobertura por módulo
+* Quantidade de massas de dados utilizadas
 
 ---
 
@@ -301,15 +334,21 @@ O plano de testes será considerado aprovado quando:
 
 # Status Atual
 
-Sprint Atual: Sprint 3 — Cadastro de Usuários
+### Sprint Atual
 
-Concluído:
+**Sprint 8 — Evidências e Relatórios**
+
+### Concluído
 
 * Sprint 0 — Estrutura Inicial
 * Sprint 1 — Infraestrutura do Framework
 * Sprint 2 — Login
-* Sprint 3 — Cadastro (implementado)
+* Sprint 3 — Cadastro
+* Sprint 4 — Produtos
+* Sprint 5 — Carrinho
+* Sprint 6 — Checkout
+* Sprint 7 — Data Driven Testing
 
-Próxima Sprint:
+### Próxima Sprint
 
-Sprint 4 — Pesquisa de Produtos
+**Sprint 8 — Evidências e Relatórios**

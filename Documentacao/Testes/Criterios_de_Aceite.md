@@ -14,7 +14,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ### Critérios de Aceite
 
-* A área de autenticação deve ser acessível através do menu principal.
+* A área de autenticação deve estar acessível através do menu principal.
 * A página de login deve ser exibida corretamente.
 * Os campos de autenticação devem estar disponíveis para preenchimento.
 
@@ -38,7 +38,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 * O sistema deve impedir a autenticação.
 * O usuário deve permanecer na tela de login.
 * Deve ser exibida a mensagem:
-  "Your email or password is incorrect!"
+  **"Your email or password is incorrect!"**
 
 ---
 
@@ -57,7 +57,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 ### Critérios de Aceite
 
 * O sistema deve encerrar a sessão do usuário autenticado.
-* O usuário deve retornar à tela de login.
+* O usuário deve retornar à tela inicial.
 * Os recursos autenticados não devem permanecer acessíveis.
 
 ---
@@ -89,7 +89,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 * O sistema deve impedir o cadastro.
 * Deve ser apresentada a mensagem:
-  "Email Address already exist!"
+  **"Email Address already exist!"**
 * Nenhuma nova conta deve ser criada.
 
 ---
@@ -109,18 +109,25 @@ Os critérios de aceite servem como referência para validação das regras de n
 ### Critérios de Aceite
 
 * A conta deve ser criada com sucesso.
-* O sistema deve exibir a mensagem:
-  "Account Created!"
-* O usuário deve conseguir acessar a aplicação após o cadastro.
+* O sistema deve exibir **"Account Created!"**
+* O usuário deve conseguir acessar a aplicação.
 * A conta deve ser removida com sucesso.
-* O sistema deve exibir a mensagem:
-  "Account Deleted!"
+* O sistema deve exibir **"Account Deleted!"**
 
 ---
 
-# Funcionalidade: Pesquisa de Produtos
+# Funcionalidade: Produtos
 
-## CA011 - Pesquisa de Produto Existente
+## CA011 - Acesso à Área de Produtos
+
+### Critérios de Aceite
+
+* A página de produtos deve ser acessada corretamente.
+* A listagem de produtos deve ser exibida.
+
+---
+
+## CA012 - Pesquisa de Produto Existente
 
 ### Critérios de Aceite
 
@@ -130,7 +137,7 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
-## CA012 - Pesquisa de Produto Inexistente
+## CA013 - Pesquisa de Produto Inexistente
 
 ### Critérios de Aceite
 
@@ -139,9 +146,18 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
+## CA014 - Visualização dos Detalhes do Produto
+
+### Critérios de Aceite
+
+* A página de detalhes deve ser aberta corretamente.
+* As informações do produto devem ser exibidas.
+
+---
+
 # Funcionalidade: Carrinho de Compras
 
-## CA013 - Adicionar Produto ao Carrinho
+## CA015 - Adicionar Produto ao Carrinho
 
 ### Critérios de Aceite
 
@@ -151,55 +167,101 @@ Os critérios de aceite servem como referência para validação das regras de n
 
 ---
 
-## CA014 - Adicionar Múltiplos Produtos ao Carrinho
+## CA016 - Adicionar Múltiplos Produtos
 
 ### Critérios de Aceite
 
 * Todos os produtos selecionados devem ser adicionados.
 * O carrinho deve exibir todos os itens corretamente.
-* O valor total deve ser atualizado.
+* A quantidade total deve ser atualizada.
 
 ---
 
-## CA015 - Remover Produto do Carrinho
+## CA017 - Remover Produto do Carrinho
 
 ### Critérios de Aceite
 
-* O item removido não deve mais aparecer no carrinho.
+* O item removido não deve mais aparecer.
+* A quantidade de produtos deve ser atualizada.
 * O valor total deve ser recalculado.
-* A quantidade de itens deve ser atualizada.
 
 ---
 
 # Funcionalidade: Checkout
 
-## CA016 - Finalização da Compra
+## CA018 - Acesso à Tela de Checkout
+
+### Critérios de Aceite
+
+* O usuário deve conseguir iniciar o checkout.
+* As informações de endereço e pedido devem ser exibidas.
+
+---
+
+## CA019 - Finalização da Compra
 
 ### Critérios de Aceite
 
 * O pedido deve ser criado com sucesso.
-* O sistema deve exibir confirmação da compra.
-* O usuário deve receber confirmação do pedido.
+* O sistema deve exibir **"Order Placed!"**
+* A compra deve ser concluída corretamente.
 
 ---
 
-## CA017 - Dados Obrigatórios do Checkout
+## CA020 - Acesso à Tela de Pagamento
 
 ### Critérios de Aceite
 
-* O sistema deve validar todos os campos obrigatórios.
-* A compra não deve ser concluída sem as informações necessárias.
-* Devem ser exibidas mensagens de validação adequadas.
+* Após clicar em **Place Order**, a tela de pagamento deve ser exibida.
+* Os campos do cartão devem estar disponíveis para preenchimento.
 
 ---
 
-## CA018 - Dados Inválidos no Checkout
+## CA021 - Finalização com Segunda Massa de Dados
 
 ### Critérios de Aceite
 
-* O sistema deve identificar informações inválidas.
-* A compra deve ser bloqueada.
-* O usuário deve receber uma mensagem explicando o problema encontrado.
+* O fluxo deve aceitar um segundo conjunto de dados.
+* O pedido deve ser concluído com sucesso.
+* O sistema deve exibir **"Order Placed!"**
+
+---
+
+# Funcionalidade: Data Driven Testing
+
+## CA022 - Leitura da Massa de Usuários
+
+### Critérios de Aceite
+
+* O arquivo **Users.json** deve ser carregado corretamente.
+* Os dados devem ser desserializados sem erros.
+
+---
+
+## CA023 - Leitura da Massa de Produtos
+
+### Critérios de Aceite
+
+* O arquivo **Products.json** deve ser carregado corretamente.
+* Todos os produtos devem estar disponíveis para utilização.
+
+---
+
+## CA024 - Leitura da Massa de Carrinho
+
+### Critérios de Aceite
+
+* O arquivo **CartItems.json** deve ser carregado corretamente.
+* Os produtos do carrinho devem ser recuperados sem inconsistências.
+
+---
+
+## CA025 - Leitura da Massa de Checkout
+
+### Critérios de Aceite
+
+* O arquivo **CheckoutData.json** deve ser carregado corretamente.
+* Os dados de pagamento devem estar disponíveis para os testes automatizados.
 
 ---
 
@@ -209,7 +271,7 @@ Uma funcionalidade será considerada aprovada quando:
 
 * Todos os critérios de aceite forem atendidos.
 * Nenhum erro crítico for identificado.
-* Os resultados obtidos estiverem de acordo com os requisitos definidos.
+* Os resultados estiverem de acordo com os requisitos definidos.
 * As evidências forem registradas corretamente.
 * Os testes automatizados forem executados com sucesso.
 
@@ -221,7 +283,7 @@ Uma funcionalidade será considerada reprovada quando:
 
 * Algum critério de aceite não for atendido.
 * O comportamento observado divergir do esperado.
-* Existirem erros que impeçam a execução do fluxo principal.
+* Existirem erros que impeçam o fluxo principal.
 * As regras de negócio não forem respeitadas.
 * O teste automatizado apresentar falha.
 
@@ -229,6 +291,17 @@ Uma funcionalidade será considerada reprovada quando:
 
 # Status
 
-Critérios de aceite das funcionalidades de Login e Cadastro implementados e validados.
+**Documento atualizado até a Sprint 7 — Data Driven Testing.**
 
-Próxima atualização prevista: Sprint 4 — Pesquisa de Produtos.
+### Funcionalidades contempladas
+
+* Login
+* Cadastro
+* Produtos
+* Carrinho
+* Checkout
+* Data Driven Testing
+
+### Próxima atualização prevista
+
+**Sprint 8 — Evidências e Relatórios**
