@@ -1,5 +1,4 @@
 using QA_automation_selenium_xunit.Models;
-using QA_automation_selenium_xunit.Pages;
 using QA_automation_selenium_xunit.Utils;
 using Xunit;
 
@@ -12,81 +11,116 @@ namespace QA_automation_selenium_xunit.Tests
     [Collection("Sequential Tests")]
     public class DataDrivenTests : BaseTest
     {
-        /// <summary>
-        /// Valida a leitura da massa de usuários.
-        /// </summary>
         [Fact]
         public void CT021_DeveLerMassaDeUsuarios()
         {
-            Console.WriteLine(
-                "Executando CT021 - Deve ler massa de usuários"
-            );
+            ReportHelper.CreateTest("CT021 - Deve ler massa de usuários");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            List<UserData> users =
-                TestDataReader.GetDataList<UserData>("Users.json");
+            try
+            {
+                Console.WriteLine("Executando CT021 - Deve ler massa de usuários");
 
-            Assert.NotEmpty(users);
-            Assert.Contains(users, user => user.Key == "validUser");
+                List<UserData> users =
+                    TestDataReader.GetDataList<UserData>("Users.json");
+
+                Assert.NotEmpty(users);
+                Assert.Contains(users, user => user.Key == "validUser");
+
+                ReportHelper.LogPass("Massa de usuários carregada com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                throw;
+            }
         }
 
-        /// <summary>
-        /// Valida a leitura da massa de produtos.
-        /// </summary>
         [Fact]
         public void CT022_DeveLerMassaDeProdutos()
         {
-            Console.WriteLine(
-                "Executando CT022 - Deve ler massa de produtos"
-            );
+            ReportHelper.CreateTest("CT022 - Deve ler massa de produtos");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            List<ProductData> products =
-                TestDataReader.GetDataList<ProductData>("Products.json");
+            try
+            {
+                Console.WriteLine("Executando CT022 - Deve ler massa de produtos");
 
-            Assert.NotEmpty(products);
-            Assert.Contains(
-                products,
-                product => !string.IsNullOrWhiteSpace(product.ExistingProduct)
-            );
+                List<ProductData> products =
+                    TestDataReader.GetDataList<ProductData>("Products.json");
+
+                Assert.NotEmpty(products);
+
+                Assert.Contains(
+                    products,
+                    product => !string.IsNullOrWhiteSpace(product.ExistingProduct)
+                );
+
+                ReportHelper.LogPass("Massa de produtos carregada com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                throw;
+            }
         }
 
-        /// <summary>
-        /// Valida a leitura da massa de carrinho.
-        /// </summary>
         [Fact]
         public void CT023_DeveLerMassaDeCarrinho()
         {
-            Console.WriteLine(
-                "Executando CT023 - Deve ler massa de carrinho"
-            );
+            ReportHelper.CreateTest("CT023 - Deve ler massa de carrinho");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            List<CartData> cartItems =
-                TestDataReader.GetDataList<CartData>("CartItems.json");
+            try
+            {
+                Console.WriteLine("Executando CT023 - Deve ler massa de carrinho");
 
-            Assert.NotEmpty(cartItems);
-            Assert.Contains(
-                cartItems,
-                item => !string.IsNullOrWhiteSpace(item.ProductName)
-            );
+                List<CartData> cartItems =
+                    TestDataReader.GetDataList<CartData>("CartItems.json");
+
+                Assert.NotEmpty(cartItems);
+
+                Assert.Contains(
+                    cartItems,
+                    item => !string.IsNullOrWhiteSpace(item.ProductName)
+                );
+
+                ReportHelper.LogPass("Massa de carrinho carregada com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                throw;
+            }
         }
 
-        /// <summary>
-        /// Valida a leitura da massa de checkout.
-        /// </summary>
         [Fact]
         public void CT024_DeveLerMassaDeCheckout()
         {
-            Console.WriteLine(
-                "Executando CT024 - Deve ler massa de checkout"
-            );
+            ReportHelper.CreateTest("CT024 - Deve ler massa de checkout");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            List<CheckoutData> checkoutData =
-                TestDataReader.GetDataList<CheckoutData>("CheckoutData.json");
+            try
+            {
+                Console.WriteLine("Executando CT024 - Deve ler massa de checkout");
 
-            Assert.NotEmpty(checkoutData);
-            Assert.Contains(
-                checkoutData,
-                data => !string.IsNullOrWhiteSpace(data.CardNumber)
-            );
+                List<CheckoutData> checkoutData =
+                    TestDataReader.GetDataList<CheckoutData>("CheckoutData.json");
+
+                Assert.NotEmpty(checkoutData);
+
+                Assert.Contains(
+                    checkoutData,
+                    data => !string.IsNullOrWhiteSpace(data.CardNumber)
+                );
+
+                ReportHelper.LogPass("Massa de checkout carregada com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                throw;
+            }
         }
     }
 }

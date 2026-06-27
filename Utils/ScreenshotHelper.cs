@@ -9,19 +9,28 @@ namespace QA_automation_selenium_xunit.Utils
     public static class ScreenshotHelper
     {
         /// <summary>
-        /// Nome da pasta utilizada para armazenar as evidências
-        /// da execução atual.
+        /// Nome da pasta utilizada para armazenar todas as evidências
+        /// da execução atual dos testes.
         /// </summary>
         private static readonly string ExecutionFolder =
             DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
 
         /// <summary>
-        /// Captura uma screenshot da página atual e salva na pasta
-        /// de evidências da execução.
+        /// Captura uma screenshot da página atual, salva a evidência
+        /// no diretório do projeto e retorna o caminho completo da imagem.
+        /// O caminho retornado pode ser utilizado em relatórios HTML,
+        /// como o ExtentReports.
         /// </summary>
-        /// <param name="driver">Instância do WebDriver.</param>
-        /// <param name="testName">Nome do teste que gerou a evidência.</param>
-        public static void TakeScreenshot(
+        /// <param name="driver">
+        /// Instância do WebDriver responsável pela execução do teste.
+        /// </param>
+        /// <param name="testName">
+        /// Nome do teste utilizado como nome da captura.
+        /// </param>
+        /// <returns>
+        /// Caminho completo da imagem salva.
+        /// </returns>
+        public static string TakeScreenshot(
             IWebDriver driver,
             string testName)
         {
@@ -33,34 +42,35 @@ namespace QA_automation_selenium_xunit.Utils
                 .Parent!
                 .FullName;
 
-            // Cria o caminho da pasta onde as evidências serão armazenadas.
-            string folderPath = Path.Combine(
+            // Define o diretório onde as evidências serão armazenadas.
+            string evidenceDirectory = Path.Combine(
                 projectPath,
                 "Evidence",
                 ExecutionFolder
             );
 
-            // Cria a pasta caso ela não exista.
-            Directory.CreateDirectory(folderPath);
+            // Cria o diretório caso ainda não exista.
+            Directory.CreateDirectory(evidenceDirectory);
 
-            // Define o nome do arquivo da evidência.
-            string fileName = $"{testName}.png";
-
-            string filePath = Path.Combine(
-                folderPath,
-                fileName
+            // Define o caminho completo do arquivo.
+            string screenshotPath = Path.Combine(
+                evidenceDirectory,
+                $"{testName}.png"
             );
 
-            // Captura a imagem da tela atual.
+            // Captura a tela atual.
             Screenshot screenshot =
                 ((ITakesScreenshot)driver).GetScreenshot();
 
-            // Salva a evidência no diretório definido.
-            screenshot.SaveAsFile(filePath);
+            // Salva a imagem.
+            screenshot.SaveAsFile(screenshotPath);
 
             Console.WriteLine(
-                $"Screenshot salvo em: {filePath}"
+                $"Screenshot salvo em: {screenshotPath}"
             );
+
+            // Retorna o caminho para utilização em relatórios.
+            return screenshotPath;
         }
     }
 }

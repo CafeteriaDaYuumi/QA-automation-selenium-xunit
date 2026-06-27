@@ -6,7 +6,7 @@ Framework de automação de testes web desenvolvido com Selenium WebDriver, xUni
 
 Desenvolver um framework de automação capaz de validar os principais fluxos de um sistema de e-commerce, simulando um ambiente real de trabalho na área de Qualidade de Software (QA).
 
-O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências, massa de dados, Data Driven Testing e organização dos artefatos de teste.
+O projeto contempla desde o planejamento dos testes até a implementação dos cenários automatizados, incluindo documentação, evidências, relatórios, massa de dados, Data Driven Testing e organização dos artefatos de teste.
 
 ---
 
@@ -67,6 +67,15 @@ O projeto contempla desde o planejamento dos testes até a implementação dos c
 * Leitura automática de carrinho
 * Leitura automática de checkout
 
+## Evidências e Relatórios
+
+* Captura automática de screenshots
+* Organização das evidências por execução
+* Geração de relatórios HTML com ExtentReports
+* Registro de logs de execução
+* Registro de status dos testes
+* Anexação de evidências aos relatórios
+
 ---
 
 # Estrutura do Projeto
@@ -111,6 +120,7 @@ QA-automation-selenium-xunit
 
 * Captura automática de evidências
 * Organização por data e horário
+* Retorno do caminho da imagem gerada para integração com relatórios
 
 ## TestDataReader
 
@@ -118,10 +128,20 @@ QA-automation-selenium-xunit
 * Suporte a Data Driven Testing
 * Desserialização automática da massa de dados
 
+## ReportHelper
+
+* Configuração do ExtentReports
+* Geração de relatórios HTML
+* Registro de logs de execução
+* Registro de sucesso e falha dos testes
+* Anexação de screenshots ao relatório
+* Informações do ambiente de execução
+
 ## BaseTest
 
 * Inicialização automática do navegador
 * Encerramento automático da sessão
+* Finalização automática do relatório
 * Reutilização da infraestrutura entre os testes
 
 ---
@@ -177,6 +197,42 @@ QA-automation-selenium-xunit
 
 ---
 
+# Relatórios
+
+O framework gera automaticamente relatórios HTML utilizando ExtentReports.
+
+Os relatórios incluem:
+
+* Nome dos testes executados
+* Status da execução
+* Logs informativos
+* Evidências anexadas
+* Tempo de execução
+* Informações do ambiente
+
+Os arquivos são gerados na estrutura:
+
+```text
+Reports
+└── TestReport_AAAA-MM-DD_HH-mm-ss.html
+```
+
+---
+
+# Evidências
+
+As evidências são capturadas automaticamente durante a execução dos testes e armazenadas na estrutura:
+
+```text
+Evidence
+└── AAAA-MM-DD_HH-mm-ss
+    ├── CT001_LoginValido.png
+    ├── CT010_AcessarAreaDeProdutos.png
+    └── ...
+```
+
+---
+
 # Documentação
 
 ## Planejamento
@@ -203,18 +259,18 @@ QA-automation-selenium-xunit
 
 # Roadmap
 
-| Sprint | Descrição | Status |
-|--------|-----------|---------|
-| Sprint 0 | Estrutura Inicial |  Concluído |
+| Sprint   | Descrição                   | Status    |
+| -------- | --------------------------- | --------- |
+| Sprint 0 | Estrutura Inicial           | Concluído |
 | Sprint 1 | Infraestrutura do Framework | Concluído |
-| Sprint 2 | Login | Concluído |
-| Sprint 3 | Cadastro |  Concluído |
-| Sprint 4 | Produtos | Concluído |
-| Sprint 5 | Carrinho |  Concluído |
-| Sprint 6 | Checkout |  Concluído |
-| Sprint 7 | Data Driven Testing |  Concluído |
-| Sprint 8 | Evidências e Relatórios | Em andamento |
-| Sprint 9 | Refatoração e Publicação |  Planejado |
+| Sprint 2 | Login                       | Concluído |
+| Sprint 3 | Cadastro                    | Concluído |
+| Sprint 4 | Produtos                    | Concluído |
+| Sprint 5 | Carrinho                    | Concluído |
+| Sprint 6 | Checkout                    | Concluído |
+| Sprint 7 | Data Driven Testing         | Concluído |
+| Sprint 8 | Evidências e Relatórios     | Concluído |
+| Sprint 9 | Refatoração e Publicação    | Planejado |
 
 ---
 
@@ -222,7 +278,7 @@ QA-automation-selenium-xunit
 
 ### Sprint Atual
 
-**Sprint 8 — Evidências e Relatórios**
+**Sprint 9 — Refatoração e Publicação**
 
 ### Concluído
 
@@ -231,6 +287,7 @@ QA-automation-selenium-xunit
 * ConfigReader
 * ScreenshotHelper
 * TestDataReader
+* ReportHelper
 * BaseTest
 * LoginPage
 * CadastroPage
@@ -243,6 +300,7 @@ QA-automation-selenium-xunit
 * CartTests
 * CheckoutTests
 * DataDrivenTests
+* InfrastructureTests
 * UserData
 * ProductData
 * CartData
@@ -253,9 +311,11 @@ QA-automation-selenium-xunit
 * CartItems.json
 * CheckoutData.json
 * CT001 ao CT024
+* Relatórios com ExtentReports
+* Evidências automatizadas
 * Planejamento dos Testes
 * Documentação Inicial
 
 ### Próxima Entrega
 
-Implementação da geração de relatórios automatizados, consolidação das evidências de execução e integração com ExtentReports para apresentação dos resultados dos testes.
+Refatoração final do framework, revisão dos Page Objects, melhoria das esperas com WaitHelper, remoção de esperas fixas, organização final do código e preparação do projeto para publicação.

@@ -1,4 +1,4 @@
- using QA_automation_selenium_xunit.Pages;
+using QA_automation_selenium_xunit.Pages;
 using QA_automation_selenium_xunit.Utils;
 using Xunit;
 
@@ -17,24 +17,47 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT014_DeveAdicionarProdutoAoCarrinho()
         {
-            Console.WriteLine(
-                "Executando CT014 - Deve adicionar produto ao carrinho"
-            );
+            ReportHelper.CreateTest("CT014 - Deve adicionar produto ao carrinho");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT014 - Deve adicionar produto ao carrinho"
+                );
 
-            CartPage cartPage = new CartPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            cartPage.OpenProductsPage();
-            cartPage.AddFirstProductToCart();
-            cartPage.ViewCart();
+                CartPage cartPage = new CartPage(Driver);
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT014_AdicionarProdutoAoCarrinho"
-            );
+                cartPage.OpenProductsPage();
+                cartPage.AddFirstProductToCart();
+                cartPage.ViewCart();
 
-            Assert.True(cartPage.HasProductsInCart());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT014_AdicionarProdutoAoCarrinho"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(cartPage.HasProductsInCart());
+
+                ReportHelper.LogPass("Produto adicionado ao carrinho com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT014_AdicionarProdutoAoCarrinho_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -43,28 +66,51 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT015_DeveAdicionarMultiplosProdutosAoCarrinho()
         {
-            Console.WriteLine(
-                "Executando CT015 - Deve adicionar múltiplos produtos ao carrinho"
-            );
+            ReportHelper.CreateTest("CT015 - Deve adicionar múltiplos produtos ao carrinho");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT015 - Deve adicionar múltiplos produtos ao carrinho"
+                );
 
-            CartPage cartPage = new CartPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            cartPage.AddProductById("1");
-            cartPage.AddProductById("2");
+                CartPage cartPage = new CartPage(Driver);
 
-            cartPage.OpenCartPage();
+                cartPage.AddProductById("1");
+                cartPage.AddProductById("2");
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT015_AdicionarMultiplosProdutosAoCarrinho"
-            );
+                cartPage.OpenCartPage();
 
-            Assert.Equal(
-                2,
-                cartPage.GetCartItemsCount()
-            );
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT015_AdicionarMultiplosProdutosAoCarrinho"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.Equal(
+                    2,
+                    cartPage.GetCartItemsCount()
+                );
+
+                ReportHelper.LogPass("Múltiplos produtos adicionados ao carrinho com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT015_AdicionarMultiplosProdutosAoCarrinho_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -73,29 +119,52 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT016_DeveRemoverProdutoDoCarrinho()
         {
-            Console.WriteLine(
-                "Executando CT016 - Deve remover produto do carrinho"
-            );
+            ReportHelper.CreateTest("CT016 - Deve remover produto do carrinho");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT016 - Deve remover produto do carrinho"
+                );
 
-            CartPage cartPage = new CartPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            cartPage.AddProductById("1");
-            cartPage.OpenCartPage();
+                CartPage cartPage = new CartPage(Driver);
 
-            Assert.True(cartPage.HasProductsInCart());
+                cartPage.AddProductById("1");
+                cartPage.OpenCartPage();
 
-            cartPage.RemoveFirstProductFromCart();
+                Assert.True(cartPage.HasProductsInCart());
 
-            Thread.Sleep(2000);
+                cartPage.RemoveFirstProductFromCart();
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT016_RemoverProdutoDoCarrinho"
-            );
+                Thread.Sleep(2000);
 
-            Assert.True(cartPage.IsCartEmpty());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT016_RemoverProdutoDoCarrinho"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(cartPage.IsCartEmpty());
+
+                ReportHelper.LogPass("Produto removido do carrinho com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT016_RemoverProdutoDoCarrinho_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
     }
 }

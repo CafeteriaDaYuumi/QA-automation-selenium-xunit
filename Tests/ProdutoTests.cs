@@ -17,22 +17,49 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT010_DeveAcessarAreaDeProdutos()
         {
-            Console.WriteLine(
-                "Executando CT010 - Deve acessar área de produtos"
-            );
+            ReportHelper.CreateTest("CT010 - Deve acessar área de produtos");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT010 - Deve acessar área de produtos"
+                );
 
-            ProductPage productPage = new ProductPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            productPage.OpenProductsPage();
+                ProductPage productPage = new ProductPage(Driver);
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT010_AcessarAreaDeProdutos"
-            );
+                productPage.OpenProductsPage();
 
-            Assert.True(productPage.IsProductsPageDisplayed());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT010_AcessarAreaDeProdutos"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(productPage.IsProductsPageDisplayed());
+
+                ReportHelper.LogPass(
+                    "Área de produtos acessada com sucesso."
+                );
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT010_AcessarAreaDeProdutos_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -42,25 +69,52 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT011_DevePesquisarProdutoExistente()
         {
-            Console.WriteLine(
-                "Executando CT011 - Deve pesquisar produto existente"
-            );
+            ReportHelper.CreateTest("CT011 - Deve pesquisar produto existente");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT011 - Deve pesquisar produto existente"
+                );
 
-            ProductPage productPage = new ProductPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            productPage.OpenProductsPage();
+                ProductPage productPage = new ProductPage(Driver);
 
-            productPage.SearchProduct("Blue Top");
+                productPage.OpenProductsPage();
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT011_PesquisarProdutoExistente"
-            );
+                productPage.SearchProduct("Blue Top");
 
-            Assert.True(productPage.IsSearchedProductsDisplayed());
-            Assert.True(productPage.HasProductsDisplayed());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT011_PesquisarProdutoExistente"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(productPage.IsSearchedProductsDisplayed());
+                Assert.True(productPage.HasProductsDisplayed());
+
+                ReportHelper.LogPass(
+                    "Pesquisa de produto existente realizada com sucesso."
+                );
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT011_PesquisarProdutoExistente_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -70,25 +124,52 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT012_DevePesquisarProdutoInexistente()
         {
-            Console.WriteLine(
-                "Executando CT012 - Deve pesquisar produto inexistente"
-            );
+            ReportHelper.CreateTest("CT012 - Deve pesquisar produto inexistente");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT012 - Deve pesquisar produto inexistente"
+                );
 
-            ProductPage productPage = new ProductPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            productPage.OpenProductsPage();
+                ProductPage productPage = new ProductPage(Driver);
 
-            productPage.SearchProduct("Produto Inexistente XYZ");
+                productPage.OpenProductsPage();
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT012_PesquisarProdutoInexistente"
-            );
+                productPage.SearchProduct("Produto Inexistente XYZ");
 
-            Assert.True(productPage.IsSearchedProductsDisplayed());
-            Assert.False(productPage.HasProductsDisplayed());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT012_PesquisarProdutoInexistente"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(productPage.IsSearchedProductsDisplayed());
+                Assert.False(productPage.HasProductsDisplayed());
+
+                ReportHelper.LogPass(
+                    "Pesquisa de produto inexistente validada com sucesso."
+                );
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT012_PesquisarProdutoInexistente_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -98,24 +179,51 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT013_DeveVisualizarDetalhesDoProduto()
         {
-            Console.WriteLine(
-                "Executando CT013 - Deve visualizar detalhes do produto"
-            );
+            ReportHelper.CreateTest("CT013 - Deve visualizar detalhes do produto");
+            ReportHelper.LogInfo("Iniciando execução do teste.");
 
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            try
+            {
+                Console.WriteLine(
+                    "Executando CT013 - Deve visualizar detalhes do produto"
+                );
 
-            ProductPage productPage = new ProductPage(Driver);
+                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
 
-            productPage.OpenProductsPage();
+                ProductPage productPage = new ProductPage(Driver);
 
-            productPage.OpenFirstProductDetails();
+                productPage.OpenProductsPage();
 
-            ScreenshotHelper.TakeScreenshot(
-                Driver,
-                "CT013_VisualizarDetalhesDoProduto"
-            );
+                productPage.OpenFirstProductDetails();
 
-            Assert.True(productPage.IsProductDetailsDisplayed());
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT013_VisualizarDetalhesDoProduto"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                Assert.True(productPage.IsProductDetailsDisplayed());
+
+                ReportHelper.LogPass(
+                    "Detalhes do produto exibidos com sucesso."
+                );
+            }
+            catch (Exception ex)
+            {
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
+                string screenshot = ScreenshotHelper.TakeScreenshot(
+                    Driver,
+                    "CT013_VisualizarDetalhesDoProduto_Falha"
+                );
+
+                ReportHelper.AttachScreenshot(screenshot);
+
+                throw;
+            }
         }
     }
 }

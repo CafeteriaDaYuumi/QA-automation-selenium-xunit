@@ -15,7 +15,6 @@ Este documento reúne todas as funcionalidades, histórias de usuário, tarefas 
 Como QA Automation,
 Quero criar a estrutura inicial do projeto,
 Para organizar os componentes do framework de automação.
-Para organizar os componentes do framework.
 
 ### Tarefas
 
