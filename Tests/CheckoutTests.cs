@@ -4,19 +4,25 @@ using Xunit;
 
 namespace QA_automation_selenium_xunit.Tests
 {
-    /// <summary>
-    /// Testes responsáveis por validar
-    /// o fluxo de checkout da aplicação.
-    /// </summary>
+    // Testes responsáveis por validar
+    // o fluxo de checkout da aplicação.
     [Collection("Sequential Tests")]
     public class CheckoutTests : BaseTest
     {
-        private void Login()
+        // Realiza a autenticação do usuário
+        // utilizado nos cenários de checkout.
+        private void LoginUser()
         {
-            Driver.Manage().Cookies.DeleteAllCookies();
-            Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
+            Driver.Manage()
+                .Cookies
+                .DeleteAllCookies();
 
-            LoginPage loginPage = new LoginPage(Driver);
+            Driver.Navigate().GoToUrl(
+                ConfigReader.GetBaseUrl()
+            );
+
+            LoginPage loginPage =
+                new LoginPage(Driver);
 
             loginPage.OpenLoginPage();
 
@@ -27,51 +33,76 @@ namespace QA_automation_selenium_xunit.Tests
 
             Thread.Sleep(2000);
 
-            Assert.True(loginPage.IsUserLoggedIn());
+            Assert.True(
+                loginPage.IsUserLoggedIn()
+            );
         }
 
         [Fact]
         public void CT017_DeveAcessarTelaDeCheckout()
         {
-            ReportHelper.CreateTest("CT017 - Deve acessar tela de checkout");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT017 - Deve acessar tela de checkout"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT017 - Deve acessar tela de checkout");
+                Console.WriteLine(
+                    "Executando CT017 - Deve acessar tela de checkout"
+                );
 
-                Login();
+                LoginUser();
 
-                CheckoutPage checkoutPage = new CheckoutPage(Driver);
+                CheckoutPage checkoutPage =
+                    new CheckoutPage(Driver);
 
                 checkoutPage.AddProductById("1");
+
                 checkoutPage.OpenCartPage();
 
-                Assert.True(checkoutPage.HasProductsInCart());
+                Assert.True(
+                    checkoutPage.HasProductsInCart()
+                );
 
                 checkoutPage.ProceedToCheckout();
 
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT017_AcessarTelaDeCheckout"
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT017_AcessarTelaDeCheckout"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                Assert.True(
+                    checkoutPage.IsCheckoutPageDisplayed()
+                );
 
-                Assert.True(checkoutPage.IsCheckoutPageDisplayed());
-
-                ReportHelper.LogPass("Tela de checkout acessada com sucesso.");
+                ReportHelper.LogPass(
+                    "Tela de checkout acessada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
-
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT017_AcessarTelaDeCheckout_Falha"
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT017_AcessarTelaDeCheckout_Falha"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
 
                 throw;
             }
@@ -80,25 +111,38 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT018_DeveFinalizarCompraComSucesso()
         {
-            ReportHelper.CreateTest("CT018 - Deve finalizar compra com sucesso");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT018 - Deve finalizar compra com sucesso"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT018 - Deve finalizar compra com sucesso");
+                Console.WriteLine(
+                    "Executando CT018 - Deve finalizar compra com sucesso"
+                );
 
-                Login();
+                LoginUser();
 
-                CheckoutPage checkoutPage = new CheckoutPage(Driver);
+                CheckoutPage checkoutPage =
+                    new CheckoutPage(Driver);
 
                 checkoutPage.AddProductById("1");
+
                 checkoutPage.OpenCartPage();
 
-                Assert.True(checkoutPage.HasProductsInCart());
+                Assert.True(
+                    checkoutPage.HasProductsInCart()
+                );
 
                 checkoutPage.ProceedToCheckout();
 
-                Assert.True(checkoutPage.IsCheckoutPageDisplayed());
+                Assert.True(
+                    checkoutPage.IsCheckoutPageDisplayed()
+                );
 
                 checkoutPage.EnterOrderComment(
                     "Pedido automatizado para validação do fluxo de checkout."
@@ -116,27 +160,39 @@ namespace QA_automation_selenium_xunit.Tests
 
                 checkoutPage.ClickPayAndConfirmOrder();
 
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT018_FinalizarCompraComSucesso"
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT018_FinalizarCompraComSucesso"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                Assert.True(
+                    checkoutPage.IsOrderPlaced()
+                );
 
-                Assert.True(checkoutPage.IsOrderPlaced());
-
-                ReportHelper.LogPass("Compra finalizada com sucesso.");
+                ReportHelper.LogPass(
+                    "Compra finalizada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
-
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT018_FinalizarCompraComSucesso_Falha"
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT018_FinalizarCompraComSucesso_Falha"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
 
                 throw;
             }
@@ -145,25 +201,38 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT019_DeveAcessarTelaDePagamento()
         {
-            ReportHelper.CreateTest("CT019 - Deve acessar tela de pagamento");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT019 - Deve acessar tela de pagamento"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT019 - Deve acessar tela de pagamento");
+                Console.WriteLine(
+                    "Executando CT019 - Deve acessar tela de pagamento"
+                );
 
-                Login();
+                LoginUser();
 
-                CheckoutPage checkoutPage = new CheckoutPage(Driver);
+                CheckoutPage checkoutPage =
+                    new CheckoutPage(Driver);
 
                 checkoutPage.AddProductById("1");
+
                 checkoutPage.OpenCartPage();
 
-                Assert.True(checkoutPage.HasProductsInCart());
+                Assert.True(
+                    checkoutPage.HasProductsInCart()
+                );
 
                 checkoutPage.ProceedToCheckout();
 
-                Assert.True(checkoutPage.IsCheckoutPageDisplayed());
+                Assert.True(
+                    checkoutPage.IsCheckoutPageDisplayed()
+                );
 
                 checkoutPage.EnterOrderComment(
                     "Validação da navegação para a tela de pagamento."
@@ -171,27 +240,39 @@ namespace QA_automation_selenium_xunit.Tests
 
                 checkoutPage.ClickPlaceOrder();
 
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT019_AcessarTelaDePagamento"
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT019_AcessarTelaDePagamento"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                Assert.True(
+                    checkoutPage.IsPaymentPageDisplayed()
+                );
 
-                Assert.True(checkoutPage.IsPaymentPageDisplayed());
-
-                ReportHelper.LogPass("Tela de pagamento acessada com sucesso.");
+                ReportHelper.LogPass(
+                    "Tela de pagamento acessada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
-
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT019_AcessarTelaDePagamento_Falha"
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT019_AcessarTelaDePagamento_Falha"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
 
                 throw;
             }
@@ -200,8 +281,13 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT020_DeveFinalizarCompraComSegundaMassaDeDados()
         {
-            ReportHelper.CreateTest("CT020 - Deve finalizar compra com segunda massa de dados");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT020 - Deve finalizar compra com segunda massa de dados"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
@@ -209,18 +295,24 @@ namespace QA_automation_selenium_xunit.Tests
                     "Executando CT020 - Deve finalizar compra com segunda massa de dados"
                 );
 
-                Login();
+                LoginUser();
 
-                CheckoutPage checkoutPage = new CheckoutPage(Driver);
+                CheckoutPage checkoutPage =
+                    new CheckoutPage(Driver);
 
                 checkoutPage.AddProductById("2");
+
                 checkoutPage.OpenCartPage();
 
-                Assert.True(checkoutPage.HasProductsInCart());
+                Assert.True(
+                    checkoutPage.HasProductsInCart()
+                );
 
                 checkoutPage.ProceedToCheckout();
 
-                Assert.True(checkoutPage.IsCheckoutPageDisplayed());
+                Assert.True(
+                    checkoutPage.IsCheckoutPageDisplayed()
+                );
 
                 checkoutPage.EnterOrderComment(
                     "Pedido automatizado utilizando segunda massa de dados."
@@ -238,14 +330,19 @@ namespace QA_automation_selenium_xunit.Tests
 
                 checkoutPage.ClickPayAndConfirmOrder();
 
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT020_FinalizarCompraSegundaMassa"
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT020_FinalizarCompraSegundaMassa"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
-
-                Assert.True(checkoutPage.IsOrderPlaced());
+                Assert.True(
+                    checkoutPage.IsOrderPlaced()
+                );
 
                 ReportHelper.LogPass(
                     "Compra finalizada com sucesso utilizando segunda massa de dados."
@@ -253,14 +350,19 @@ namespace QA_automation_selenium_xunit.Tests
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
-
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "CT020_FinalizarCompraSegundaMassa_Falha"
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "CT020_FinalizarCompraSegundaMassa_Falha"
+                    );
+
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
 
                 throw;
             }

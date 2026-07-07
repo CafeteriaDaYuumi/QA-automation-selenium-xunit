@@ -3,22 +3,21 @@ using Xunit;
 
 namespace QA_automation_selenium_xunit.Tests
 {
-    /// <summary>
-    /// Testes responsáveis por validar a infraestrutura básica
-    /// do framework de automação.
-    /// </summary>
+    // Testes responsáveis por validar a infraestrutura básica
+    // do framework de automação.
     [Collection("Sequential Tests")]
     public class InfrastructureTests : BaseTest
     {
-        /// <summary>
-        /// Valida se o navegador pode ser iniciado,
-        /// acessar a aplicação e gerar evidências da execução.
-        /// </summary>
         [Fact]
-        public void DeveAbrirNavegadorEAcessarSite()
+        public void INFRA001_DeveAbrirNavegadorEAcessarSite()
         {
-            ReportHelper.CreateTest("INFRA001 - Deve abrir navegador e acessar o site");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "INFRA001 - Deve abrir navegador e acessar o site"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
@@ -27,17 +26,22 @@ namespace QA_automation_selenium_xunit.Tests
                 );
 
                 // Acessa a URL base configurada.
-                Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
-
-                // Gera evidência da execução.
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "DeveAbrirNavegadorEAcessarSite"
+                Driver.Navigate().GoToUrl(
+                    ConfigReader.GetBaseUrl()
                 );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                // Gera evidência da execução.
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "INFRA001_AbrirNavegadorEAcessarSite"
+                    );
 
-                // Valida carregamento da aplicação.
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
+
+                // Valida o carregamento da aplicação.
                 Assert.Contains(
                     "Automation Exercise",
                     Driver.Title
@@ -53,12 +57,15 @@ namespace QA_automation_selenium_xunit.Tests
                     $"Falha durante a execução: {ex.Message}"
                 );
 
-                string screenshot = ScreenshotHelper.TakeScreenshot(
-                    Driver,
-                    "DeveAbrirNavegadorEAcessarSite_Falha"
-                );
+                string screenshot =
+                    ScreenshotHelper.TakeScreenshot(
+                        Driver,
+                        "INFRA001_AbrirNavegadorEAcessarSite_Falha"
+                    );
 
-                ReportHelper.AttachScreenshot(screenshot);
+                ReportHelper.AttachScreenshot(
+                    screenshot
+                );
 
                 throw;
             }

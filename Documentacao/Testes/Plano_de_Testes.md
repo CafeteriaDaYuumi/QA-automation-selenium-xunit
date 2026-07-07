@@ -1,354 +1,138 @@
-# Plano de Testes
+# Status Geral
 
-## 1. Informações Gerais
+**Sprint 9 — Refatoração e Publicação em andamento.**
 
-### Projeto
+O framework encontra-se em sua etapa final de desenvolvimento, após a conclusão das funcionalidades planejadas, da estrutura de automação, da integração com massas de dados externas e da implementação de evidências e relatórios.
 
-QA Test Automation Framework
+Atualmente, o projeto contempla:
 
-### Versão
-
-1.7
-
-### Responsável
-
-Victor Hugo
-
-### Data de Criação
-
-Junho de 2026
-
-### Última Atualização
-
-Junho de 2026
-
----
-
-# 2. Objetivo
-
-Este documento define a estratégia, o escopo, os critérios e as abordagens utilizadas para validação automatizada de um sistema de e-commerce.
-
-O framework foi desenvolvido utilizando Selenium WebDriver, xUnit e C#, aplicando o padrão Page Object Model (POM), Data Driven Testing, geração automática de evidências e organização em camadas.
+* Automação dos principais fluxos funcionais da aplicação.
+* Organização baseada em Page Object Model (POM).
+* Testes automatizados com Selenium WebDriver e xUnit.
+* Separação entre páginas, testes, modelos, utilitários e dados de teste.
+* Massa de dados externa armazenada em arquivos JSON.
+* Implementação de Data Driven Testing.
+* Captura automática de screenshots.
+* Organização de evidências por execução.
+* Integração com ExtentReports.
+* Geração de relatórios HTML.
+* Registro de informações, sucessos e falhas durante as execuções.
+* Anexação de evidências aos relatórios.
+* Execução sequencial dos testes para redução de conflitos entre cenários.
+* Configuração centralizada da aplicação.
+* Gerenciamento centralizado do WebDriver.
+* Bloqueio e redução de interferências causadas por notificações, pop-ups e elementos externos.
+* Estrutura de documentação técnica e funcional do projeto.
 
 ---
 
-# 3. Escopo
+# Sprint Atual
 
-## Funcionalidades Incluídas
+## Sprint 9 — Refatoração e Publicação
 
-* Login
-* Cadastro de Usuário
-* Pesquisa de Produtos
-* Visualização de Produtos
-* Carrinho de Compras
-* Checkout
-* Logout
-* Data Driven Testing
+A Sprint 9 representa a etapa final do projeto e possui como objetivo revisar, padronizar e preparar o framework para publicação definitiva.
 
-## Funcionalidades Fora do Escopo
+### Atividades da Sprint
 
-* Testes de Performance
-* Testes de Carga
-* Testes de Segurança
-* Testes Mobile
-* Testes de Integração com Sistemas Externos
-
----
-
-# 4. Objetivo dos Testes
-
-Garantir que os principais fluxos da aplicação funcionem conforme esperado.
-
-Validar:
-
-* Regras de negócio
-* Fluxos críticos
-* Mensagens de erro
-* Tratamento de exceções
-* Integridade do processo de compra
-* Comportamento esperado da aplicação
-* Leitura correta das massas de dados
+* Padronizar nomes de classes em inglês.
+* Padronizar nomes de arquivos em inglês.
+* Padronizar nomes de métodos em inglês.
+* Padronizar nomes de variáveis em inglês.
+* Padronizar nomes de modelos de dados.
+* Manter a documentação funcional em português.
+* Revisar namespaces e referências internas.
+* Revisar a estrutura Page Object Model.
+* Remover nomenclaturas inconsistentes entre português e inglês.
+* Revisar duplicações de código.
+* Revisar comentários técnicos.
+* Validar referências após renomeação de classes e arquivos.
+* Executar limpeza completa do projeto.
+* Validar compilação do framework.
+* Executar a suíte completa de testes.
+* Validar geração de screenshots.
+* Validar geração dos relatórios HTML.
+* Revisar arquivos de massa de dados.
+* Revisar documentação final.
+* Atualizar o README.
+* Preparar o repositório para publicação definitiva.
 
 ---
 
-# 5. Tipos de Teste Aplicados
+# Padronização Final do Código
 
-## Testes Funcionais
+Como parte da Sprint 9, o código-fonte será padronizado utilizando nomenclatura em inglês.
 
-Validação das funcionalidades conforme os requisitos.
+A documentação permanecerá em português para facilitar a apresentação, leitura e avaliação do projeto.
 
-### Exemplos
+## Exemplos de Padronização
 
-* Login
-* Cadastro
-* Pesquisa de Produtos
-* Carrinho
-* Checkout
+| Nome Anterior | Nome Padronizado |
+| --- | --- |
+| `CadastroPage` | `RegistrationPage` |
+| `CadastroTests` | `RegistrationTests` |
+| `CadastroData` | `RegistrationData` |
+| `CarrinhoPage` | `CartPage` |
+| `OpenCarrinhoPage` | `OpenCartPage` |
+| Métodos em português | Métodos equivalentes em inglês |
+| Variáveis em português | Variáveis equivalentes em inglês |
 
----
-
-## Testes de Regressão
-
-Execução recorrente dos cenários automatizados para garantir que alterações futuras não impactem funcionalidades existentes.
-
----
-
-## Testes Positivos
-
-Validação de fluxos esperados.
-
-### Exemplos
-
-* Login válido
-* Cadastro válido
-* Compra realizada com sucesso
+Essa padronização busca aumentar a consistência técnica do projeto e aproximar sua estrutura das convenções normalmente utilizadas em projetos profissionais de automação de testes.
 
 ---
 
-## Testes Negativos
+# Critérios de Conclusão do Projeto
 
-Validação do tratamento de erros.
+O projeto será considerado concluído quando:
 
-### Exemplos
-
-* Senha inválida
-* E-mail já cadastrado
-* Campos obrigatórios vazios
-
----
-
-## Data Driven Testing
-
-Validação da execução dos testes utilizando massas de dados externas armazenadas em arquivos JSON.
-
-### Exemplos
-
-* Leitura de usuários
-* Leitura de produtos
-* Leitura de carrinho
-* Leitura de checkout
+1. Todas as classes estiverem padronizadas.
+2. Todos os arquivos estiverem utilizando nomenclatura consistente.
+3. Os namespaces e referências internas estiverem válidos.
+4. O projeto compilar sem erros.
+5. A suíte completa de testes for executada.
+6. Os casos automatizados apresentarem os resultados esperados.
+7. As evidências forem geradas corretamente.
+8. Os relatórios HTML forem gerados corretamente.
+9. As massas de dados JSON forem carregadas corretamente.
+10. A documentação estiver atualizada.
+11. O README representar corretamente a versão final do framework.
+12. O repositório estiver preparado para publicação.
 
 ---
 
-# 6. Ambiente de Testes
+# Resumo Final
 
-## Sistema Operacional
+**Total de Casos de Teste:** **25**
 
-Windows 11
+## Implementados
 
-## Linguagem
+* ✔ LOGIN001
+* ✔ CT001 ao CT024
 
-C#
+## Planejados
 
-## Framework de Testes
+* Nenhum caso funcional adicional no escopo atual.
 
-xUnit
+## Distribuição
 
-## Ferramenta de Automação
+* Login: 5
+* Cadastro: 5
+* Produtos: 4
+* Carrinho: 3
+* Checkout: 4
+* Data Driven Testing: 4
 
-Selenium WebDriver
-
-## Controle de Versão
-
-Git
-
-## Repositório
-
-GitHub
-
-## Navegador Principal
-
-Google Chrome
-
-## Padrão de Projeto
-
-Page Object Model (POM)
+**Total:** 25 casos de teste.
 
 ---
 
-# 7. Casos de Teste Implementados
+# Situação do Projeto
 
-## Login
+O desenvolvimento funcional planejado foi concluído até a Sprint 8.
 
-| ID    | Caso de Teste                 | Status       |
-| ----- | ----------------------------- | ------------ |
-| CT001 | Login com credenciais válidas | Implementado |
-| CT002 | Login com senha inválida      | Implementado |
-| CT003 | Login com campos vazios       | Implementado |
-| CT004 | Logout com sucesso            | Implementado |
+A **Sprint 9 — Refatoração e Publicação** constitui a última etapa do projeto.
 
----
+Nesta etapa final, o framework passa por revisão estrutural, padronização da nomenclatura do código-fonte em inglês, validação completa da suíte automatizada, revisão das evidências e relatórios e atualização da documentação.
 
-## Cadastro
+Após a conclusão da Sprint 9, o projeto será considerado finalizado e preparado para publicação definitiva no repositório.
 
-| ID    | Caso de Teste                        | Status       |
-| ----- | ------------------------------------ | ------------ |
-| CT005 | Acesso à área de cadastro            | Implementado |
-| CT006 | Início de cadastro com dados válidos | Implementado |
-| CT007 | Validação de e-mail já cadastrado    | Implementado |
-| CT008 | Validação de campos obrigatórios     | Implementado |
-| CT009 | Criação e exclusão de conta          | Implementado |
-
----
-
-## Produtos
-
-| ID    | Caso de Teste                        | Status       |
-| ----- | ------------------------------------ | ------------ |
-| CT010 | Acesso à área de produtos            | Implementado |
-| CT011 | Pesquisa de produto existente        | Implementado |
-| CT012 | Pesquisa de produto inexistente      | Implementado |
-| CT013 | Visualização dos detalhes do produto | Implementado |
-
----
-
-## Carrinho
-
-| ID    | Caso de Teste                 | Status       |
-| ----- | ----------------------------- | ------------ |
-| CT014 | Adicionar produto ao carrinho | Implementado |
-| CT015 | Adicionar múltiplos produtos  | Implementado |
-| CT016 | Remover produto do carrinho   | Implementado |
-
----
-
-## Checkout
-
-| ID    | Caso de Teste                                 | Status       |
-| ----- | --------------------------------------------- | ------------ |
-| CT017 | Acesso à tela de checkout                     | Implementado |
-| CT018 | Finalização da compra com sucesso             | Implementado |
-| CT019 | Acesso à tela de pagamento                    | Implementado |
-| CT020 | Finalização utilizando segunda massa de dados | Implementado |
-
----
-
-## Data Driven Testing
-
-| ID    | Caso de Teste                | Status       |
-| ----- | ---------------------------- | ------------ |
-| CT021 | Leitura da massa de usuários | Implementado |
-| CT022 | Leitura da massa de produtos | Implementado |
-| CT023 | Leitura da massa de carrinho | Implementado |
-| CT024 | Leitura da massa de checkout | Implementado |
-
----
-
-# 8. Critérios de Entrada
-
-Os testes poderão ser iniciados quando:
-
-* Projeto compilando sem erros críticos
-* Dependências instaladas
-* Ambiente disponível
-* Massa de testes preparada
-* Navegador configurado corretamente
-
----
-
-# 9. Critérios de Saída
-
-Os testes serão considerados concluídos quando:
-
-* Todos os cenários planejados forem executados
-* Evidências forem geradas
-* Defeitos forem registrados
-* Resultados forem documentados
-
----
-
-# 10. Riscos
-
-| Risco                                        | Impacto |
-| -------------------------------------------- | ------- |
-| Mudanças na aplicação testada                | Alto    |
-| Instabilidade do ambiente                    | Médio   |
-| Massa de dados inconsistente                 | Médio   |
-| Bloqueios causados por anúncios da aplicação | Médio   |
-| Alterações na estrutura HTML                 | Médio   |
-| Falhas de conexão                            | Baixo   |
-
----
-
-# 11. Evidências
-
-As evidências são armazenadas automaticamente na estrutura:
-
-```text
-Evidence
-│
-└── AAAA-MM-DD_HH-MM-SS
-    ├── CT001_LoginValido.png
-    ├── CT002_LoginSenhaInvalida.png
-    ├── CT018_FinalizarCompra.png
-    └── ...
-```
-
-As capturas podem ser geradas em:
-
-* Execuções com sucesso
-* Execuções com falha
-* Pontos críticos dos fluxos
-
----
-
-# 12. Registro de Defeitos
-
-Todos os defeitos identificados devem ser registrados em:
-
-```text
-Documentacao
-│
-└── Defeitos
-    └── Registro_de_Defeitos.md
-```
-
----
-
-# 13. Métricas Planejadas
-
-Serão acompanhadas:
-
-* Total de testes planejados
-* Total de testes implementados
-* Total de testes executados
-* Total de testes aprovados
-* Total de testes reprovados
-* Quantidade de defeitos encontrados
-* Cobertura dos fluxos automatizados
-* Cobertura por módulo
-* Quantidade de massas de dados utilizadas
-
----
-
-# 14. Aprovação
-
-O plano de testes será considerado aprovado quando:
-
-* O escopo estiver definido
-* Os cenários estiverem documentados
-* Os casos de teste estiverem implementados
-* As evidências estiverem sendo geradas corretamente
-
----
-
-# Status Atual
-
-### Sprint Atual
-
-**Sprint 8 — Evidências e Relatórios**
-
-### Concluído
-
-* Sprint 0 — Estrutura Inicial
-* Sprint 1 — Infraestrutura do Framework
-* Sprint 2 — Login
-* Sprint 3 — Cadastro
-* Sprint 4 — Produtos
-* Sprint 5 — Carrinho
-* Sprint 6 — Checkout
-* Sprint 7 — Data Driven Testing
-
-### Próxima Sprint
-
-**Sprint 8 — Evidências e Relatórios**
+**Próxima etapa:** conclusão da Sprint 9, execução da suíte final de testes e publicação da versão definitiva do framework.

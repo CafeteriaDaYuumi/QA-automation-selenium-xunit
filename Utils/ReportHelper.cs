@@ -3,20 +3,15 @@ using AventStack.ExtentReports.Reporter;
 
 namespace QA_automation_selenium_xunit.Utils
 {
-    /// <summary>
-    /// Classe responsável pela configuração e gerenciamento
-    /// dos relatórios de execução dos testes automatizados.
-    /// </summary>
+    // Responsável pela configuração e gerenciamento
+    // dos relatórios de execução dos testes automatizados.
     public static class ReportHelper
     {
         private static ExtentReports? _extentReports;
         private static ExtentTest? _extentTest;
 
-        /// <summary>
-        /// Retorna a instância principal do relatório.
-        /// Caso ainda não exista, cria e configura o relatório HTML.
-        /// </summary>
-        /// <returns>Instância configurada do ExtentReports.</returns>
+        // Retorna a instância principal do relatório.
+        // Caso ainda não exista, cria e configura o relatório HTML.
         public static ExtentReports GetReportInstance()
         {
             if (_extentReports == null)
@@ -43,7 +38,10 @@ namespace QA_automation_selenium_xunit.Utils
                     "Relatório de Execução dos Testes Automatizados";
 
                 _extentReports = new ExtentReports();
-                _extentReports.AttachReporter(sparkReporter);
+
+                _extentReports.AttachReporter(
+                    sparkReporter
+                );
 
                 _extentReports.AddSystemInfo(
                     "Projeto",
@@ -60,46 +58,32 @@ namespace QA_automation_selenium_xunit.Utils
             return _extentReports;
         }
 
-        /// <summary>
-        /// Cria um novo registro de teste no relatório.
-        /// </summary>
-        /// <param name="testName">Nome do teste executado.</param>
+        // Cria um novo registro de teste no relatório.
         public static void CreateTest(string testName)
         {
-            _extentTest = GetReportInstance().CreateTest(testName);
+            _extentTest =
+                GetReportInstance().CreateTest(testName);
         }
 
-        /// <summary>
-        /// Registra uma informação no teste atual.
-        /// </summary>
-        /// <param name="message">Mensagem informativa.</param>
+        // Registra uma informação no teste atual.
         public static void LogInfo(string message)
         {
             _extentTest?.Info(message);
         }
 
-        /// <summary>
-        /// Registra sucesso no teste atual.
-        /// </summary>
-        /// <param name="message">Mensagem de sucesso.</param>
+        // Registra sucesso no teste atual.
         public static void LogPass(string message)
         {
             _extentTest?.Pass(message);
         }
 
-        /// <summary>
-        /// Registra falha no teste atual.
-        /// </summary>
-        /// <param name="message">Mensagem de falha.</param>
+        // Registra falha no teste atual.
         public static void LogFail(string message)
         {
             _extentTest?.Fail(message);
         }
 
-        /// <summary>
-        /// Anexa uma captura de tela ao teste atual.
-        /// </summary>
-        /// <param name="screenshotPath">Caminho completo da captura de tela.</param>
+        // Anexa uma captura de tela ao teste atual.
         public static void AttachScreenshot(string screenshotPath)
         {
             if (string.IsNullOrWhiteSpace(screenshotPath))
@@ -113,7 +97,9 @@ namespace QA_automation_selenium_xunit.Utils
 
             if (File.Exists(screenshotPath))
             {
-                _extentTest?.AddScreenCaptureFromPath(screenshotPath);
+                _extentTest?.AddScreenCaptureFromPath(
+                    screenshotPath
+                );
 
                 _extentTest?.Info(
                     $"Evidência anexada: {Path.GetFileName(screenshotPath)}"
@@ -127,9 +113,7 @@ namespace QA_automation_selenium_xunit.Utils
             }
         }
 
-        /// <summary>
-        /// Finaliza e grava o relatório em disco.
-        /// </summary>
+        // Finaliza e grava o relatório em disco.
         public static void FlushReport()
         {
             _extentReports?.Flush();

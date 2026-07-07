@@ -110,16 +110,22 @@ QA-automation-selenium-xunit
 * Inicialização do ChromeDriver
 * Configuração do navegador
 * Gerenciamento do ciclo de vida do WebDriver
+* Configuração de tempo de espera para localização de elementos
+* Configuração de tempo máximo de carregamento das páginas
+* Configuração do navegador para reduzir interferências durante a execução
 
 ## ConfigReader
 
-* Leitura do appsettings.json
+* Leitura do `appsettings.json`
 * Recuperação da URL base
+* Leitura genérica de configurações
+* Validação da existência do arquivo de configuração
 
 ## ScreenshotHelper
 
 * Captura automática de evidências
 * Organização por data e horário
+* Armazenamento das evidências por execução
 * Retorno do caminho da imagem gerada para integração com relatórios
 
 ## TestDataReader
@@ -127,6 +133,9 @@ QA-automation-selenium-xunit
 * Leitura genérica de arquivos JSON
 * Suporte a Data Driven Testing
 * Desserialização automática da massa de dados
+* Recuperação de listas de dados
+* Recuperação de usuários por chave
+* Validação da existência e integridade dos arquivos
 
 ## ReportHelper
 
@@ -143,6 +152,12 @@ QA-automation-selenium-xunit
 * Encerramento automático da sessão
 * Finalização automática do relatório
 * Reutilização da infraestrutura entre os testes
+
+## Execução Sequencial
+
+* Desabilitação da paralelização dos testes
+* Redução de conflitos entre cenários
+* Maior estabilidade em fluxos que compartilham estado da aplicação
 
 ---
 
@@ -197,6 +212,19 @@ QA-automation-selenium-xunit
 
 ---
 
+# Resumo dos Testes
+
+**Casos de teste funcionais e de dados implementados:** 25
+
+* LOGIN001
+* CT001 ao CT024
+
+Além dos casos acima, o framework possui o teste de infraestrutura:
+
+* INFRA001
+
+---
+
 # Relatórios
 
 O framework gera automaticamente relatórios HTML utilizando ExtentReports.
@@ -206,8 +234,9 @@ Os relatórios incluem:
 * Nome dos testes executados
 * Status da execução
 * Logs informativos
+* Registro de sucesso
+* Registro de falha
 * Evidências anexadas
-* Tempo de execução
 * Informações do ambiente
 
 Os arquivos são gerados na estrutura:
@@ -230,6 +259,32 @@ Evidence
     ├── CT010_AcessarAreaDeProdutos.png
     └── ...
 ```
+
+As capturas podem ser integradas aos relatórios HTML gerados pelo ExtentReports, permitindo maior rastreabilidade das execuções.
+
+---
+
+# Massa de Dados
+
+As massas de dados utilizadas pelo framework são armazenadas externamente em arquivos JSON.
+
+```text
+TestData
+│
+├── Users.json
+├── CadastroUsers.json
+├── Products.json
+├── CartItems.json
+└── CheckoutData.json
+```
+
+Essa abordagem permite:
+
+* Separação entre código e dados de teste
+* Reutilização das massas
+* Facilidade de manutenção
+* Suporte a Data Driven Testing
+* Maior escalabilidade do framework
 
 ---
 
@@ -259,18 +314,18 @@ Evidence
 
 # Roadmap
 
-| Sprint   | Descrição                   | Status    |
-| -------- | --------------------------- | --------- |
-| Sprint 0 | Estrutura Inicial           | Concluído |
-| Sprint 1 | Infraestrutura do Framework | Concluído |
-| Sprint 2 | Login                       | Concluído |
-| Sprint 3 | Cadastro                    | Concluído |
-| Sprint 4 | Produtos                    | Concluído |
-| Sprint 5 | Carrinho                    | Concluído |
-| Sprint 6 | Checkout                    | Concluído |
-| Sprint 7 | Data Driven Testing         | Concluído |
-| Sprint 8 | Evidências e Relatórios     | Concluído |
-| Sprint 9 | Refatoração e Publicação    | Planejado |
+| Sprint   | Descrição                   | Status        |
+| -------- | --------------------------- | ------------- |
+| Sprint 0 | Estrutura Inicial           | Concluído     |
+| Sprint 1 | Infraestrutura do Framework | Concluído     |
+| Sprint 2 | Login                       | Concluído     |
+| Sprint 3 | Cadastro                    | Concluído     |
+| Sprint 4 | Produtos                    | Concluído     |
+| Sprint 5 | Carrinho                    | Concluído     |
+| Sprint 6 | Checkout                    | Concluído     |
+| Sprint 7 | Data Driven Testing         | Concluído     |
+| Sprint 8 | Evidências e Relatórios     | Concluído     |
+| Sprint 9 | Refatoração e Publicação    | Concluído     |
 
 ---
 
@@ -279,6 +334,10 @@ Evidence
 ### Sprint Atual
 
 **Sprint 9 — Refatoração e Publicação**
+
+### Sprints Concluídas
+
+**Sprint 0 à Sprint 8**
 
 ### Concluído
 
@@ -289,13 +348,12 @@ Evidence
 * TestDataReader
 * ReportHelper
 * BaseTest
+* Execução sequencial dos testes
 * LoginPage
-* CadastroPage
 * ProductPage
 * CartPage
 * CheckoutPage
 * LoginTests
-* CadastroTests
 * ProductTests
 * CartTests
 * CheckoutTests
@@ -305,17 +363,67 @@ Evidence
 * ProductData
 * CartData
 * CheckoutData
-* TestDataModel
 * Users.json
 * Products.json
 * CartItems.json
 * CheckoutData.json
+* LOGIN001
 * CT001 ao CT024
 * Relatórios com ExtentReports
 * Evidências automatizadas
-* Planejamento dos Testes
-* Documentação Inicial
+* Integração de screenshots aos relatórios
+* Planejamento dos testes
+* Documentação do framework
+
+### Em Refatoração
+
+* Padronização dos nomes de classes em inglês
+* Padronização dos nomes de métodos em inglês
+* Padronização dos nomes de variáveis em inglês
+* Padronização dos Models
+* Padronização dos Page Objects
+* Padronização das classes de teste
+* Manutenção da documentação em português
+* Revisão da estrutura final do projeto
 
 ### Próxima Entrega
 
-Refatoração final do framework, revisão dos Page Objects, melhoria das esperas com WaitHelper, remoção de esperas fixas, organização final do código e preparação do projeto para publicação.
+Refatoração final do framework, revisão dos Page Objects, padronização completa do código-fonte em inglês, melhoria das estratégias de espera, remoção de esperas fixas, revisão dos relatórios, organização final do código, atualização da documentação e preparação do projeto para publicação.
+
+---
+
+# Visão Geral do Projeto
+
+Ao término da Sprint 8, o framework possui cobertura automatizada dos principais fluxos de um sistema de e-commerce, incluindo autenticação, cadastro, pesquisa de produtos, operações de carrinho, checkout, gerenciamento de massa de dados externa e geração automatizada de evidências e relatórios.
+
+A arquitetura foi construída utilizando Page Object Model (POM), Data Driven Testing, organização em camadas, configuração externa, geração automática de evidências e integração com ExtentReports.
+
+Atualmente, o projeto encontra-se na Sprint 9, etapa final dedicada à refatoração, padronização do código-fonte em inglês, revisão da estrutura, atualização da documentação e preparação do repositório para publicação.
+
+A documentação do projeto permanece em português, enquanto classes, métodos, variáveis e demais elementos do código-fonte passam por padronização em inglês, seguindo convenções comuns de desenvolvimento e automação de testes.
+
+---
+
+# Progresso do Projeto
+
+**Progresso Atual:** **≈95%**
+
+## Sprint Atual
+
+**Sprint 9 — Refatoração e Publicação**
+
+## Próxima Entrega
+
+* Padronização final do código-fonte em inglês
+* Revisão dos Page Objects
+* Revisão dos Models
+* Revisão das classes de teste
+* Melhoria das estratégias de espera
+* Remoção de esperas fixas
+* Validação consolidada da suíte de testes
+* Revisão dos relatórios HTML
+* Atualização final da documentação
+* Atualização do README
+* Preparação do repositório para publicação
+
+Após a conclusão da Sprint 9, o projeto será considerado **100% concluído dentro do escopo planejado**.

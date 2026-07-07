@@ -1,0 +1,26 @@
+[
+  {
+    "TestCase": "CT024_001",
+    "Execute": true,
+    "Description": "Checkout com cartão Visa",
+    "ProductId": "1",
+    "Comment": "Pedido automatizado para validação do fluxo de checkout.",
+    "CardName": "Usuario Teste",
+    "CardNumber": "4111111111111111",
+    "Cvc": "123",
+    "ExpirationMonth": "12",
+    "ExpirationYear": "2030"
+  },
+  {
+    "TestCase": "CT024_002",
+    "Execute": true,
+    "Description": "Checkout com segunda massa de dados",
+    "ProductId": "2",
+    "Comment": "Pedido automatizado utilizando segunda massa de dados.",
+    "CardName": "Maria Oliveira",
+    "CardNumber": "5555555555554444",
+    "Cvc": "456",
+    "ExpirationMonth": "10",
+    "ExpirationYear": "2032"
+  }
+]

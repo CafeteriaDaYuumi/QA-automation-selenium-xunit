@@ -275,7 +275,7 @@ Melhorar a rastreabilidade das execuções automatizadas.
 
 Cada execução deve gerar um relatório detalhado contendo evidências dos testes.
 
-**Status:** 🚧 Em andamento
+**Status:** ✅ Concluído
 
 ---
 
@@ -301,8 +301,7 @@ Preparar o framework para publicação.
 
 Framework documentado, organizado e pronto para publicação.
 
-**Status:** ⏳ Planejado
-
+**Status:** ✅ Concluído
 ---
 
 # Resumo Geral
@@ -317,22 +316,57 @@ Framework documentado, organizado e pronto para publicação.
 | Sprint 5 | Carrinho                 | ✅ Concluído     |
 | Sprint 6 | Checkout                 | ✅ Concluído     |
 | Sprint 7 | Data Driven Testing      | ✅ Concluído     |
-| Sprint 8 | Evidências e Relatórios  | 🚧 Em andamento |
-| Sprint 9 | Refatoração e Publicação | ⏳ Planejado     |
+| Sprint 8 | Evidências e Relatórios  | ✅ Concluído     |
+| Sprint 9 | Refatoração e Publicação | ✅ Concluído     |
 
 ---
 
 # Progresso do Projeto
 
-**Progresso Atual:** **≈80%**
+**Progresso Atual:** **≈95%**
 
 ## Sprint Atual
 
-**Sprint 8 — Evidências e Relatórios**
+**Sprint 9 — Refatoração e Publicação**
+
+## Status da Sprint
+
+O framework encontra-se em sua etapa final de desenvolvimento, com os principais fluxos funcionais já implementados e automatizados.
+
+As Sprints anteriores concluíram:
+
+* Estrutura inicial do framework.
+* Infraestrutura de automação.
+* Testes de Login.
+* Testes de Cadastro.
+* Testes de Produtos.
+* Testes de Carrinho.
+* Testes de Checkout.
+* Data Driven Testing com arquivos JSON.
+* Captura automática de screenshots.
+* Organização de evidências por execução.
+* Integração com ExtentReports.
+* Geração de relatórios HTML.
+
+## Entrega Final
+
+* Padronização dos nomes de classes, métodos e variáveis em inglês.
+* Manutenção da documentação em português.
+* Refatoração final da estrutura do projeto.
+* Revisão do padrão Page Object Model (POM).
+* Padronização dos testes automatizados.
+* Revisão dos Models e massas de dados JSON.
+* Validação da integração com ExtentReports.
+* Validação consolidada dos relatórios HTML.
+* Remoção de código redundante ou não utilizado.
+* Atualização final da documentação.
+* Atualização do README.
+* Execução completa da suíte de testes.
+* Correção de eventuais falhas identificadas.
+* Preparação do repositório para publicação.
 
 ## Próxima Entrega
 
-* Implementação do ExtentReports
-* Geração de relatórios HTML
-* Integração das evidências aos relatórios
-* Finalização da documentação do framework
+**Versão final estável do QA Test Automation Framework.**
+
+Após a conclusão das atividades restantes da Sprint 9, o projeto será considerado **100% concluído dentro do escopo planejado**.

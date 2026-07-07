@@ -10,22 +10,22 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade, reu
 
 # 1. Usuários de Login
 
-| ID      | Tipo           | E-mail                                                                                  | Senha           | Finalidade                   |
-| ------- | -------------- | --------------------------------------------------------------------------------------- | --------------- | ---------------------------- |
-| USER001 | Válido         | [QA-automation-selenium-xunit@gmail.com](mailto:QA-automation-selenium-xunit@gmail.com) | 123456          | Login válido                 |
-| USER002 | Senha inválida | [QA-automation-selenium-xunit@gmail.com](mailto:QA-automation-selenium-xunit@gmail.com) | senha_incorreta | Login inválido               |
-| USER003 | Campos vazios  | -                                                                                       | -               | Validação de obrigatoriedade |
+| ID      | Tipo           | E-mail                                  | Senha           | Finalidade                   |
+| ------- | -------------- | --------------------------------------- | --------------- | ---------------------------- |
+| USER001 | Válido         | QA-automation-selenium-xunit@gmail.com  | 123456          | Login válido                 |
+| USER002 | Senha inválida | QA-automation-selenium-xunit@gmail.com  | senha_incorreta | Login inválido               |
+| USER003 | Campos vazios  | -                                       | -               | Validação de obrigatoriedade |
 
 ---
 
 # 2. Usuários de Cadastro
 
-| ID     | Tipo              | Nome              | E-mail                                                                                  | Finalidade                   |
-| ------ | ----------------- | ----------------- | --------------------------------------------------------------------------------------- | ---------------------------- |
-| CAD001 | Novo usuário      | Usuario Teste     | [usuario.teste.automatico@gmail.com](mailto:usuario.teste.automatico@gmail.com)         | Cadastro válido              |
-| CAD002 | E-mail existente  | Usuario Existente | [QA-automation-selenium-xunit@gmail.com](mailto:QA-automation-selenium-xunit@gmail.com) | Cadastro duplicado           |
-| CAD003 | Campos vazios     | -                 | -                                                                                       | Validação de obrigatoriedade |
-| CAD004 | Cadastro completo | Usuario Teste     | usuario.teste.{timestamp}@gmail.com                                                     | Criação e exclusão de conta  |
+| ID     | Tipo              | Nome              | E-mail                                      | Finalidade                   |
+| ------ | ----------------- | ----------------- | ------------------------------------------- | ---------------------------- |
+| CAD001 | Novo usuário      | Usuario Teste     | usuario.teste.{timestamp}@gmail.com         | Cadastro válido              |
+| CAD002 | E-mail existente  | Usuario Existente | QA-automation-selenium-xunit@gmail.com      | Cadastro duplicado           |
+| CAD003 | Campos vazios     | -                 | -                                           | Validação de obrigatoriedade |
+| CAD004 | Cadastro completo | Usuario Teste     | usuario.teste.{timestamp}@gmail.com         | Criação e exclusão de conta  |
 
 ---
 
@@ -41,7 +41,7 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade, reu
 | Mês    | Maio   |
 | Ano    | 2000   |
 
-### Dados de Endereço
+## Dados de Endereço
 
 | Campo     | Valor          |
 | --------- | -------------- |
@@ -58,12 +58,12 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade, reu
 
 # 4. Produtos de Teste
 
-| ID      | Produto                 | Finalidade          |
-| ------- | ----------------------- | ------------------- |
-| PROD001 | Blue Top                | Pesquisa de produto |
-| PROD002 | Men Tshirt              | Carrinho            |
-| PROD003 | Sleeveless Dress        | Checkout            |
-| PROD004 | Produto Inexistente XYZ | Pesquisa negativa   |
+| ID      | Produto                 | Finalidade                    |
+| ------- | ----------------------- | ----------------------------- |
+| PROD001 | Blue Top                | Pesquisa de produto existente |
+| PROD002 | Men Tshirt              | Carrinho                      |
+| PROD003 | Sleeveless Dress        | Checkout                      |
+| PROD004 | Produto Inexistente XYZ | Pesquisa negativa             |
 
 ---
 
@@ -90,18 +90,19 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade, reu
 
 | Caso de Teste | Massa Utilizada    |
 | ------------- | ------------------ |
+| LOGIN001      | Não aplicável      |
 | CT001         | USER001            |
 | CT002         | USER002            |
 | CT003         | USER003            |
 | CT004         | USER001            |
-| CT005         | CAD001             |
+| CT005         | Não aplicável      |
 | CT006         | CAD001             |
 | CT007         | CAD002             |
 | CT008         | CAD003             |
 | CT009         | CAD004             |
-| CT010         | PROD001            |
-| CT011         | PROD004            |
-| CT012         | PROD001            |
+| CT010         | Não aplicável      |
+| CT011         | PROD001            |
+| CT012         | PROD004            |
 | CT013         | PROD001            |
 | CT014         | CART001            |
 | CT015         | CART002            |
@@ -123,57 +124,7 @@ A massa de teste tem como objetivo garantir padronização, rastreabilidade, reu
 TestData
 │
 ├── Users.json
-├── CadastroUsers.json
+├── RegistrationUsers.json
 ├── Products.json
 ├── CartItems.json
 └── CheckoutData.json
-```
-
----
-
-# 9. Organização da Massa de Dados
-
-Todas as massas de dados são armazenadas em arquivos JSON e carregadas dinamicamente durante a execução dos testes através da classe **TestDataReader**, seguindo o conceito de **Data Driven Testing**.
-
-Essa abordagem proporciona:
-
-* Separação entre código e dados de teste.
-* Facilidade de manutenção.
-* Reutilização das massas de dados.
-* Maior escalabilidade do framework.
-
----
-
-# Observações
-
-* Todos os dados são destinados exclusivamente para testes automatizados.
-* Usuários de cadastro utilizam e-mails dinâmicos para evitar conflitos entre execuções.
-* As massas de dados são reutilizadas entre diferentes cenários sempre que possível.
-* Novas massas poderão ser adicionadas sem necessidade de alteração da infraestrutura do framework.
-
----
-
-# Status
-
-**Massa de teste totalmente implementada.**
-
-### Arquivos disponíveis
-
-* Users.json
-* CadastroUsers.json
-* Products.json
-* CartItems.json
-* CheckoutData.json
-
-### Funcionalidades cobertas
-
-* Login
-* Cadastro
-* Produtos
-* Carrinho
-* Checkout
-* Data Driven Testing
-
-### Próxima atualização prevista
-
-**Sprint 8 — Evidências e Relatórios**

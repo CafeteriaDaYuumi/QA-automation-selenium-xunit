@@ -4,34 +4,52 @@ using Xunit;
 
 namespace QA_automation_selenium_xunit.Tests
 {
-    /// <summary>
-    /// Testes responsáveis por validar a execução
-    /// orientada a dados utilizando massas externas em JSON.
-    /// </summary>
+    // Testes responsáveis por validar a execução
+    // orientada a dados utilizando massas externas em JSON.
     [Collection("Sequential Tests")]
     public class DataDrivenTests : BaseTest
     {
         [Fact]
         public void CT021_DeveLerMassaDeUsuarios()
         {
-            ReportHelper.CreateTest("CT021 - Deve ler massa de usuários");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT021 - Deve ler massa de usuários"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT021 - Deve ler massa de usuários");
+                Console.WriteLine(
+                    "Executando CT021 - Deve ler massa de usuários"
+                );
 
                 List<UserData> users =
-                    TestDataReader.GetDataList<UserData>("Users.json");
+                    TestDataReader.GetDataList<UserData>(
+                        "Users.json"
+                    );
 
-                Assert.NotEmpty(users);
-                Assert.Contains(users, user => user.Key == "validUser");
+                Assert.NotEmpty(
+                    users
+                );
 
-                ReportHelper.LogPass("Massa de usuários carregada com sucesso.");
+                Assert.Contains(
+                    users,
+                    user => user.Key == "validUser"
+                );
+
+                ReportHelper.LogPass(
+                    "Massa de usuários carregada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
                 throw;
             }
         }
@@ -39,28 +57,46 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT022_DeveLerMassaDeProdutos()
         {
-            ReportHelper.CreateTest("CT022 - Deve ler massa de produtos");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT022 - Deve ler massa de produtos"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT022 - Deve ler massa de produtos");
+                Console.WriteLine(
+                    "Executando CT022 - Deve ler massa de produtos"
+                );
 
                 List<ProductData> products =
-                    TestDataReader.GetDataList<ProductData>("Products.json");
+                    TestDataReader.GetDataList<ProductData>(
+                        "Products.json"
+                    );
 
-                Assert.NotEmpty(products);
+                Assert.NotEmpty(
+                    products
+                );
 
                 Assert.Contains(
                     products,
-                    product => !string.IsNullOrWhiteSpace(product.ExistingProduct)
+                    product => !string.IsNullOrWhiteSpace(
+                        product.ExistingProduct
+                    )
                 );
 
-                ReportHelper.LogPass("Massa de produtos carregada com sucesso.");
+                ReportHelper.LogPass(
+                    "Massa de produtos carregada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
                 throw;
             }
         }
@@ -68,28 +104,46 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT023_DeveLerMassaDeCarrinho()
         {
-            ReportHelper.CreateTest("CT023 - Deve ler massa de carrinho");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT023 - Deve ler massa de carrinho"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT023 - Deve ler massa de carrinho");
+                Console.WriteLine(
+                    "Executando CT023 - Deve ler massa de carrinho"
+                );
 
                 List<CartData> cartItems =
-                    TestDataReader.GetDataList<CartData>("CartItems.json");
+                    TestDataReader.GetDataList<CartData>(
+                        "CartItems.json"
+                    );
 
-                Assert.NotEmpty(cartItems);
+                Assert.NotEmpty(
+                    cartItems
+                );
 
                 Assert.Contains(
                     cartItems,
-                    item => !string.IsNullOrWhiteSpace(item.ProductName)
+                    item => !string.IsNullOrWhiteSpace(
+                        item.ProductName
+                    )
                 );
 
-                ReportHelper.LogPass("Massa de carrinho carregada com sucesso.");
+                ReportHelper.LogPass(
+                    "Massa de carrinho carregada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
                 throw;
             }
         }
@@ -97,28 +151,46 @@ namespace QA_automation_selenium_xunit.Tests
         [Fact]
         public void CT024_DeveLerMassaDeCheckout()
         {
-            ReportHelper.CreateTest("CT024 - Deve ler massa de checkout");
-            ReportHelper.LogInfo("Iniciando execução do teste.");
+            ReportHelper.CreateTest(
+                "CT024 - Deve ler massa de checkout"
+            );
+
+            ReportHelper.LogInfo(
+                "Iniciando execução do teste."
+            );
 
             try
             {
-                Console.WriteLine("Executando CT024 - Deve ler massa de checkout");
+                Console.WriteLine(
+                    "Executando CT024 - Deve ler massa de checkout"
+                );
 
                 List<CheckoutData> checkoutData =
-                    TestDataReader.GetDataList<CheckoutData>("CheckoutData.json");
+                    TestDataReader.GetDataList<CheckoutData>(
+                        "CheckoutData.json"
+                    );
 
-                Assert.NotEmpty(checkoutData);
+                Assert.NotEmpty(
+                    checkoutData
+                );
 
                 Assert.Contains(
                     checkoutData,
-                    data => !string.IsNullOrWhiteSpace(data.CardNumber)
+                    data => !string.IsNullOrWhiteSpace(
+                        data.CardNumber
+                    )
                 );
 
-                ReportHelper.LogPass("Massa de checkout carregada com sucesso.");
+                ReportHelper.LogPass(
+                    "Massa de checkout carregada com sucesso."
+                );
             }
             catch (Exception ex)
             {
-                ReportHelper.LogFail($"Falha durante a execução: {ex.Message}");
+                ReportHelper.LogFail(
+                    $"Falha durante a execução: {ex.Message}"
+                );
+
                 throw;
             }
         }

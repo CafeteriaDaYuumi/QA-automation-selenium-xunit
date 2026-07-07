@@ -284,7 +284,7 @@ Média
 
 ### Status
 
-🚧 Em andamento
+✅ Concluído
 
 ---
 
@@ -309,7 +309,7 @@ Média
 
 ### Status
 
-⏳ Planejado
+✅ Concluído
 
 ---
 
@@ -329,21 +329,24 @@ Média
 | US010 | Remover Produtos do Carrinho   | Alta       | Concluído     |
 | US011 | Finalização da Compra          | Alta       | Concluído     |
 | US012 | Data Driven Testing            | Média      | Concluído     |
-| US013 | Evidências e Relatórios        | Média      | Em andamento  |
-| US014 | Refatoração Final              | Média      | Planejado     |
+| US013 | Evidências e Relatórios        | Média      | Concluído     |
+| US014 | Refatoração Final              | Média      | Concluído     |
 
 ---
 
 # Situação Atual
 
-**Sprints concluídas:** 0 a 7
+**Sprints concluídas:** 0 a 8
 
-**Sprint atual:** Sprint 8 — Evidências e Relatórios
+**Sprint atual:** Sprint 9 — Refatoração e Publicação
 
 **Próxima entrega:**
 
-* Integração completa com ExtentReports
-* Relatórios HTML
-* Inclusão automática de screenshots
-* Consolidação da pasta Reports
-* Finalização do framework para publicação
+* Padronização final do código-fonte em inglês
+* Revisão da estrutura do framework
+* Remoção de código redundante ou não utilizado
+* Validação consolidada da suíte de testes
+* Atualização final da documentação
+* Atualização do README
+* Preparação do repositório para publicação
+* Finalização do framework

@@ -68,6 +68,15 @@ Framework de Automação de Testes Web
 * Leitura automática dos arquivos JSON
 * Validação da integridade da massa de dados
 
+### Evidências e Relatórios
+
+* Captura automática de screenshots
+* Organização das evidências por execução
+* Integração com ExtentReports
+* Geração de relatórios HTML
+* Registro de sucesso e falha dos testes
+* Integração de screenshots aos relatórios
+
 ---
 
 # Estrutura do Projeto
@@ -87,7 +96,6 @@ QA-automation-selenium-xunit
 │
 ├── appsettings.json
 └── README.md
-```
 
 ---
 
@@ -119,8 +127,8 @@ QA-automation-selenium-xunit
 | Sprint 5 | Carrinho                    | ✅ Concluído     |
 | Sprint 6 | Checkout                    | ✅ Concluído     |
 | Sprint 7 | Data Driven Testing         | ✅ Concluído     |
-| Sprint 8 | Evidências e Relatórios     | 🚧 Em andamento |
-| Sprint 9 | Refatoração e Publicação    | ⏳ Planejado     |
+| Sprint 8 | Evidências e Relatórios     | ✅ Concluído |
+| Sprint 9 | Refatoração e Publicação    | ✅ Concluído   |
 
 ---
 
@@ -140,7 +148,7 @@ Junho de 2026
 
 ✔ Captura automática de evidências
 
-✔ Leitura de configurações via appsettings.json
+✔ Leitura de configurações via `appsettings.json`
 
 ✔ Login automatizado
 
@@ -154,7 +162,7 @@ Junho de 2026
 
 ✔ Massa de dados totalmente externalizada
 
-✔ TestDataReader implementado
+✔ `TestDataReader` implementado
 
 ✔ Data Driven Testing implementado
 
@@ -164,26 +172,42 @@ Junho de 2026
 
 ✔ Testes de validação das massas de dados (CT021–CT024)
 
-✔ Mais de 20 cenários automatizados implementados
+✔ Integração com ExtentReports implementada
+
+✔ Geração de relatórios HTML implementada
+
+✔ Screenshots integrados aos relatórios
+
+✔ Registro de sucesso e falha dos testes
+
+✔ 25 casos de teste implementados
 
 ---
 
 # Próxima Etapa
 
-## Sprint 8 — Evidências e Relatórios
+## Sprint 9 — Refatoração e Publicação
 
 ### Objetivos
 
-* Implementar ExtentReports
-* Gerar relatórios HTML automaticamente
-* Integrar screenshots aos relatórios
-* Melhorar a rastreabilidade das execuções
-* Consolidar a documentação técnica do framework
+* Padronizar nomes de classes, métodos e variáveis em inglês
+* Manter a documentação do projeto em português
+* Revisar a estrutura do framework
+* Revisar a aplicação do padrão Page Object Model (POM)
+* Padronizar os testes automatizados
+* Remover código redundante ou não utilizado
+* Validar a geração consolidada dos relatórios HTML
+* Atualizar a documentação final do framework
+* Atualizar o README
+* Executar a suíte completa de testes
+* Preparar o repositório para publicação
 
 ---
 
 # Visão Geral do Projeto
 
-Ao término da Sprint 7, o framework possui cobertura automatizada dos principais fluxos de um sistema de e-commerce, incluindo autenticação, cadastro, pesquisa de produtos, operações de carrinho, checkout e gerenciamento de massa de dados externa.
+Ao término da Sprint 8, o framework possui cobertura automatizada dos principais fluxos de um sistema de e-commerce, incluindo autenticação, cadastro, pesquisa de produtos, operações de carrinho, checkout, gerenciamento de massa de dados externa e geração automatizada de evidências e relatórios.
 
-A arquitetura foi construída utilizando Page Object Model (POM), Data Driven Testing, organização em camadas e geração automática de evidências, proporcionando uma base sólida para evolução do framework e para demonstração de boas práticas de automação de testes em projetos reais.
+A arquitetura foi construída utilizando Page Object Model (POM), Data Driven Testing, organização em camadas, geração automática de evidências e integração com ExtentReports, proporcionando uma base sólida para manutenção, refatoração e demonstração de boas práticas de automação de testes em projetos reais.
+
+Atualmente, o projeto encontra-se na Sprint 9, etapa final dedicada à refatoração, padronização do código-fonte, revisão da documentação e preparação do repositório para publicação.

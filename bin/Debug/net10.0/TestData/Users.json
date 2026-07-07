@@ -1,0 +1,18 @@
+[
+  {
+    "TestCase": "CT021_001",
+    "Execute": true,
+    "Description": "Login com usuário válido",
+    "Key": "validUser",
+    "Email": "QA-automation-selenium-xunit@gmail.com",
+    "Password": "123456"
+  },
+  {
+    "TestCase": "CT021_002",
+    "Execute": true,
+    "Description": "Login com senha inválida",
+    "Key": "invalidUser",
+    "Email": "QA-automation-selenium-xunit@gmail.com",
+    "Password": "senha_invalida"
+  }
+]

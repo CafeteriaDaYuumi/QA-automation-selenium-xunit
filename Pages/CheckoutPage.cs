@@ -2,61 +2,81 @@ using OpenQA.Selenium;
 
 namespace QA_automation_selenium_xunit.Pages
 {
-    /// <summary>
-    /// Página responsável pelas operações relacionadas
-    /// ao fluxo de checkout da aplicação.
-    /// </summary>
     public class CheckoutPage
     {
         private readonly IWebDriver _driver;
 
+        // Itens exibidos dentro do carrinho.
         private readonly By _cartItems =
-            By.XPath("//tr[contains(@id,'product')]");
+            By.XPath(
+                "//tr[contains(@id,'product')]"
+            );
 
+        // Botão responsável por avançar para o checkout.
         private readonly By _proceedToCheckoutButton =
-            By.XPath("//a[contains(text(),'Proceed To Checkout')]");
+            By.XPath(
+                "//a[contains(text(),'Proceed To Checkout')]"
+            );
 
+        // Título da seção de detalhes do endereço.
         private readonly By _addressDetailsTitle =
-            By.XPath("//h2[contains(text(),'Address Details')]");
+            By.XPath(
+                "//h2[contains(text(),'Address Details')]"
+            );
 
+        // Título da seção de revisão do pedido.
         private readonly By _reviewOrderTitle =
-            By.XPath("//h2[contains(text(),'Review Your Order')]");
+            By.XPath(
+                "//h2[contains(text(),'Review Your Order')]"
+            );
 
+        // Campo utilizado para inserir comentários sobre o pedido.
         private readonly By _commentField =
             By.Name("message");
 
+        // Botão responsável por avançar para a etapa de pagamento.
         private readonly By _placeOrderButton =
-            By.XPath("//a[contains(text(),'Place Order')]");
+            By.XPath(
+                "//a[contains(text(),'Place Order')]"
+            );
 
+        // Campo utilizado para informar o nome presente no cartão.
         private readonly By _nameOnCardField =
             By.Name("name_on_card");
 
+        // Campo utilizado para informar o número do cartão.
         private readonly By _cardNumberField =
             By.Name("card_number");
 
+        // Campo utilizado para informar o código de segurança do cartão.
         private readonly By _cvcField =
             By.Name("cvc");
 
+        // Campo utilizado para informar o mês de expiração.
         private readonly By _expirationMonthField =
             By.Name("expiry_month");
 
+        // Campo utilizado para informar o ano de expiração.
         private readonly By _expirationYearField =
             By.Name("expiry_year");
 
+        // Botão responsável por confirmar o pagamento e o pedido.
         private readonly By _payAndConfirmButton =
             By.Id("submit");
 
+        // Mensagem exibida após a finalização do pedido.
         private readonly By _orderPlacedMessage =
-            By.XPath("//b[contains(text(),'Order Placed!')]");
+            By.XPath(
+                "//b[contains(text(),'Order Placed!')]"
+            );
 
+        // Inicializa a página de checkout com a instância atual do WebDriver.
         public CheckoutPage(IWebDriver driver)
         {
             _driver = driver;
         }
 
-        /// <summary>
-        /// Adiciona um produto ao carrinho utilizando a rota interna da aplicação.
-        /// </summary>
+        // Adiciona um produto ao carrinho pelo identificador interno.
         public void AddProductById(string productId)
         {
             _driver.Navigate().GoToUrl(
@@ -64,9 +84,7 @@ namespace QA_automation_selenium_xunit.Pages
             );
         }
 
-        /// <summary>
-        /// Acessa diretamente a página do carrinho.
-        /// </summary>
+        // Acessa diretamente a página do carrinho.
         public void OpenCartPage()
         {
             _driver.Navigate().GoToUrl(
@@ -74,50 +92,51 @@ namespace QA_automation_selenium_xunit.Pages
             );
         }
 
-        /// <summary>
-        /// Verifica se existem produtos no carrinho.
-        /// </summary>
+        // Verifica se existem produtos no carrinho.
         public bool HasProductsInCart()
         {
-            return _driver.FindElements(_cartItems).Count > 0;
+            return _driver
+                .FindElements(_cartItems)
+                .Count > 0;
         }
 
-        /// <summary>
-        /// Avança do carrinho para a tela de checkout.
-        /// </summary>
+        // Avança do carrinho para a página de checkout.
         public void ProceedToCheckout()
         {
-            ClickWithJavaScript(_proceedToCheckoutButton);
+            ClickWithJavaScript(
+                _proceedToCheckoutButton
+            );
         }
 
-        /// <summary>
-        /// Verifica se a tela de checkout está sendo exibida.
-        /// </summary>
+        // Verifica se a página de checkout está sendo exibida.
         public bool IsCheckoutPageDisplayed()
         {
-            return _driver.FindElements(_addressDetailsTitle).Count > 0
-                && _driver.FindElements(_reviewOrderTitle).Count > 0;
+            return _driver
+                .FindElements(_addressDetailsTitle)
+                .Count > 0
+                &&
+                _driver
+                .FindElements(_reviewOrderTitle)
+                .Count > 0;
         }
 
-        /// <summary>
-        /// Preenche o comentário do pedido.
-        /// </summary>
+        // Preenche o campo de comentário do pedido.
         public void EnterOrderComment(string comment)
         {
-            _driver.FindElement(_commentField).SendKeys(comment);
+            _driver
+                .FindElement(_commentField)
+                .SendKeys(comment);
         }
 
-        /// <summary>
-        /// Clica no botão responsável por seguir para o pagamento.
-        /// </summary>
+        // Avança para a etapa de pagamento.
         public void ClickPlaceOrder()
         {
-            ClickWithJavaScript(_placeOrderButton);
+            ClickWithJavaScript(
+                _placeOrderButton
+            );
         }
 
-        /// <summary>
-        /// Verifica se a tela de pagamento está sendo exibida.
-        /// </summary>
+        // Verifica se a página de pagamento está sendo exibida.
         public bool IsPaymentPageDisplayed()
         {
             return _driver.Url.Contains("/payment")
@@ -129,9 +148,7 @@ namespace QA_automation_selenium_xunit.Pages
                 && _driver.FindElements(_payAndConfirmButton).Count > 0;
         }
 
-        /// <summary>
-        /// Preenche os dados de pagamento.
-        /// </summary>
+        // Preenche os dados utilizados durante o pagamento.
         public void FillPaymentInformation(
             string cardName,
             string cardNumber,
@@ -140,32 +157,45 @@ namespace QA_automation_selenium_xunit.Pages
             string expirationYear
         )
         {
-            _driver.FindElement(_nameOnCardField).SendKeys(cardName);
-            _driver.FindElement(_cardNumberField).SendKeys(cardNumber);
-            _driver.FindElement(_cvcField).SendKeys(cvc);
-            _driver.FindElement(_expirationMonthField).SendKeys(expirationMonth);
-            _driver.FindElement(_expirationYearField).SendKeys(expirationYear);
+            _driver
+                .FindElement(_nameOnCardField)
+                .SendKeys(cardName);
+
+            _driver
+                .FindElement(_cardNumberField)
+                .SendKeys(cardNumber);
+
+            _driver
+                .FindElement(_cvcField)
+                .SendKeys(cvc);
+
+            _driver
+                .FindElement(_expirationMonthField)
+                .SendKeys(expirationMonth);
+
+            _driver
+                .FindElement(_expirationYearField)
+                .SendKeys(expirationYear);
         }
 
-        /// <summary>
-        /// Confirma o pagamento e finaliza o pedido.
-        /// </summary>
+        // Confirma o pagamento e finaliza o pedido.
         public void ClickPayAndConfirmOrder()
         {
-            ClickWithJavaScript(_payAndConfirmButton);
+            ClickWithJavaScript(
+                _payAndConfirmButton
+            );
         }
 
-        /// <summary>
-        /// Verifica se o pedido foi finalizado com sucesso.
-        /// </summary>
+        // Verifica se o pedido foi finalizado com sucesso.
         public bool IsOrderPlaced()
         {
-            return _driver.FindElements(_orderPlacedMessage).Count > 0;
+            return _driver
+                .FindElements(_orderPlacedMessage)
+                .Count > 0;
         }
 
-        /// <summary>
-        /// Realiza clique em um elemento utilizando JavaScript.
-        /// </summary>
+        // Executa clique com JavaScript para reduzir falhas causadas
+        // por anúncios, overlays ou elementos sobrepostos.
         private void ClickWithJavaScript(By locator)
         {
             IWebElement element =

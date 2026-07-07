@@ -352,8 +352,28 @@ Os dados de checkout devem ser carregados corretamente.
 
 # Status
 
-**Todos os cenários previstos até a Sprint 7 foram implementados e automatizados.**
+**Documento revisado na Sprint 9 — Refatoração e Publicação.**
 
-### Próxima Sprint
+Todos os cenários planejados para o escopo atual foram implementados e automatizados.
 
-**Sprint 8 — Evidências e Relatórios (ExtentReports e geração de relatórios automatizados).**
+A documentação contempla:
+
+* Login
+* Cadastro
+* Produtos
+* Carrinho
+* Checkout
+* Data Driven Testing
+* Evidências e relatórios automatizados
+
+### Situação Atual
+
+O projeto encontra-se na última etapa:
+
+**Sprint 9 — Refatoração e Publicação**
+
+Nesta Sprint, os cenários estão passando por revisão final de nomenclatura, padronização do código-fonte em inglês, validação das referências internas e preparação para publicação definitiva.
+
+### Próxima Etapa
+
+Executar a suíte completa de testes, validar evidências, validar relatórios HTML e finalizar a publicação do projeto.
