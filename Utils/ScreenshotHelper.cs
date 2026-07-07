@@ -15,54 +15,51 @@ namespace QA_automation_selenium_xunit.Utils
         // salva a evidência no diretório do projeto
         // e retorna o caminho completo da imagem.
         public static string TakeScreenshot(
-            IWebDriver driver,
-            string testName)
+     IWebDriver driver,
+     string testName)
         {
-            // Obtém o diretório raiz do projeto.
-            string projectPath = Directory
-                .GetParent(AppContext.BaseDirectory)!
-                .Parent!
-                .Parent!
-                .Parent!
-                .FullName;
+            try
+            {
+                string projectPath = Directory
+                    .GetParent(AppContext.BaseDirectory)!
+                    .Parent!
+                    .Parent!
+                    .Parent!
+                    .FullName;
 
-            // Define o diretório onde
-            // as evidências serão armazenadas.
-            string evidenceDirectory = Path.Combine(
-                projectPath,
-                "Evidence",
-                ExecutionFolder
-            );
+                string evidenceDirectory = Path.Combine(
+                    projectPath,
+                    "Evidence",
+                    ExecutionFolder
+                );
 
-            // Cria o diretório caso ainda não exista.
-            Directory.CreateDirectory(
-                evidenceDirectory
-            );
+                Directory.CreateDirectory(evidenceDirectory);
 
-            // Define o caminho completo
-            // do arquivo de evidência.
-            string screenshotPath = Path.Combine(
-                evidenceDirectory,
-                $"{testName}.png"
-            );
+                string screenshotPath = Path.Combine(
+                    evidenceDirectory,
+                    $"{testName}.png"
+                );
 
-            // Captura a tela atual do navegador.
-            Screenshot screenshot =
-                ((ITakesScreenshot)driver)
-                    .GetScreenshot();
+                Screenshot screenshot =
+                    ((ITakesScreenshot)driver)
+                        .GetScreenshot();
 
-            // Salva a imagem no diretório de evidências.
-            screenshot.SaveAsFile(
-                screenshotPath
-            );
+                screenshot.SaveAsFile(screenshotPath);
 
-            Console.WriteLine(
-                $"Screenshot salvo em: {screenshotPath}"
-            );
+                Console.WriteLine(
+                    $"Screenshot salvo em: {screenshotPath}"
+                );
 
-            // Retorna o caminho completo
-            // para utilização nos relatórios.
-            return screenshotPath;
+                return screenshotPath;
+            }
+            catch (WebDriverException ex)
+            {
+                Console.WriteLine(
+                    $"Falha ao capturar screenshot do teste {testName}: {ex.Message}"
+                );
+
+                return string.Empty;
+            }
         }
     }
 }

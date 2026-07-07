@@ -18,6 +18,13 @@ namespace QA_automation_selenium_xunit.Drivers
                 ChromeOptions options =
                     new ChromeOptions();
 
+                // Define estratégia de carregamento Eager.
+                // Permite continuar a execução quando o HTML principal
+                // estiver carregado, sem aguardar completamente
+                // imagens, anúncios, iframes e outros recursos externos.
+                options.PageLoadStrategy =
+                    PageLoadStrategy.Eager;
+
                 // Inicia o navegador maximizado.
                 options.AddArgument(
                     "--start-maximized"
@@ -51,10 +58,20 @@ namespace QA_automation_selenium_xunit.Drivers
                     "--blink-settings=imagesEnabled=false"
                 );
 
-                // Cria uma nova instância do ChromeDriver
-                // utilizando as configurações definidas.
+                // Cria e configura o serviço responsável
+                // pela comunicação com o ChromeDriver.
+                ChromeDriverService service =
+                    ChromeDriverService.CreateDefaultService();
+
+                // Cria uma nova instância do ChromeDriver.
+                // O timeout de 120 segundos é aplicado
+                // à comunicação entre Selenium e ChromeDriver.
                 _driver =
-                    new ChromeDriver(options);
+                    new ChromeDriver(
+                        service,
+                        options,
+                        TimeSpan.FromSeconds(120)
+                    );
 
                 // Define o tempo máximo para
                 // localização implícita de elementos.
@@ -68,7 +85,7 @@ namespace QA_automation_selenium_xunit.Drivers
                 _driver.Manage()
                     .Timeouts()
                     .PageLoad =
-                        TimeSpan.FromSeconds(30);
+                        TimeSpan.FromSeconds(60);
             }
 
             return _driver;

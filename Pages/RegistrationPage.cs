@@ -163,11 +163,28 @@ namespace QA_automation_selenium_xunit.Pages
         }
 
         // Realiza o clique no botão responsável por iniciar o cadastro.
+        // Primeiro tenta o clique padrão do Selenium.
+        // Caso anúncio ou iframe bloqueie o botão,
+        // utiliza JavaScript como alternativa.
         public void ClickSignup()
         {
-            _driver
-                .FindElement(_signupButton)
-                .Click();
+            IWebElement signupButton =
+           _driver.FindElement(_signupButton);
+
+            try
+            {
+                signupButton.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                IJavaScriptExecutor js =
+                 (IJavaScriptExecutor)_driver;
+
+                js.ExecuteScript(
+                   "arguments[0].click();",
+                   signupButton
+               );
+            }
         }
 
         // Executa o fluxo inicial de cadastro.

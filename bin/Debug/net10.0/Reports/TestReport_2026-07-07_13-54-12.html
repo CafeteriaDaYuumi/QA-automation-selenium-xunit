@@ -1,0 +1,1810 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>QA Test Automation Framework</title>
+ <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/commons/img/logo.png">
+ <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/css/spark-style.css" rel="stylesheet" />
+ <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@78fa5a2421587b8228150e93142e5ba97178e85b/spark/js/jsontree.js"></script>
+ <style></style>
+</head>
+<body class="spa  standard">
+ <div class="app">
+  <div class="layout">
+   <div class="header navbar">
+ <div class="vheader">
+  <div class="nav-logo">
+   <a href="#">
+	 <div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/commons/img/logo.png')"></div>
+   </a>
+  </div>
+  <ul class="nav-left">
+   <li class="search-box">
+	<a class="search-toggle" href="#"><i class="search-icon fa fa-search"></i><i class="search-icon-close fa fa-close"></i></a>
+   </li>
+   <li class="search-input">
+    <input id="search-tests" class="form-control" type="text" placeholder="Search...">
+   </li>
+  </ul>
+  <ul class="nav-right">
+   <li class="m-r-10"><a href="#"><span class="badge badge-primary">Relatório de Execução dos Testes Automatizados</span></a></li>
+   <li class="m-r-10">
+    <a href="#"><span class="badge badge-primary">07/07/2026 13:54:12</span></a>
+   </li>
+  </ul>
+ </div>
+</div>
+   <div class="side-nav">
+ <div class="side-nav-inner">
+  <ul class="side-nav-menu">
+   <li class="nav-item dropdown" onclick="toggleView('test-view')">
+    <a id="nav-test" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-list"></i></span>
+    </a>
+   </li>
+   <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+    <a id="nav-dashboard" class="dropdown-toggle" href="#">
+     <span class="ico"><i class="fa fa-bar-chart"></i></span>
+    </a>
+   </li>
+  </ul>
+ </div>
+</div>
+
+   <div class="vcontainer">
+    <div class="main-content">
+     
+
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+      <ul class="tools pull-left">
+        <li><a href="#"><span class="font-size-14">Tests</span></a></li>
+      </ul>
+      <ul class="tools text-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+          <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+ <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>             <div class="dropdown-divider"></div>
+            <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item" status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT008 - Deve validar campos obrigatórios no cadastro</p>
+            <p class="text-sm">
+              <span>13:54:12</span> / <span>1833,29 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT008 - Deve validar campos obrigatórios no cadastro</h5>
+                  <span class='badge badge-success'>07/07/2026 13:54:12</span>
+                  <span class='badge badge-danger'>07/07/2026 13:54:13</span>
+                  <span class='badge badge-default'>1833,29 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT008_CamposObrigatoriosCadastro.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT008_CamposObrigatoriosCadastro.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:12</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:13</td>
+        <td>
+Evidência anexada: CT008_CamposObrigatoriosCadastro.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:54:13</td>
+        <td>
+Validação de campos obrigatórios executada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT006 - Deve iniciar cadastro com dados válidos</p>
+            <p class="text-sm">
+              <span>13:54:22</span> / <span>14212,58 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT006 - Deve iniciar cadastro com dados válidos</h5>
+                  <span class='badge badge-success'>07/07/2026 13:54:22</span>
+                  <span class='badge badge-danger'>07/07/2026 13:54:37</span>
+                  <span class='badge badge-default'>14212,58 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT006_IniciarCadastroComDadosValidos.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT006_IniciarCadastroComDadosValidos.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:22</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:37</td>
+        <td>
+Evidência anexada: CT006_IniciarCadastroComDadosValidos.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:54:37</td>
+        <td>
+Cadastro iniciado com dados válidos.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT009 - Deve criar e excluir conta com sucesso</p>
+            <p class="text-sm">
+              <span>13:54:41</span> / <span>20406,58 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT009 - Deve criar e excluir conta com sucesso</h5>
+                  <span class='badge badge-success'>07/07/2026 13:54:41</span>
+                  <span class='badge badge-danger'>07/07/2026 13:55:01</span>
+                  <span class='badge badge-default'>20406,58 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT009_ContaCriada.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT009_ContaCriada.png">
+  </div>
+ </div>
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT009_ContaExcluida.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT009_ContaExcluida.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:41</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:54:56</td>
+        <td>
+Evidência anexada: CT009_ContaCriada.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:01</td>
+        <td>
+Evidência anexada: CT009_ContaExcluida.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:55:01</td>
+        <td>
+Conta criada e excluída com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT007 - Deve validar e-mail já cadastrado</p>
+            <p class="text-sm">
+              <span>13:55:08</span> / <span>3635,35 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT007 - Deve validar e-mail já cadastrado</h5>
+                  <span class='badge badge-success'>07/07/2026 13:55:08</span>
+                  <span class='badge badge-danger'>07/07/2026 13:55:12</span>
+                  <span class='badge badge-default'>3635,35 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT007_EmailJaCadastrado.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT007_EmailJaCadastrado.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:08</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:12</td>
+        <td>
+Evidência anexada: CT007_EmailJaCadastrado.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:55:12</td>
+        <td>
+Mensagem de e-mail já cadastrado validada.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT005 - Deve acessar área de cadastro</p>
+            <p class="text-sm">
+              <span>13:55:15</span> / <span>10124,05 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT005 - Deve acessar área de cadastro</h5>
+                  <span class='badge badge-success'>07/07/2026 13:55:15</span>
+                  <span class='badge badge-danger'>07/07/2026 13:55:26</span>
+                  <span class='badge badge-default'>10124,05 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT005_AcessarAreaDeCadastro.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT005_AcessarAreaDeCadastro.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:15</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:25</td>
+        <td>
+Evidência anexada: CT005_AcessarAreaDeCadastro.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:55:26</td>
+        <td>
+Área de cadastro acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT013 - Deve visualizar detalhes do produto</p>
+            <p class="text-sm">
+              <span>13:55:42</span> / <span>2007,36 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT013 - Deve visualizar detalhes do produto</h5>
+                  <span class='badge badge-success'>07/07/2026 13:55:42</span>
+                  <span class='badge badge-danger'>07/07/2026 13:55:44</span>
+                  <span class='badge badge-default'>2007,36 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT013_VisualizarDetalhesDoProduto.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT013_VisualizarDetalhesDoProduto.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:42</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:44</td>
+        <td>
+Evidência anexada: CT013_VisualizarDetalhesDoProduto.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:55:44</td>
+        <td>
+Detalhes do produto exibidos com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT010 - Deve acessar área de produtos</p>
+            <p class="text-sm">
+              <span>13:55:49</span> / <span>2251,26 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT010 - Deve acessar área de produtos</h5>
+                  <span class='badge badge-success'>07/07/2026 13:55:49</span>
+                  <span class='badge badge-danger'>07/07/2026 13:55:51</span>
+                  <span class='badge badge-default'>2251,26 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT010_AcessarAreaDeProdutos.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT010_AcessarAreaDeProdutos.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:49</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:51</td>
+        <td>
+Evidência anexada: CT010_AcessarAreaDeProdutos.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:55:51</td>
+        <td>
+Área de produtos acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT012 - Deve pesquisar produto inexistente</p>
+            <p class="text-sm">
+              <span>13:55:54</span> / <span>6888,78 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT012 - Deve pesquisar produto inexistente</h5>
+                  <span class='badge badge-success'>07/07/2026 13:55:54</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:01</span>
+                  <span class='badge badge-default'>6888,78 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT012_PesquisarProdutoInexistente.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT012_PesquisarProdutoInexistente.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:54</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:55:56</td>
+        <td>
+Evidência anexada: CT012_PesquisarProdutoInexistente.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:01</td>
+        <td>
+Pesquisa de produto inexistente validada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT011 - Deve pesquisar produto existente</p>
+            <p class="text-sm">
+              <span>13:56:04</span> / <span>2348,64 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT011 - Deve pesquisar produto existente</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:04</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:07</span>
+                  <span class='badge badge-default'>2348,64 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT011_PesquisarProdutoExistente.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT011_PesquisarProdutoExistente.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:04</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:07</td>
+        <td>
+Evidência anexada: CT011_PesquisarProdutoExistente.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:07</td>
+        <td>
+Pesquisa de produto existente realizada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT004 - Deve realizar logout com sucesso</p>
+            <p class="text-sm">
+              <span>13:56:23</span> / <span>4263,18 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT004 - Deve realizar logout com sucesso</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:23</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:27</span>
+                  <span class='badge badge-default'>4263,18 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT004_LogoutValido.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT004_LogoutValido.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:23</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:27</td>
+        <td>
+Evidência anexada: CT004_LogoutValido.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:27</td>
+        <td>
+Logout realizado com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT003 - Deve validar campos obrigatórios no login</p>
+            <p class="text-sm">
+              <span>13:56:30</span> / <span>1692,84 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT003 - Deve validar campos obrigatórios no login</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:30</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:32</span>
+                  <span class='badge badge-default'>1692,84 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT003_LoginCamposVazios.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT003_LoginCamposVazios.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:30</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:32</td>
+        <td>
+Evidência anexada: CT003_LoginCamposVazios.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:32</td>
+        <td>
+Validação de campos obrigatórios executada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT002 - Deve exibir erro ao realizar login com senha inválida</p>
+            <p class="text-sm">
+              <span>13:56:36</span> / <span>1221,39 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT002 - Deve exibir erro ao realizar login com senha inválida</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:36</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:37</span>
+                  <span class='badge badge-default'>1221,39 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT002_LoginSenhaInvalida.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT002_LoginSenhaInvalida.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:36</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:37</td>
+        <td>
+Evidência anexada: CT002_LoginSenhaInvalida.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:37</td>
+        <td>
+Mensagem de erro validada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT001 - Deve realizar login com credenciais válidas</p>
+            <p class="text-sm">
+              <span>13:56:40</span> / <span>3032,96 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT001 - Deve realizar login com credenciais válidas</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:40</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:43</span>
+                  <span class='badge badge-default'>3032,96 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT001_LoginValido.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT001_LoginValido.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:40</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:42</td>
+        <td>
+Evidência anexada: CT001_LoginValido.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:43</td>
+        <td>
+Login realizado com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LOGIN001 - Deve acessar página de login</p>
+            <p class="text-sm">
+              <span>13:56:45</span> / <span>560,28 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">LOGIN001 - Deve acessar página de login</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:45</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:46</span>
+                  <span class='badge badge-default'>560,28 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\LOGIN001_AcessarPaginaDeLogin.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\LOGIN001_AcessarPaginaDeLogin.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:45</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:46</td>
+        <td>
+Evidência anexada: LOGIN001_AcessarPaginaDeLogin.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:46</td>
+        <td>
+Página de login acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">INFRA001 - Deve abrir navegador e acessar o site</p>
+            <p class="text-sm">
+              <span>13:56:49</span> / <span>739,99 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">INFRA001 - Deve abrir navegador e acessar o site</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:49</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:49</span>
+                  <span class='badge badge-default'>739,99 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\INFRA001_AbrirNavegadorEAcessarSite.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\INFRA001_AbrirNavegadorEAcessarSite.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:49</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:49</td>
+        <td>
+Evidência anexada: INFRA001_AbrirNavegadorEAcessarSite.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:49</td>
+        <td>
+Aplicação acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT023 - Deve ler massa de carrinho</p>
+            <p class="text-sm">
+              <span>13:56:53</span> / <span>55,65 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT023 - Deve ler massa de carrinho</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:53</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:53</span>
+                  <span class='badge badge-default'>55,65 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:53</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:53</td>
+        <td>
+Massa de carrinho carregada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT024 - Deve ler massa de checkout</p>
+            <p class="text-sm">
+              <span>13:56:56</span> / <span>8,58 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT024 - Deve ler massa de checkout</h5>
+                  <span class='badge badge-success'>07/07/2026 13:56:56</span>
+                  <span class='badge badge-danger'>07/07/2026 13:56:56</span>
+                  <span class='badge badge-default'>8,58 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:56:56</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:56:56</td>
+        <td>
+Massa de checkout carregada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT021 - Deve ler massa de usuários</p>
+            <p class="text-sm">
+              <span>13:57:14</span> / <span>1,05 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT021 - Deve ler massa de usuários</h5>
+                  <span class='badge badge-success'>07/07/2026 13:57:14</span>
+                  <span class='badge badge-danger'>07/07/2026 13:57:14</span>
+                  <span class='badge badge-default'>1,05 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:14</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:57:14</td>
+        <td>
+Massa de usuários carregada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT022 - Deve ler massa de produtos</p>
+            <p class="text-sm">
+              <span>13:57:16</span> / <span>6,01 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT022 - Deve ler massa de produtos</h5>
+                  <span class='badge badge-success'>07/07/2026 13:57:16</span>
+                  <span class='badge badge-danger'>07/07/2026 13:57:16</span>
+                  <span class='badge badge-default'>6,01 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:16</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:57:16</td>
+        <td>
+Massa de produtos carregada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT019 - Deve acessar tela de pagamento</p>
+            <p class="text-sm">
+              <span>13:57:18</span> / <span>8005,41 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT019 - Deve acessar tela de pagamento</h5>
+                  <span class='badge badge-success'>07/07/2026 13:57:18</span>
+                  <span class='badge badge-danger'>07/07/2026 13:57:26</span>
+                  <span class='badge badge-default'>8005,41 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT019_AcessarTelaDePagamento.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT019_AcessarTelaDePagamento.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:18</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:26</td>
+        <td>
+Evidência anexada: CT019_AcessarTelaDePagamento.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:57:26</td>
+        <td>
+Tela de pagamento acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT018 - Deve finalizar compra com sucesso</p>
+            <p class="text-sm">
+              <span>13:57:29</span> / <span>11147,11 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT018 - Deve finalizar compra com sucesso</h5>
+                  <span class='badge badge-success'>07/07/2026 13:57:29</span>
+                  <span class='badge badge-danger'>07/07/2026 13:57:40</span>
+                  <span class='badge badge-default'>11147,11 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT018_FinalizarCompraComSucesso.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT018_FinalizarCompraComSucesso.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:29</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:40</td>
+        <td>
+Evidência anexada: CT018_FinalizarCompraComSucesso.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:57:40</td>
+        <td>
+Compra finalizada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT020 - Deve finalizar compra com segunda massa de dados</p>
+            <p class="text-sm">
+              <span>13:57:44</span> / <span>23163,37 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT020 - Deve finalizar compra com segunda massa de dados</h5>
+                  <span class='badge badge-success'>07/07/2026 13:57:44</span>
+                  <span class='badge badge-danger'>07/07/2026 13:58:07</span>
+                  <span class='badge badge-default'>23163,37 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT020_FinalizarCompraSegundaMassa.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT020_FinalizarCompraSegundaMassa.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:57:44</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:07</td>
+        <td>
+Evidência anexada: CT020_FinalizarCompraSegundaMassa.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:58:07</td>
+        <td>
+Compra finalizada com sucesso utilizando segunda massa de dados.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT017 - Deve acessar tela de checkout</p>
+            <p class="text-sm">
+              <span>13:58:11</span> / <span>6334,43 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT017 - Deve acessar tela de checkout</h5>
+                  <span class='badge badge-success'>07/07/2026 13:58:11</span>
+                  <span class='badge badge-danger'>07/07/2026 13:58:17</span>
+                  <span class='badge badge-default'>6334,43 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT017_AcessarTelaDeCheckout.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT017_AcessarTelaDeCheckout.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:11</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:17</td>
+        <td>
+Evidência anexada: CT017_AcessarTelaDeCheckout.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:58:17</td>
+        <td>
+Tela de checkout acessada com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT016 - Deve remover produto do carrinho</p>
+            <p class="text-sm">
+              <span>13:58:20</span> / <span>8446,15 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT016 - Deve remover produto do carrinho</h5>
+                  <span class='badge badge-success'>07/07/2026 13:58:20</span>
+                  <span class='badge badge-danger'>07/07/2026 13:58:29</span>
+                  <span class='badge badge-default'>8446,15 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT016_RemoverProdutoDoCarrinho.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT016_RemoverProdutoDoCarrinho.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:20</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:24</td>
+        <td>
+Evidência anexada: CT016_RemoverProdutoDoCarrinho.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:58:29</td>
+        <td>
+Produto removido do carrinho com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT015 - Deve adicionar múltiplos produtos ao carrinho</p>
+            <p class="text-sm">
+              <span>13:58:33</span> / <span>2179,06 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT015 - Deve adicionar múltiplos produtos ao carrinho</h5>
+                  <span class='badge badge-success'>07/07/2026 13:58:33</span>
+                  <span class='badge badge-danger'>07/07/2026 13:58:35</span>
+                  <span class='badge badge-default'>2179,06 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT015_AdicionarMultiplosProdutosAoCarrinho.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT015_AdicionarMultiplosProdutosAoCarrinho.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:33</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:35</td>
+        <td>
+Evidência anexada: CT015_AdicionarMultiplosProdutosAoCarrinho.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:58:35</td>
+        <td>
+Múltiplos produtos adicionados ao carrinho com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+        <li class="test-item" status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">CT014 - Deve adicionar produto ao carrinho</p>
+            <p class="text-sm">
+              <span>13:58:48</span> / <span>5122,92 ms</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+            <div class="detail-head">
+              <div class="p-v-10">
+                <div class="info">
+                  <h5 class="test-status text-pass">CT014 - Deve adicionar produto ao carrinho</h5>
+                  <span class='badge badge-success'>07/07/2026 13:58:48</span>
+                  <span class='badge badge-danger'>07/07/2026 13:58:53</span>
+                  <span class='badge badge-default'>5122,92 ms</span>
+                  &middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+                  <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+                  <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+                  <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+  <div class="row mb-3">
+   <div class="col-md-3">
+     <img data-featherlight='D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT014_AdicionarProdutoAoCarrinho.png' src="D:\Meus Codigos\GitHub\QA-automation-selenium-xunit\Evidence\2026-07-07_13-54-13\CT014_AdicionarProdutoAoCarrinho.png">
+  </div>
+ </div>
+
+<div class="detail-body mt-4">
+
+
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:48</td>
+        <td>
+Iniciando execução do teste.        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>jul. 07, 2026 13:58:53</td>
+        <td>
+Evidência anexada: CT014_AdicionarProdutoAoCarrinho.png        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>jul. 07, 2026 13:58:53</td>
+        <td>
+Produto adicionado ao carrinho com sucesso.        </td>
+      </tr>
+  </tbody>
+</table></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="test-content scrollable">
+    <div class="test-content-tools">
+      <ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+    </div>
+    <div class="test-content-detail"><div class="detail-body"></div></div>
+  </div>
+</div>
+
+     
+
+<div class="container-fluid p-4 view dashboard-view">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Started</p>
+          <h3>07/07/2026 13:54:12</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0">Ended</p>
+          <h3>07/07/2026 13:58:57</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-pass">Tests Passed</p>
+          <h3>26</h3>
+      </div></div>
+    </div>
+    <div class="col-md-3">
+      <div class="card"><div class="card-body">
+          <p class="m-b-0 text-fail">Tests Failed</p>
+          <h3>0</h3>
+      </div></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Tests</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='parent-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='1%'>
+            <b>26</b> tests passed
+            </small>
+          </div>
+          <div>
+            <small data-tooltip='0%'><b>0</b> tests failed, 
+            <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h6 class="card-title">Log events</h6>
+        </div>
+        <div class="card-body">
+          <div class="">
+            <canvas id='events-analysis' width='115' height='90'></canvas>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div><small data-tooltip='0%'><b>26</b> events passed</small></div>
+          <div>
+            <small data-tooltip='0%'><b>0</b> events failed, 
+            <b data-tooltip='%'>49</b> others
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"><div class="col-md-12">
+    <div class="card"><div class="card-header"><p>Timeline</p></div>
+      <div class="card-body pt-0"><div>
+        <canvas id="timeline" height="120"></canvas>
+      </div></div>
+    </div>
+  </div></div>
+  <script>
+	var timeline = { "CT008 - Deve validar campos obrigatórios no cadastro":1833,292,"CT006 - Deve iniciar cadastro com dados válidos":14212,5827,"CT009 - Deve criar e excluir conta com sucesso":20406,5819,"CT007 - Deve validar e-mail já cadastrado":3635,3523,"CT005 - Deve acessar área de cadastro":10124,0476,"CT013 - Deve visualizar detalhes do produto":2007,3616,"CT010 - Deve acessar área de produtos":2251,2644,"CT012 - Deve pesquisar produto inexistente":6888,7818,"CT011 - Deve pesquisar produto existente":2348,6408,"CT004 - Deve realizar logout com sucesso":4263,1792,"CT003 - Deve validar campos obrigatórios no login":1692,8383,"CT002 - Deve exibir erro ao realizar login com senha inválida":1221,3932,"CT001 - Deve realizar login com credenciais válidas":3032,9627,"LOGIN001 - Deve acessar página de login":560,2754,"INFRA001 - Deve abrir navegador e acessar o site":739,9871,"CT023 - Deve ler massa de carrinho":55,6535,"CT024 - Deve ler massa de checkout":8,5754,"CT021 - Deve ler massa de usuários":1,0458,"CT022 - Deve ler massa de produtos":6,0053,"CT019 - Deve acessar tela de pagamento":8005,4085,"CT018 - Deve finalizar compra com sucesso":11147,1116,"CT020 - Deve finalizar compra com segunda massa de dados":23163,3702,"CT017 - Deve acessar tela de checkout":6334,4275,"CT016 - Deve remover produto do carrinho":8446,1542,"CT015 - Deve adicionar múltiplos produtos ao carrinho":2179,0596,"CT014 - Deve adicionar produto ao carrinho":5122,9206 };
+  </script>
+  <div class="row">
+      <div class="col-md-4 sysenv-container">
+      <div class="card">
+        <div class="card-header"><p>System/Environment</p></div>
+        <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+          <thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Projeto</td>
+              <td>QA Test Automation Framework</td>
+            </tr>
+            <tr>
+              <td>Linguagem</td>
+              <td>C#</td>
+            </tr>
+            <tr>
+              <td>Framework</td>
+              <td>xUnit</td>
+            </tr>
+            <tr>
+              <td>Automação</td>
+              <td>Selenium WebDriver</td>
+            </tr>
+            <tr>
+              <td>Ambiente</td>
+              <td>QA</td>
+            </tr>
+            <tr>
+              <td>Navegador</td>
+              <td>Google Chrome</td>
+            </tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var statusGroup = {
+    parentCount: 26,
+    childCount: 0,
+    grandChildCount: 0,
+    eventsCount: 75,
+
+passParent:26,failParent:0,warningParent:0,skipParent:0,    
+passChild:0,failChild:0,warningChild:0,skipChild:0,infoChild:0,    
+passGrandChild:0,failGrandChild:0,warningGrandChild:0,skipGrandChild:0,infoGrandChild:0,    
+passEvents:26,failEvents:0,warningEvents:0,skipEvents:0,infoEvents:49,  };
+</script>
+
+    </div>
+   </div>
+  </div>
+ </div>
+ <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c439bdbc7bade3d85af3b90e9e69c30ebc87445f/spark/js/spark-script.js"></script>
+<script type='text/javascript'></script>
+</body>
+</html>

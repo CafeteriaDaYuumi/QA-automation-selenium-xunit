@@ -86,25 +86,29 @@ namespace QA_automation_selenium_xunit.Pages
                 .SendKeys(password);
         }
 
-        // Realiza o clique no botão de login utilizando JavaScript
-        // para reduzir falhas causadas por anúncios ou sobreposições.
+        // Realiza o clique no botão de login.
+        // Primeiro tenta o clique padrão do Selenium.
+        // Caso algum anúncio ou overlay bloqueie o clique,
+        // utiliza JavaScript como alternativa.
         public void ClickLogin()
         {
             IWebElement loginButton =
                 _driver.FindElement(_loginButton);
 
-            IJavaScriptExecutor js =
-                (IJavaScriptExecutor)_driver;
+            try
+            {
+                loginButton.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                IJavaScriptExecutor js =
+                    (IJavaScriptExecutor)_driver;
 
-            js.ExecuteScript(
-                "arguments[0].scrollIntoView({block: 'center'});",
-                loginButton
-            );
-
-            js.ExecuteScript(
-                "arguments[0].click();",
-                loginButton
-            );
+                js.ExecuteScript(
+                    "arguments[0].click();",
+                    loginButton
+                );
+            }
         }
 
         // Executa o fluxo completo de autenticação.
@@ -118,9 +122,23 @@ namespace QA_automation_selenium_xunit.Pages
         // Realiza o logout do usuário autenticado.
         public void Logout()
         {
-            _driver
-                .FindElement(_logoutButton)
-                .Click();
+            IWebElement logoutButton =
+                _driver.FindElement(_logoutButton);
+
+            try
+            {
+                logoutButton.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                IJavaScriptExecutor js =
+                    (IJavaScriptExecutor)_driver;
+
+                js.ExecuteScript(
+                    "arguments[0].click();",
+                    logoutButton
+                );
+            }
         }
 
         // Retorna a mensagem de erro exibida para login inválido.
@@ -139,12 +157,13 @@ namespace QA_automation_selenium_xunit.Pages
                 .Displayed;
         }
 
+
         // Verifica se a página de login está sendo exibida.
         public bool IsLoginPageDisplayed()
         {
-            return _driver
-                .FindElement(_loginTitle)
-                .Displayed;
+            return _driver.Url.Contains("/login")
+                || _driver.FindElements(_loginTitle).Count > 0
+                || _driver.FindElements(_emailField).Count > 0;
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QA-automation-selenium-xunit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+702243c490954c95ddaa2476c4690abe52885069")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bb98869ce3dcbfa0a9e4b29ac83a22cd3b861a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("QA-automation-selenium-xunit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QA-automation-selenium-xunit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
